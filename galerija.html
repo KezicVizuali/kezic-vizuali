@@ -126,22 +126,43 @@ nav.scrolled { background: rgba(8,8,7,0.97); border-color: rgba(201,168,76,0.22)
 .section-title em { font-style: italic; color: var(--gold); }
 .gallery-header p { color: var(--text-muted); max-width: 600px; margin: 0 auto; line-height: 1.8; }
 
-/* ── MASONRY GALERIJA & NASLOVI ── */
-.gallery-wrapper {
-  position: relative; z-index: 2;
-  padding: 2rem 5% 6rem;
+/* ── FILTER GUMBI ── */
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 3rem 5% 2rem;
+  position: relative;
+  z-index: 2;
 }
-.gallery-category-title {
-  font-family: var(--serif);
-  font-size: 2.2rem;
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(240,234,216,0.2);
+  color: var(--text-muted);
+  padding: 0.5rem 1.4rem;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer !important;
+  transition: all 0.3s ease;
+}
+.filter-btn:hover {
+  border-color: var(--gold);
   color: var(--text);
-  font-weight: 300;
-  text-align: center;
-  margin: 4rem 0 2rem;
 }
-.gallery-category-title em { color: var(--gold); font-style: italic; }
+.filter-btn.active {
+  background: var(--gold);
+  color: #080807;
+  border-color: var(--gold);
+  font-weight: 500;
+}
 
+/* ── MASONRY GALERIJA ── */
 .gallery-container {
+  position: relative; z-index: 2;
+  padding: 1rem 5% 8rem;
   column-count: 3;
   column-gap: 1.5rem;
 }
@@ -152,6 +173,7 @@ nav.scrolled { background: rgba(8,8,7,0.97); border-color: rgba(201,168,76,0.22)
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--bg2);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .gallery-item::before {
   content: '';
@@ -233,6 +255,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
   .section-title { font-size: 2.2rem; }
   .gallery-category-title { font-size: 1.8rem; }
   .lb-close { top: 15px; right: 20px; font-size: 2rem; }
+  .gallery-filters { flex-direction: column; gap: 0.5rem; }
 }
 </style>
 </head>
@@ -264,42 +287,50 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <p>Selekcija odabranih radova. Svaki kadar je pomno planiran kako bi prenio autentičnu priču, teksturu i emociju vašeg brenda.</p>
   </header>
 
-  <!-- GLAAVNI OMOTAČ ZA SVE KATEGORIJE -->
-  <main class="gallery-wrapper">
-    
-    <!-- KATEGORIJA 1: CRNO BIJELO -->
-    <h2 class="gallery-category-title">Crno-bijela <em>Elegancija</em></h2>
-    <div class="gallery-container">
-      <div class="gallery-item"><img src="slike/foto1.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/foto2.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/foto3.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/foto4.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/foto5.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/foto6.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/foto7.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/foto8.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/foto9.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/foto10.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-    </div>
+  <!-- GUMBI ZA FILTRIRANJE KATEGORIJA -->
+  <div class="gallery-filters">
+    <button class="filter-btn active" data-filter="sve">Svi Radovi</button>
+    <button class="filter-btn" data-filter="monochrome">Monochrome</button>
+    <button class="filter-btn" data-filter="editorijal">Studijski Editorijal</button>
+    <button class="filter-btn" data-filter="komercijalno">Komercijalno</button>
+  </div>
 
-    <!-- KATEGORIJA 2: STUDIJSKE SLIKE U BOJI -->
-    <h2 class="gallery-category-title">Studijski <em>Editorijal</em></h2>
-    <div class="gallery-container">
-      <div class="gallery-item"><img src="slike/studio1.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/studio2.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/studio3.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/studio4.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/studio5.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/studio6.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/studio7.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/studio8.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/studio9.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/studio10.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/studio11.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/studio12.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/studio13.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-      <div class="gallery-item"><img src="slike/studio14.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-    </div>
+  <!-- MASONRY GRID (Zajednički omotač) -->
+  <main class="gallery-container">
+    
+    <!-- 1. KATEGORIJA: MONOCHROME (Mia) -->
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto1.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto2.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto3.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto4.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto5.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto6.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto7.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto8.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto9.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto10.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+
+    <!-- 2. KATEGORIJA: STUDIJSKI EDITORIJAL (Iva) -->
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio1.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio2.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio3.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio4.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio5.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio6.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio7.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio8.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio9.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio10.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio11.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio12.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio13.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio14.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+
+    <!-- 3. KATEGORIJA: KOMERCIJALNO (Lidija i Esensse - prazan prostor za kasnije) -->
+    <!-- 
+      Kada budeš imao slike, samo ih zalijepi ovdje ispod. Primjer:
+      <div class="gallery-item" data-category="komercijalno"><img src="slike/parfem1.jpeg" alt="Komercijalna fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    -->
 
   </main>
 
@@ -368,13 +399,36 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
+    // ── Logika za filtriranje galerije ──
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Skini active klasu sa svih
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Dodaj onom gumbu koji je kliknut
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        galleryItems.forEach(item => {
+          if (filterValue === 'sve' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
     // ── Lightbox logika ──
     const lightbox = document.getElementById('lightbox');
     const lbImg = document.getElementById('lightbox-img');
     const lbClose = document.querySelector('.lb-close');
-    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const galleryImages = document.querySelectorAll('.gallery-item img');
 
-    galleryItems.forEach(img => {
+    galleryImages.forEach(img => {
       img.addEventListener('click', () => {
         lbImg.src = img.src;
         lightbox.classList.add('active');
