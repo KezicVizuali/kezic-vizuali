@@ -45,7 +45,7 @@ img {
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
-  -webkit-touch-callout: none; /* Sprječava izbornik na mobitelu kod dugog pritiska */
+  -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -126,10 +126,22 @@ nav.scrolled { background: rgba(8,8,7,0.97); border-color: rgba(201,168,76,0.22)
 .section-title em { font-style: italic; color: var(--gold); }
 .gallery-header p { color: var(--text-muted); max-width: 600px; margin: 0 auto; line-height: 1.8; }
 
-/* ── MASONRY GALERIJA ── */
-.gallery-container {
+/* ── MASONRY GALERIJA & NASLOVI ── */
+.gallery-wrapper {
   position: relative; z-index: 2;
-  padding: 4rem 5% 8rem;
+  padding: 2rem 5% 6rem;
+}
+.gallery-category-title {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  color: var(--text);
+  font-weight: 300;
+  text-align: center;
+  margin: 4rem 0 2rem;
+}
+.gallery-category-title em { color: var(--gold); font-style: italic; }
+
+.gallery-container {
   column-count: 3;
   column-gap: 1.5rem;
 }
@@ -219,11 +231,12 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 @media (max-width: 600px) {
   .gallery-container { column-count: 1; }
   .section-title { font-size: 2.2rem; }
+  .gallery-category-title { font-size: 1.8rem; }
   .lb-close { top: 15px; right: 20px; font-size: 2rem; }
 }
 </style>
 </head>
-<body oncontextmenu="return false;"> <!-- Globalna zaštita desnog klika -->
+<body oncontextmenu="return false;">
   <div id="cursor"></div>
   <div id="cursor-ring"></div>
 
@@ -251,52 +264,40 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <p>Selekcija odabranih radova. Svaki kadar je pomno planiran kako bi prenio autentičnu priču, teksturu i emociju vašeg brenda.</p>
   </header>
 
-  <!-- MASONRY GRID -->
-  <main class="gallery-container">
+  <!-- GLAAVNI OMOTAČ ZA SVE KATEGORIJE -->
+  <main class="gallery-wrapper">
     
-    <div class="gallery-item">
-      <img src="slike/foto1.jpeg" alt="Portret 1" loading="lazy" draggable="false" oncontextmenu="return false;">
+    <!-- KATEGORIJA 1: CRNO BIJELO -->
+    <h2 class="gallery-category-title">Crno-bijela <em>Elegancija</em></h2>
+    <div class="gallery-container">
+      <div class="gallery-item"><img src="slike/foto1.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/foto2.jpg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/foto3.jpg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/foto4.jpg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/foto5.jpg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/foto6.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/foto7.jpg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/foto8.jpg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/foto9.jpg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/foto10.jpg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
     </div>
-    
-    <div class="gallery-item">
-      <img src="slike/foto2.jpeg" alt="Portret 2" loading="lazy" draggable="false" oncontextmenu="return false;">
-    </div>
-    
-    <div class="gallery-item">
-      <img src="slike/foto3.jpeg" alt="Portret 3" loading="lazy" draggable="false" oncontextmenu="return false;">
-    </div>
-    
-    <div class="gallery-item">
-      <img src="slike/foto4.jpeg" alt="Portret 4" loading="lazy" draggable="false" oncontextmenu="return false;">
-    </div>
-    
-    <div class="gallery-item">
-      <img src="slike/foto5.jpeg" alt="Portret 5" loading="lazy" draggable="false" oncontextmenu="return false;">
-    </div>
-    
-    <div class="gallery-item">
-      <img src="slike/foto6.jpeg" alt="Portret 6" loading="lazy" draggable="false" oncontextmenu="return false;">
-    </div>
-    
-    <div class="gallery-item">
-      <img src="slike/foto7.jpeg" alt="Portret 7" loading="lazy" draggable="false" oncontextmenu="return false;">
-    </div>
-    
-    <div class="gallery-item">
-      <img src="slike/foto8.jpeg" alt="Portret 8" loading="lazy" draggable="false" oncontextmenu="return false;">
-    </div>
-    
-    <div class="gallery-item">
-      <img src="slike/foto9.jpeg" alt="Portret 9" loading="lazy" draggable="false" oncontextmenu="return false;">
-    </div>
-    
-    <div class="gallery-item">
-      <img src="slike/foto10.jpeg" alt="Portret 10" loading="lazy" draggable="false" oncontextmenu="return false;">
+
+    <!-- KATEGORIJA 2: STUDIJSKE SLIKE U BOJI -->
+    <h2 class="gallery-category-title">Studijski <em>Editorijal</em></h2>
+    <div class="gallery-container">
+      <div class="gallery-item"><img src="slike/studio1.jpg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/studio2.jpg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/studio3.jpg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/studio4.jpg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/studio5.jpg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/studio6.jpg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/studio7.jpg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+      <div class="gallery-item"><img src="slike/studio8.jpg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
     </div>
 
   </main>
 
-  <!-- LIGHTBOX (Za povećani prikaz slika) -->
+  <!-- LIGHTBOX -->
   <div id="lightbox">
     <button class="lb-close">&times;</button>
     <img id="lightbox-img" src="" alt="Povećana fotografija" draggable="false" oncontextmenu="return false;">
@@ -371,7 +372,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       img.addEventListener('click', () => {
         lbImg.src = img.src;
         lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Zaustavlja scrollanje stranice kad je fotka otvorena
+        document.body.style.overflow = 'hidden'; 
       });
     });
 
@@ -386,7 +387,6 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       if(e.target === lightbox) closeLightbox();
     });
 
-    // Zatvaranje lightboxa na Escape tipku
     document.addEventListener('keydown', (e) => {
       if(e.key === "Escape" && lightbox.classList.contains('active')) closeLightbox();
     });
