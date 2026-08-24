@@ -1071,13 +1071,21 @@ footer::before {
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#o-meni">O nama</a></li>
-      <li><a href="portfolio.html">Web Portfolio</a></li>
-      <li><a href="galerija.html">Foto Galerija</a></li>
-      <li><a href="#cjenik">Usluge i Cjenik</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#o-meni" data-hr="O nama" data-en="About us">O nama</a></li>
+      <li><a href="portfolio.html" data-hr="Web Portfolio" data-en="Web Portfolio">Web Portfolio</a></li>
+      <li><a href="galerija.html" data-hr="Foto Galerija" data-en="Photo Gallery">Foto Galerija</a></li>
+      <li><a href="#cjenik" data-hr="Usluge i Cjenik" data-en="Services & Pricing">Usluge i Cjenik</a></li>
+      <li><a href="#kontakt" data-hr="Kontakt" data-en="Contact">Kontakt</a></li>
     </ul>
-    <a href="#kontakt" class="nav-cta">Zatraži Ponudu</a>
+    
+    <!-- Language Switcher -->
+    <div style="display: flex; align-items: center; gap: 8px; margin-left: auto; margin-right: 20px;">
+        <button id="btn-hr" onclick="setLanguage('hr')" style="background:none; border:none; color: var(--gold); font-size: 0.78rem; font-family: var(--sans); font-weight: 600; cursor: pointer; letter-spacing: 0.14em;">HR</button>
+        <span style="color: var(--text-faint); font-size: 0.8rem;">/</span>
+        <button id="btn-en" onclick="setLanguage('en')" style="background:none; border:none; color: var(--text-muted); font-size: 0.78rem; font-family: var(--sans); font-weight: 600; cursor: pointer; letter-spacing: 0.14em; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="if(document.documentElement.lang !== 'en') this.style.color='var(--text-muted)'">EN</button>
+    </div>
+
+    <a href="#kontakt" class="nav-cta" data-hr="Zatraži Ponudu" data-en="Get a Quote">Zatraži Ponudu</a>
   </nav>
 
   <header id="hero">
