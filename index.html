@@ -1972,6 +1972,31 @@ footer::before {
       localStorage.setItem('cookie_consent', 'rejected');
       cookieBanner.classList.remove('visible');
     });
+  // ── FUNKCIJA ZA PROMJENU JEZIKA ──
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        
+        // Promijeni tekstove za sve elemente s data-hr i data-en atributima
+        document.querySelectorAll('[data-hr]').forEach(el => {
+            if (lang === 'en' && el.hasAttribute('data-en')) {
+                el.innerHTML = el.getAttribute('data-en');
+            } else {
+                el.innerHTML = el.getAttribute('data-hr');
+            }
+        });
+        
+        // Ažuriraj stilove gumba (aktivni jezik je zlatan, neaktivni je siv)
+        const btnHr = document.getElementById('btn-hr');
+        const btnEn = document.getElementById('btn-en');
+        
+        if (lang === 'en') {
+            btnEn.style.color = 'var(--gold)';
+            btnHr.style.color = 'var(--text-muted)';
+        } else {
+            btnHr.style.color = 'var(--gold)';
+            btnEn.style.color = 'var(--text-muted)';
+        }
+    }
   </script>
 </body>
 </html>
