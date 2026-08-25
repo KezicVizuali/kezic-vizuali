@@ -3,409 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Kezić Vizuali — Profesionalna web stranica za samo 200€. Bez pretplate, hosting zauvijek besplatan. Za obrte, OPG-ove i udruge.">
-<meta property="og:title" content="Vaš web. Zauvijek vaš. Za samo 200 €.">
-<meta property="og:description" content="Kompletan profesionalni web — fotografiranje, copywriting, SEO, besplatan hosting. Jednom platite, zauvijek vaše.">
-<meta property="og:image" content="https://kezicvizuali.com/logo-za-share.jpg">
-<meta property="og:url" content="https://kezicvizuali.com/ponuda100.html">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Vaš web. Zauvijek vaš. Za samo 200 €.">
-<meta name="twitter:description" content="Kompletan profesionalni web — fotografiranje, copywriting, SEO, besplatan hosting. Jednom platite, zauvijek vaše.">
-<meta name="twitter:image" content="https://kezicvizuali.com/logo-za-share.jpg">
-<link rel="canonical" href="https://kezicvizuali.com/ponuda100.html">
-<title>Web za 200 € — Kezić Vizuali</title>
+<meta name="description" content="Kezić Vizuali — Specijalna ponuda web stranice za samo 200€. Bez pretplate, hosting zauvijek besplatan.">
+<title>Web za 200 € — Kezić Vizuali Editorial</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root { --gold: #c9a84c; --gold-light: #e8c96a; --gold-pale: #f5e9c8; --gold-dim: rgba(201,168,76,0.12); --bg: #080807; --bg2: #0f0f0d; --bg3: #161614; --text: #f0ead8; --text-muted: #8a8070; --text-faint: #5a5448; --border: rgba(201,168,76,0.14); --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif; }
+:root { --gold: #c9a84c; --gold-light: #e8c96a; --bg: #080807; --bg2: #0f0f0d; --bg3: #161614; --text: #f0ead8; --text-muted: #8a8070; --text-faint: #5a5448; --border: rgba(201,168,76,0.14); --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif; }
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
-*, *::before, *::after { cursor: none !important; }
-#cursor { position: fixed; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width .25s, height .25s; will-change: transform; }
-#cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(201,168,76,0.5); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: transform .18s ease, width .25s, height .25s; will-change: transform; }
-body:has(a:hover) #cursor, body:has(button:hover) #cursor { width: 14px; height: 14px; }
-body:has(a:hover) #cursor-ring, body:has(button:hover) #cursor-ring { width: 44px; height: 44px; border-color: rgba(201,168,76,0.9); }
-body::before { content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); background-size: 200px; opacity: 0.35; }
+
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 68px; background: rgba(8,8,7,0.9); backdrop-filter: blur(24px); border-bottom: 1px solid var(--border); }
-.nav-logo { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--gold); text-decoration: none; letter-spacing: 0.04em; }
-.nav-back { color: var(--text-muted); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; transition: color 0.2s; }
+.nav-logo { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--gold); text-decoration: none; }
+.nav-back { color: var(--text-muted); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }
 .nav-back:hover { color: var(--gold); }
-.nav-back::before { content: '← '; }
-#hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 5% 80px; position: relative; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,168,76,0.07) 0%, transparent 65%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%), linear-gradient(170deg, #0a0a08 0%, #0f0f0c 100%); }
-.hero-grid-lines { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(201,168,76,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.035) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 20%, transparent 80%); }
-.hero-badge { display: inline-block; background: var(--gold); color: #080807; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; padding: 0.35rem 1.1rem; margin-bottom: 2rem; font-weight: 500; position: relative; z-index: 2; opacity: 0; animation: fade-up 0.7s 0.1s ease forwards; }
-.hero-price-big { position: relative; z-index: 2; font-family: var(--serif); font-size: clamp(6rem, 18vw, 14rem); font-weight: 300; color: var(--gold); line-height: 0.85; letter-spacing: -0.03em; margin-bottom: 0.5rem; opacity: 0; animation: fade-up 0.9s 0.3s ease forwards; }
-.hero-price-big sup { font-size: 0.3em; vertical-align: super; }
-.hero-tagline { position: relative; z-index: 2; font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 3rem); font-weight: 300; margin-bottom: 1.5rem; opacity: 0; animation: fade-up 0.9s 0.5s ease forwards; }
+
+#hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 5% 80px; position: relative; }
+.hero-price-big { font-family: var(--serif); font-size: clamp(6rem, 18vw, 14rem); font-weight: 300; color: var(--gold); line-height: 0.85; margin-bottom: 0.5rem; }
+.hero-tagline { font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 3rem); font-weight: 300; margin-bottom: 1.5rem; }
 .hero-tagline em { font-style: italic; color: var(--gold); }
-.hero-sub { position: relative; z-index: 2; color: var(--text-muted); font-size: 1rem; max-width: 560px; margin: 0 auto 2.5rem; opacity: 0; animation: fade-up 0.9s 0.7s ease forwards; }
-.hero-pills { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-bottom: 3rem; position: relative; z-index: 2; opacity: 0; animation: fade-up 0.9s 0.9s ease forwards; }
-.pill { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.2rem; border: 1px solid var(--border); font-size: 0.8rem; color: var(--text-muted); background: rgba(201,168,76,0.04); backdrop-filter: blur(8px); }
-.pill::before { content: '✓'; color: var(--gold); }
-.hero-cta-group { position: relative; z-index: 2; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; opacity: 0; animation: fade-up 0.9s 1.1s ease forwards; }
-.btn-gold { background: var(--gold); color: #080807; border: none; padding: 1.1rem 2.5rem; font-family: var(--sans); font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; text-decoration: none; display: inline-block; transition: background 0.25s, transform 0.2s, box-shadow 0.25s; position: relative; overflow: hidden; }
-.btn-gold::after { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.15); transform: translateX(-100%) skewX(-15deg); transition: transform 0.4s ease; }
-.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.35); }
-.btn-gold:hover::after { transform: translateX(100%) skewX(-15deg); }
-.btn-ghost { background: transparent; color: var(--text); border: 1px solid rgba(240,234,216,0.2); padding: 1.1rem 2.5rem; font-family: var(--sans); font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: border-color 0.25s, color 0.25s, transform 0.2s; }
-.btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
-#included { padding: 8rem 5%; position: relative; z-index: 2; }
-.section-eyebrow { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
-.section-eyebrow::before { content: ''; width: 36px; height: 1px; background: linear-gradient(to right, transparent, var(--gold)); display: block; }
-.section-title { font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem; }
-.section-title em { font-style: italic; color: var(--gold); }
-.divider { width: 50px; height: 1px; background: linear-gradient(to right, var(--gold), transparent); margin: 1.5rem 0 3rem; }
+.btn-gold { background: var(--gold); color: #080807; border: none; padding: 1.1rem 2.5rem; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; text-decoration: none; display: inline-block; transition: 0.25s; }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+#included { padding: 8rem 5%; }
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2px; background: var(--border); border: 1px solid var(--border); }
-.feature-card { background: var(--bg2); padding: 2.2rem; position: relative; overflow: hidden; transition: background 0.3s; }
-.feature-card:hover { background: rgba(15,15,13,0.7); backdrop-filter: blur(12px); }
-.feature-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 60%); opacity: 0; transition: opacity 0.4s; }
-.feature-card:hover::before { opacity: 1; }
-.feature-num { font-family: var(--serif); font-size: 3.5rem; font-weight: 300; color: rgba(201,168,76,0.1); line-height: 1; margin-bottom: 1rem; transition: color 0.3s; }
-.feature-card:hover .feature-num { color: rgba(201,168,76,0.25); }
-.feature-title { font-size: 1rem; color: var(--text); font-weight: 400; margin-bottom: 0.5rem; }
-.feature-desc { font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; }
-.feature-border-top { border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem; }
-#comparison { padding: 8rem 5%; position: relative; z-index: 2; background: var(--bg2); border-top: 1px solid var(--border); }
-.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border: 1px solid var(--border); max-width: 860px; margin: 0 auto; }
-.compare-col { padding: 2.5rem; }
-.compare-col.them { background: var(--bg3); }
-.compare-col.us { background: linear-gradient(135deg, #0d0d0a, #141410); position: relative; overflow: hidden; }
-.compare-col.us::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%); }
-.compare-header { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
-.compare-col.them .compare-header { color: var(--text-faint); }
-.compare-col.us .compare-header { color: var(--gold); }
-.compare-item { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 1rem; font-size: 0.88rem; }
-.compare-col.them .compare-item { color: var(--text-muted); }
-.compare-col.us .compare-item { color: var(--text); }
-.compare-x { color: #c94c4c; margin-top: 0.1rem; flex-shrink: 0; }
-.compare-check { color: var(--gold); margin-top: 0.1rem; flex-shrink: 0; }
-#price-anchor { padding: 6rem 5%; position: relative; z-index: 2; text-align: center; }
-.price-anchor-inner { max-width: 760px; margin: 0 auto; background: linear-gradient(135deg, #0d0d0a 0%, #141410 60%, #0a0a08 100%); border: 1px solid var(--border); padding: 4rem; position: relative; overflow: hidden; }
-.price-anchor-inner::before { content: ''; position: absolute; left: 50%; top: -80px; transform: translateX(-50%); width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%); pointer-events: none; }
-.price-anchor-label { font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 1rem; }
-.price-anchor-num { font-family: var(--serif); font-size: clamp(5rem, 12vw, 9rem); font-weight: 300; color: var(--gold); line-height: 0.9; margin-bottom: 1.5rem; }
-.price-anchor-num sup { font-size: 0.3em; vertical-align: super; }
-.price-anchor-text { color: var(--text-muted); font-size: 0.9rem; max-width: 480px; margin: 0 auto 2.5rem; }
-.price-anchor-fine { font-size: 0.75rem; color: var(--text-faint); margin-top: 1.5rem; }
-.price-anchor-fine a { color: var(--gold); text-decoration: none; }
-#kontakt-lp { padding: 8rem 5%; position: relative; z-index: 2; background: var(--bg); border-top: 1px solid var(--border); }
+.feature-card { background: var(--bg2); padding: 2.2rem; position: relative; }
+.feature-num { font-family: var(--serif); font-size: 3.5rem; color: rgba(201,168,76,0.15); line-height: 1; margin-bottom: 1rem; }
+
+#kontakt-lp { padding: 8rem 5%; background: var(--bg); border-top: 1px solid var(--border); }
 .kontakt-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; max-width: 1000px; margin: 0 auto; }
-.kontakt-left p { color: var(--text-muted); margin-bottom: 2rem; line-height: 1.9; }
-.contact-item { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.2rem; padding: 1rem 1.2rem; border: 1px solid transparent; transition: border-color 0.3s, background 0.3s; }
-.contact-item:hover { border-color: var(--border); background: var(--bg2); }
-.contact-icon { width: 44px; height: 44px; border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; color: var(--gold); flex-shrink: 0; background: rgba(201,168,76,0.04); transition: border-color 0.3s, background 0.3s; }
-.contact-item:hover .contact-icon { border-color: var(--gold); background: rgba(201,168,76,0.1); }
-.contact-text label { display: block; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.2rem; }
-.contact-text span { font-size: 0.9rem; color: var(--text); }
-.contact-text a { color: var(--text); text-decoration: none; }
-.contact-text a:hover { color: var(--gold); }
-.lp-form { display: flex; flex-direction: column; gap: 1.1rem; }
-.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-.form-group label { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); }
-.form-group input, .form-group textarea { background: var(--bg2); border: 1px solid var(--border); color: var(--text); font-family: var(--sans); font-size: 0.9rem; padding: 0.85rem 1.1rem; outline: none; transition: border-color 0.25s, background 0.25s; }
-.form-group input:focus, .form-group textarea:focus { border-color: var(--gold); background: var(--bg3); }
-.form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-faint); }
-.form-group textarea { min-height: 120px; resize: none; }
-#lp-form-success { display: none; background: rgba(201,168,76,0.08); border: 1px solid var(--gold); padding: 1.2rem 1.5rem; color: var(--gold); font-size: 0.9rem; }
-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 5%; text-align: center; position: relative; z-index: 2; }
-footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); }
-footer p { font-size: 0.78rem; color: var(--text-faint); margin-bottom: 0.5rem; }
-footer a { color: var(--text-muted); text-decoration: none; font-size: 0.78rem; }
-footer a:hover { color: var(--gold); }
-@keyframes fade-up { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-.reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
-.reveal-delay-6 { transition-delay: 0.6s; }
-.reveal-delay-7 { transition-delay: 0.7s; }
-.reveal-delay-8 { transition-delay: 0.8s; }
-.scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; animation: fade-up 1s 1.3s ease forwards; z-index: 2; }
-.scroll-hint span { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-faint); }
-.scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scroll-pulse 1.8s ease-in-out infinite; }
-@keyframes scroll-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
-@media (max-width: 768px) { .compare-grid { grid-template-columns: 1fr; } .kontakt-grid { grid-template-columns: 1fr; gap: 3rem; } .hero-price-big { font-size: clamp(5rem, 22vw, 9rem); } .price-anchor-inner { padding: 2.5rem 1.5rem; } #included, #comparison, #price-anchor, #kontakt-lp { padding: 5rem 5%; } }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+.form-group input, .form-group textarea { background: var(--bg2); border: 1px solid var(--border); color: var(--text); padding: 0.85rem 1.1rem; outline: none; }
+.form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem 5%; text-align: center; }
+@media (max-width: 768px) { .kontakt-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
-  <div id="cursor"></div>
-  <div id="cursor-ring"></div>
-
   <nav>
     <a href="index.html" class="nav-logo">Kezić Vizuali</a>
-    <!-- Language Switcher -->
-    <div style="display: flex; align-items: center; gap: 8px; margin-left: auto; margin-right: 20px;">
-        <button id="btn-hr" onclick="setLanguage('hr')" style="background:none; border:none; color: var(--gold); font-size: 0.78rem; font-family: var(--sans); font-weight: 600; cursor: pointer; letter-spacing: 0.14em;">HR</button>
-        <span style="color: var(--text-faint); font-size: 0.8rem;">/</span>
-        <button id="btn-en" onclick="setLanguage('en')" style="background:none; border:none; color: var(--text-muted); font-size: 0.78rem; font-family: var(--sans); font-weight: 600; cursor: pointer; letter-spacing: 0.14em; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="if(document.documentElement.lang !== 'en') this.style.color='var(--text-muted)'">EN</button>
+    <div style="display: flex; align-items: center; gap: 8px;">
+        <button id="btn-hr" onclick="setLanguage('hr')" style="background:none; border:none; color: var(--gold); font-size: 0.78rem; font-weight: 600; cursor: pointer;">HR</button>
+        <span style="color: var(--text-faint);">/</span>
+        <button id="btn-en" onclick="setLanguage('en')" style="background:none; border:none; color: var(--text-muted); font-size: 0.78rem; font-weight: 600; cursor: pointer;">EN</button>
     </div>
     <a href="index.html" class="nav-back" data-hr="Natrag na web" data-en="Back to website">Natrag na web</a>
   </nav>
 
-  <!-- HERO -->
   <header id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid-lines"></div>
-
-    <div class="hero-badge" data-hr="Akcijska Ponuda 2026" data-en="Special Offer 2026">Akcijska Ponuda 2026</div>
+    <div style="font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem;" data-hr="Akcijska Ponuda 2026" data-en="Special Offer 2026">Akcijska Ponuda 2026</div>
     <div class="hero-price-big"><sup>€</sup>200</div>
     <h1 class="hero-tagline" data-hr="Vaš web. Zauvijek vaš.<br><em>Jednom platite i nikad više.</em>" data-en="Your web. Yours forever.<br><em>Pay once and never again.</em>">Vaš web. Zauvijek vaš.<br><em>Jednom platite i nikad više.</em></h1>
-    <p class="hero-sub" data-hr="Kompletan profesionalni web za vaš biznis, obrt, OPG ili udrugu. Bez pretplate. Bez skrivenih troškova. Bez ovisnosti o agenciji." data-en="Complete professional web for your business, trade, family farm or association. No subscription. No hidden costs. No agency dependency.">Kompletan profesionalni web za vaš biznis, obrt, OPG ili udrugu. Bez pretplate. Bez skrivenih troškova. Bez ovisnosti o agenciji.</p>
-
-    <div class="hero-pills">
-      <div class="pill" data-hr="Ultra-brzo učitavanje" data-en="Ultra-fast loading">Ultra-brzo učitavanje</div>
-      <div class="pill" data-hr="Hosting zauvijek besplatan" data-en="Free hosting forever">Hosting zauvijek besplatan</div>
-      <div class="pill" data-hr="Do 6 podstranica" data-en="Up to 6 subpages">Do 6 podstranica</div>
-      <div class="pill" data-hr="Mobile-first dizajn" data-en="Mobile-first design">Mobile-first dizajn</div>
-    </div>
-
-    <div class="hero-cta-group">
-      <a href="#kontakt-lp" class="btn-gold" data-hr="Javite se danas →" data-en="Contact us today →">Javite se danas →</a>
-      <a href="#included" class="btn-ghost" data-hr="Što je uključeno" data-en="What's included">Što je uključeno</a>
-    </div>
-
-    <div class="scroll-hint">
-      <div class="scroll-line"></div>
-    </div>
+    <p style="color: var(--text-muted); max-width: 560px; margin-bottom: 2.5rem;" data-hr="Kompletan profesionalni web za vaš biznis, obrt, OPG ili udrugu. Bez pretplate. Bez skrivenih troškova." data-en="Complete professional web for your business. No subscription. No hidden costs.">Kompletan profesionalni web za vaš biznis, obrt, OPG ili udrugu. Bez pretplate. Bez skrivenih troškova.</p>
+    <a href="#kontakt-lp" class="btn-gold" data-hr="Javite se danas →" data-en="Contact us today →">Javite se danas →</a>
   </header>
 
-  <!-- WHAT'S INCLUDED -->
   <section id="included">
-    <div class="section-eyebrow" data-hr="Sve je uključeno, bez iznimke" data-en="Everything is included, without exception">Sve je uključeno, bez iznimke</div>
-    <h2 class="section-title" data-hr="8 usluga u jednoj <em>cijeni</em>" data-en="8 services in one <em>price</em>">8 usluga u jednoj <em>cijeni</em></h2>
-    <div class="divider"></div>
-
+    <div style="font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem;" data-hr="Sve je uključeno, bez iznimke" data-en="Everything is included">Sve je uključeno, bez iznimke</div>
+    <h2 style="font-family: var(--serif); font-size: 3rem; font-weight: 300; margin-bottom: 3rem;" data-hr="8 usluga u jednoj <em>cijeni</em>" data-en="8 services in one <em>price</em>">8 usluga u jednoj <em>cijeni</em></h2>
+    
     <div class="features-grid">
-      <div class="feature-card reveal reveal-delay-1">
-        <div class="feature-num">01</div>
-        <div class="feature-title" data-hr="Profesionalno fotografiranje" data-en="Professional photography">Profesionalno fotografiranje</div>
-        <div class="feature-desc" data-hr="Vaši proizvodi, prostor ili tim, za klijente u regiji. Originalni vizuali koji privlače pažnju." data-en="Your products, space or team, for clients in the region. Original visuals that attract attention.">Vaši proizvodi, prostor ili tim, za klijente u regiji. Originalni vizuali koji privlače pažnju.</div>
-      </div>
-      <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-num">02</div>
-        <div class="feature-title" data-hr="Pisanje svih tekstova" data-en="Writing all texts">Pisanje svih tekstova</div>
-        <div class="feature-desc" data-hr="Prilagođeni copywriting koji privlači prave klijente. Vi nam kažete priču, mi je pretočimo u riječi." data-en="Tailored copywriting that attracts the right clients. You tell us the story, we translate it into words.">Prilagođeni copywriting koji privlači prave klijente. Vi nam kažete priču, mi je pretočimo u riječi.</div>
-      </div>
-      <div class="feature-card reveal reveal-delay-3">
-        <div class="feature-num">03</div>
-        <div class="feature-title" data-hr="Dizajn i programiranje" data-en="Design and programming">Dizajn i programiranje</div>
-        <div class="feature-desc" data-hr="Do 6 podstranica, vrhunski dizajn, brzo na svim uređajima. Ručno kodiran, bez sporih tema." data-en="Up to 6 subpages, premium design, fast on all devices. Hand-coded, no slow themes.">Do 6 podstranica, vrhunski dizajn, brzo na svim uređajima. Ručno kodiran, bez sporih tema.</div>
-      </div>
-      <div class="feature-card reveal reveal-delay-4">
-        <div class="feature-num">04</div>
-        <div class="feature-title" data-hr="SEO optimizacija" data-en="SEO optimization">SEO optimizacija</div>
-        <div class="feature-desc" data-hr="Google vas lakše pronalazi ispred konkurencije. Meta tagovi, struktura i brzina, sve namješteno." data-en="Google finds you easier ahead of the competition. Meta tags, structure and speed, all set up.">Google vas lakše pronalazi ispred konkurencije. Meta tagovi, struktura i brzina, sve namješteno.</div>
-      </div>
-      <div class="feature-card reveal reveal-delay-5">
-        <div class="feature-num">05</div>
-        <div class="feature-title" data-hr="Kontakt forma" data-en="Contact form">Kontakt forma</div>
-        <div class="feature-desc" data-hr="Upiti klijenata stižu direktno na vaš mail. Jednostavna, pouzdana, bez spam-a." data-en="Client inquiries arrive directly to your email. Simple, reliable, spam-free.">Upiti klijenata stižu direktno na vaš mail. Jednostavna, pouzdana, bez spam-a.</div>
-      </div>
-      <div class="feature-card reveal reveal-delay-6">
-        <div class="feature-num">06</div>
-        <div class="feature-title" data-hr="Domena po želji" data-en="Domain of choice">Domena po želji</div>
-        <div class="feature-desc" data-hr="Imate svoju ili novu, sve spojimo besprijekorno. Pomoć pri registraciji domene ako je potrebno." data-en="Have your own or new, we connect everything flawlessly. Help with domain registration if needed.">Imate svoju ili novu, sve spojimo besprijekorno. Pomoć pri registraciji domene ako je potrebno.</div>
-      </div>
-      <div class="feature-card reveal reveal-delay-7">
-        <div class="feature-num">07</div>
-        <div class="feature-title" data-hr="Izmjene po završetku" data-en="Revisions upon completion">Izmjene po završetku</div>
-        <div class="feature-desc" data-hr="Treba nešto ažurirati? U potpunosti pokriveno. Jedna runda izmjena uključena u cijenu." data-en="Need to update something? Fully covered. One round of revisions included in the price.">Treba nešto ažurirati? U potpunosti pokriveno. Jedna runda izmjena uključena u cijenu.</div>
-      </div>
-      <div class="feature-card reveal reveal-delay-8">
-        <div class="feature-num">∞</div>
-        <div class="feature-title" data-hr="Doživotni besplatan hosting" data-en="Lifetime free hosting">Doživotni besplatan hosting</div>
-        <div class="feature-desc" data-hr="Jednom platite i nikad više nikakvog računa nikome. Sustav je zauvijek besplatan. Nije šala." data-en="Pay once and never again any bill to anyone. The system is free forever. No joke.">Jednom platite i nikad više nikakvog računa nikome. Sustav je zauvijek besplatan. Nije šala.</div>
-        <div class="feature-border-top" style="border-color: rgba(201,168,76,0.25);">
-          <span style="font-size: 0.8rem; color: var(--gold); font-weight: 500;" data-hr="Najvažnija stavka ↑" data-en="The most important item ↑">Najvažnija stavka ↑</span>
-        </div>
-      </div>
+      <div class="feature-card"><div class="feature-num">01</div><div style="font-weight:400; margin-bottom:0.5rem;" data-hr="Profesionalno fotografiranje" data-en="Professional photography">Profesionalno fotografiranje</div><div style="font-size:0.84rem; color:var(--text-muted);" data-hr="Vaši proizvodi, prostor ili tim." data-en="Your products, space or team.">Vaši proizvodi, prostor ili tim.</div></div>
+      <div class="feature-card"><div class="feature-num">02</div><div style="font-weight:400; margin-bottom:0.5rem;" data-hr="Pisanje svih tekstova" data-en="Writing all texts">Pisanje svih tekstova</div><div style="font-size:0.84rem; color:var(--text-muted);" data-hr="Prilagođeni copywriting." data-en="Tailored copywriting.">Prilagođeni copywriting.</div></div>
+      <div class="feature-card"><div class="feature-num">03</div><div style="font-weight:400; margin-bottom:0.5rem;" data-hr="Dizajn i programiranje" data-en="Design and programming">Dizajn i programiranje</div><div style="font-size:0.84rem; color:var(--text-muted);" data-hr="Do 6 podstranica, brzo na svim uređajima." data-en="Up to 6 subpages, fast on all devices.">Do 6 podstranica, brzo na svim uređajima.</div></div>
+      <div class="feature-card"><div class="feature-num">∞</div><div style="font-weight:400; margin-bottom:0.5rem;" data-hr="Doživotni besplatan hosting" data-en="Lifetime free hosting">Doživotni besplatan hosting</div><div style="font-size:0.84rem; color:var(--text-muted);" data-hr="Jednom platite i nikad više računa." data-en="Pay once and never another bill.">Jednom platite i nikad više računa.</div></div>
     </div>
   </section>
 
-  <!-- COMPARISON -->
-  <section id="comparison">
-    <div class="section-eyebrow" data-hr="Usporedba" data-en="Comparison">Usporedba</div>
-    <h2 class="section-title" style="text-align: center;" data-hr="Kezić Vizuali vs. <em>Klasična agencija</em>" data-en="Kezić Vizuali vs. <em>Traditional Agency</em>">Kezić Vizuali vs. <em>Klasična agencija</em></h2>
-    <div class="divider" style="margin: 1.5rem auto 3rem;"></div>
-
-    <div class="compare-grid reveal">
-      <div class="compare-col them">
-        <div class="compare-header" data-hr="Klasična agencija" data-en="Traditional agency">Klasična agencija</div>
-        <div class="compare-item"><span class="compare-x">✕</span> <span data-hr="1.000 €+ za izradu" data-en="1,000 €+ for development">1.000 €+ za izradu</span></div>
-        <div class="compare-item"><span class="compare-x">✕</span> <span data-hr="Godišnji hosting računi" data-en="Annual hosting bills">Godišnji hosting računi</span></div>
-        <div class="compare-item"><span class="compare-x">✕</span> <span data-hr="Ovisnost o agenciji za svaku izmjenu" data-en="Dependency on the agency for every change">Ovisnost o agenciji za svaku izmjenu</span></div>
-        <div class="compare-item"><span class="compare-x">✕</span> <span data-hr="Skriveni troškovi u sitnim slovima" data-en="Hidden costs in the fine print">Skriveni troškovi u sitnim slovima</span></div>
-        <div class="compare-item"><span class="compare-x">✕</span> <span data-hr="Čekanje tjednima" data-en="Waiting for weeks">Čekanje tjednima</span></div>
-        <div class="compare-item"><span class="compare-x">✕</span> <span data-hr="Fotografije nisu uključene" data-en="Photos are not included">Fotografije nisu uključene</span></div>
-        <div class="compare-item"><span class="compare-x">✕</span> <span data-hr="Tekstovi nisu uključeni" data-en="Texts are not included">Tekstovi nisu uključeni</span></div>
-      </div>
-      <div class="compare-col us">
-        <div class="compare-header">Kezić Vizuali</div>
-        <div class="compare-item"><span class="compare-check">✓</span> <span data-hr="Samo <strong>200 €</strong> — sve uključeno" data-en="Only <strong>200 €</strong> — all included">Samo <strong>200 €</strong> — sve uključeno</span></div>
-        <div class="compare-item"><span class="compare-check">✓</span> <span data-hr="Hosting zauvijek besplatan" data-en="Hosting forever free">Hosting zauvijek besplatan</span></div>
-        <div class="compare-item"><span class="compare-check">✓</span> <span data-hr="Stranica je 100% vaša" data-en="The site is 100% yours">Stranica je 100% vaša</span></div>
-        <div class="compare-item"><span class="compare-check">✓</span> <span data-hr="Bez sitnih slova" data-en="No fine print">Bez sitnih slova</span></div>
-        <div class="compare-item"><span class="compare-check">✓</span> <span data-hr="Brza izrada i isporuka" data-en="Fast development and delivery">Brza izrada i isporuka</span></div>
-        <div class="compare-item"><span class="compare-check">✓</span> <span data-hr="Fotografiranje uključeno" data-en="Photography included">Fotografiranje uključeno</span></div>
-        <div class="compare-item"><span class="compare-check">✓</span> <span data-hr="Copywriting uključen" data-en="Copywriting included">Copywriting uključen</span></div>
-      </div>
-    </div>
-
-    <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 2rem;" class="reveal" data-hr="Za kompleksnije projekte (webshop, višejezično, posebne funkcionalnosti), cijena se dogovara individualno.<br>U akcijskom periodu i te cijene ostaju razumne i ispod tržišnog prosjeka." data-en="For more complex projects (webshop, multilingual, special functionalities), the price is negotiated individually.<br>During the promotional period, these prices also remain reasonable and below the market average.">
-      Za kompleksnije projekte (webshop, višejezično, posebne funkcionalnosti), cijena se dogovara individualno.<br>
-      U akcijskom periodu i te cijene ostaju razumne i ispod tržišnog prosjeka.
-    </p>
-  </section>
-
-  <!-- PRICE ANCHOR -->
-  <section id="price-anchor">
-    <div class="price-anchor-inner reveal">
-      <div class="price-anchor-label" data-hr="Akcijska cijena — samo dok traje" data-en="Special price — only while it lasts">Akcijska cijena — samo dok traje</div>
-      <div class="price-anchor-num"><sup>€</sup>200</div>
-      <p class="price-anchor-text" data-hr="Mjesta su ograničena. Bez obveze, bez sitnih slova." data-en="Spots are limited. No obligations, no fine print.">Mjesta su ograničena. Bez obveze, bez sitnih slova.</p>
-      <a href="#kontakt-lp" class="btn-gold" data-hr="Javite se danas →" data-en="Contact us today →">Javite se danas →</a>
-      <div class="price-anchor-fine" data-hr="Imate pitanje? Nazovite: <a href='tel:+385976002753'>097 600 2753</a> ili pišite: <a href='mailto:kezicvizuali@gmail.com'>kezicvizuali@gmail.com</a>" data-en="Have a question? Call: <a href='tel:+385976002753'>097 600 2753</a> or write: <a href='mailto:kezicvizuali@gmail.com'>kezicvizuali@gmail.com</a>">
-        Imate pitanje? Nazovite: <a href="tel:+385976002753">097 600 2753</a> ili pišite: <a href="mailto:kezicvizuali@gmail.com">kezicvizuali@gmail.com</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
   <section id="kontakt-lp">
-    <div class="section-eyebrow" data-hr="Povežimo se" data-en="Let's connect">Povežimo se</div>
-    <h2 class="section-title" data-hr="Javite se <em>danas</em>" data-en="Contact us <em>today</em>">Javite se <em>danas</em></h2>
-    <div class="divider"></div>
-
     <div class="kontakt-grid">
-      <div class="kontakt-left reveal">
-        <p data-hr="Pošaljite upit i odgovorit ću vam u najkraćem mogućem roku. Razgovaramo bez obveza, samo da vidimo odgovara li vam ova ponuda." data-en="Send an inquiry and I will reply as soon as possible. We talk without obligations, just to see if this offer suits you.">Pošaljite upit i odgovorit ću vam u najkraćem mogućem roku. Razgovaramo bez obveza, samo da vidimo odgovara li vam ova ponuda.</p>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          </div>
-          <div class="contact-text">
-            <label data-hr="Telefon" data-en="Phone">Telefon</label>
-            <span><a href="tel:+385976002753">+385 97 600 2753</a></span>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div class="contact-text">
-            <label data-hr="Email" data-en="Email">Email</label>
-            <span><a href="mailto:kezicvizuali@gmail.com">kezicvizuali@gmail.com</a></span>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          </div>
-          <div class="contact-text">
-            <label data-hr="Područje rada" data-en="Area of work">Područje rada</label>
-            <span data-hr="Cijela Hrvatska, Slovenija i BiH" data-en="All of Croatia, Slovenia and BiH">Cijela Hrvatska, Slovenija i BiH</span>
-          </div>
-        </div>
+      <div>
+        <h2 style="font-family: var(--serif); font-size: 3rem; font-weight: 300; margin-bottom: 1.5rem;" data-hr="Javite se <em>danas</em>" data-en="Contact us <em>today</em>">Javite se <em>danas</em></h2>
+        <p style="color: var(--text-muted);" data-hr="Pošaljite upit i odgovorit ću vam u najkraćem mogućem roku." data-en="Send an inquiry and I will reply as soon as possible.">Pošaljite upit i odgovorit ću vam u najkraćem mogućem roku.</p>
       </div>
-
-      <div class="reveal">
+      <div>
         <form class="lp-form" action="https://formspree.io/f/mgoqkdek" method="POST" id="lp-form">
           <input type="hidden" name="subject" value="Upit: Web za 200€ — ponuda100">
-          <div class="form-group">
-            <label data-hr="Ime i Prezime / Tvrtka / Obrt" data-en="Full Name / Company / Trade">Ime i Prezime / Tvrtka / Obrt</label>
-            <input type="text" name="name" placeholder="Vaše ime" data-hr-placeholder="Vaše ime" data-en-placeholder="Your name" required>
-          </div>
-          <div class="form-group">
-            <label data-hr="Email Adresa" data-en="Email Address">Email Adresa</label>
-            <input type="email" name="email" placeholder="vas@email.com" data-hr-placeholder="vas@email.com" data-en-placeholder="you@email.com" required>
-          </div>
-          <div class="form-group">
-            <label data-hr="Telefon (opcionalno)" data-en="Phone (optional)">Telefon (opcionalno)</label>
-            <input type="tel" name="phone" placeholder="+385 ..." data-hr-placeholder="+385 ..." data-en-placeholder="+385 ...">
-          </div>
-          <div class="form-group">
-            <label data-hr="Kratko opišite vaše poslovanje" data-en="Briefly describe your business">Kratko opišite vaše poslovanje</label>
-            <textarea name="message" placeholder="Npr. restoran u Varaždinu, tražim jednostavan web s jelovnikom..." data-hr-placeholder="Npr. restoran u Varaždinu, tražim jednostavan web s jelovnikom..." data-en-placeholder="E.g. a restaurant in Varaždin, looking for a simple website with a menu..." required></textarea>
-          </div>
-          <button type="submit" class="btn-gold" style="margin-top: 0.5rem; width: fit-content;" data-hr="Pošalji upit →" data-en="Send inquiry →">Pošalji upit →</button>
+          <div class="form-group"><label data-hr="Ime i Prezime" data-en="Full Name">Ime i Prezime</label><input type="text" name="name" required></div>
+          <div class="form-group"><label data-hr="Email Adresa" data-en="Email Address">Email Adresa</label><input type="email" name="email" required></div>
+          <div class="form-group"><label data-hr="Poruka" data-en="Message">Poruka</label><textarea name="message" required></textarea></div>
+          <button type="submit" class="btn-gold" data-hr="Pošalji upit →" data-en="Send inquiry →">Pošalji upit →</button>
         </form>
-        <div id="lp-form-success" data-hr="Hvala! Javljam se uskoro. 🙏" data-en="Thank you! I will get in touch soon. 🙏">Hvala! Javljam se uskoro. 🙏</div>
+        <div id="lp-form-success" style="display:none; color:var(--gold); margin-top:1rem;" data-hr="Hvala! Javljam se uskoro." data-en="Thank you! I will get in touch soon.">Hvala! Javljam se uskoro.</div>
       </div>
     </div>
   </section>
 
   <footer>
-    <p data-hr="&copy; 2026 Kezić Vizuali · Krunoslav Kezić · Velika Gorica" data-en="&copy; 2026 Kezić Vizuali · Krunoslav Kezić · Velika Gorica">&copy; 2026 Kezić Vizuali · Krunoslav Kezić · Velika Gorica</p>
-    <a href="index.html" data-hr="Natrag na glavnu stranicu" data-en="Back to main page">Natrag na glavnu stranicu</a>
+    <p>&copy; 2026 Kezić Vizuali · Krunoslav Kezić · Velika Gorica</p>
+    <a href="index.html" style="color:var(--gold); text-decoration:none;" data-hr="Natrag na glavnu stranicu" data-en="Back to main page">Natrag na glavnu stranicu</a>
   </footer>
 
   <script>
     function setLanguage(lang) {
         document.documentElement.lang = lang;
         document.querySelectorAll('[data-hr]').forEach(el => {
-            if (lang === 'en' && el.hasAttribute('data-en')) {
-                el.innerHTML = el.getAttribute('data-en');
-            } else {
-                el.innerHTML = el.getAttribute('data-hr');
-            }
+            if (lang === 'en' && el.hasAttribute('data-en')) el.innerHTML = el.getAttribute('data-en');
+            else el.innerHTML = el.getAttribute('data-hr');
         });
-        document.querySelectorAll('[data-hr-placeholder]').forEach(el => {
-            if (lang === 'en' && el.hasAttribute('data-en-placeholder')) {
-                el.setAttribute('placeholder', el.getAttribute('data-en-placeholder'));
-            } else {
-                el.setAttribute('placeholder', el.getAttribute('data-hr-placeholder'));
-            }
-        });
-        const btnHr = document.getElementById('btn-hr');
-        const btnEn = document.getElementById('btn-en');
-        if(btnHr && btnEn) {
-            if (lang === 'en') {
-                btnEn.style.color = 'var(--gold)';
-                btnHr.style.color = 'var(--text-muted)';
-            } else {
-                btnHr.style.color = 'var(--gold)';
-                btnEn.style.color = 'var(--text-muted)';
-            }
-        }
+        document.getElementById('btn-hr').style.color = lang === 'hr' ? 'var(--gold)' : 'var(--text-muted)';
+        document.getElementById('btn-en').style.color = lang === 'en' ? 'var(--gold)' : 'var(--text-muted)';
     }
-
-    const cursor = document.getElementById('cursor');
-    const ring = document.getElementById('cursor-ring');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-    function animateCursor() {
-      cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
-      rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    const reveals = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-    reveals.forEach(el => obs.observe(el));
-
     const form = document.getElementById('lp-form');
-    const success = document.getElementById('lp-form-success');
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      const isEn = document.documentElement.lang === 'en';
-      btn.textContent = isEn ? 'Sending...' : 'Šaljem...'; btn.disabled = true;
-      try {
-        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
-        if (res.ok) { form.style.display = 'none'; success.style.display = 'block'; }
-        else { btn.textContent = isEn ? 'Send inquiry →' : 'Pošalji upit →'; btn.disabled = false; }
-      } catch { btn.textContent = isEn ? 'Send inquiry →' : 'Pošalji upit →'; btn.disabled = false; }
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+      if (res.ok) { form.style.display = 'none'; document.getElementById('lp-form-success').style.display = 'block'; }
     });
   </script>
 </body>
