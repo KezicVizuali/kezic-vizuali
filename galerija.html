@@ -10,89 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --gold: #c9a84c;
-  --gold-light: #e8c96a;
-  --gold-dim: rgba(201,168,76,0.12);
-  --bg: #080807;
-  --bg2: #0f0f0d;
-  --bg3: #161614;
-  --text: #f0ead8;
-  --text-muted: #8a8070;
-  --text-faint: #5a5448;
-  --border: rgba(201,168,76,0.14);
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans: 'DM Sans', system-ui, sans-serif;
-}
-
+:root { --gold: #c9a84c; --gold-light: #e8c96a; --gold-dim: rgba(201,168,76,0.12); --bg: #080807; --bg2: #0f0f0d; --bg3: #161614; --text: #f0ead8; --text-muted: #8a8070; --text-faint: #5a5448; --border: rgba(201,168,76,0.14); --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif; }
 html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.7;
-  font-weight: 300;
-  overflow-x: hidden;
-}
-
-/* ── ZAŠTITA SLIKA (CSS) ── */
-img {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-  user-drag: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* ── CURSOR ── */
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.7; font-weight: 300; overflow-x: hidden; }
+img { -webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-drag: none; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 *, *::before, *::after { cursor: none !important; }
-#cursor {
-  position: fixed; width: 8px; height: 8px;
-  background: var(--gold); border-radius: 50%;
-  pointer-events: none; z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s, width 0.25s, height 0.25s, background 0.25s;
-  will-change: transform;
-}
-#cursor-ring {
-  position: fixed; width: 32px; height: 32px;
-  border: 1px solid rgba(201,168,76,0.5); border-radius: 50%;
-  pointer-events: none; z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: transform 0.18s ease, width 0.25s, height 0.25s, border-color 0.25s;
-  will-change: transform;
-}
+#cursor { position: fixed; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: transform 0.1s, width 0.25s, height 0.25s, background 0.25s; will-change: transform; }
+#cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(201,168,76,0.5); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: transform 0.18s ease, width 0.25s, height 0.25s, border-color 0.25s; will-change: transform; }
 body:has(a:hover) #cursor, body:has(button:hover) #cursor, body:has(img:hover) #cursor { width: 14px; height: 14px; }
 body:has(a:hover) #cursor-ring, body:has(button:hover) #cursor-ring, body:has(img:hover) #cursor-ring { width: 44px; height: 44px; border-color: rgba(201,168,76,0.9); }
-
-@media (pointer: coarse) {
-  #cursor, #cursor-ring { display: none !important; }
-  *, *::before, *::after { cursor: auto !important; }
-}
-
-/* ── NOISE OVERLAY ── */
-body::before {
-  content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  background-size: 200px; opacity: 0.35;
-}
-
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 5%; height: 72px;
-  background: rgba(8,8,7,0.88); backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid var(--border); transition: 0.3s;
-}
+@media (pointer: coarse) { #cursor, #cursor-ring { display: none !important; } *, *::before, *::after { cursor: auto !important; } }
+body::before { content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); background-size: 200px; opacity: 0.35; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 72px; background: rgba(8,8,7,0.88); backdrop-filter: blur(24px) saturate(180%); border-bottom: 1px solid var(--border); transition: 0.3s; }
 nav.scrolled { background: rgba(8,8,7,0.97); border-color: rgba(201,168,76,0.22); }
 .nav-logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 0.6rem; }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
@@ -100,128 +29,35 @@ nav.scrolled { background: rgba(8,8,7,0.97); border-color: rgba(201,168,76,0.22)
 .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s ease; }
 .nav-links a:hover { color: var(--gold); }
 .nav-links a:hover::after { width: 100%; }
-.nav-cta {
-  background: transparent; border: 1px solid var(--gold); color: var(--gold);
-  padding: 0.5rem 1.4rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: 0.25s; position: relative; overflow: hidden;
-}
+.nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 0.5rem 1.4rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: 0.25s; position: relative; overflow: hidden; }
 .nav-cta::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.25s ease; z-index: -1; }
 .nav-cta:hover { color: #080807; }
 .nav-cta:hover::before { transform: scaleX(1); }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer !important; background: none; border: none; padding: 4px; }
 .hamburger span { display: block; width: 24px; height: 1px; background: var(--text); transition: 0.3s; }
-
-/* ── HEADER ── */
-.gallery-header {
-  padding: 180px 5% 60px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-  border-bottom: 1px solid var(--border);
-  background: radial-gradient(ellipse 50% 50% at 50% 0%, rgba(201,168,76,0.03) 0%, transparent 100%);
-}
+.gallery-header { padding: 180px 5% 60px; text-align: center; position: relative; z-index: 2; border-bottom: 1px solid var(--border); background: radial-gradient(ellipse 50% 50% at 50% 0%, rgba(201,168,76,0.03) 0%, transparent 100%); }
 .section-label { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
 .section-label::before, .section-label::after { content:''; width: 36px; height: 1px; background: linear-gradient(to right, transparent, var(--gold)); display: block; }
 .section-label::after { background: linear-gradient(to left, transparent, var(--gold)); }
 .section-title { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem; }
 .section-title em { font-style: italic; color: var(--gold); }
 .gallery-header p { color: var(--text-muted); max-width: 600px; margin: 0 auto; line-height: 1.8; }
-
-/* ── FILTER GUMBI ── */
-.gallery-filters {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 3rem 5% 2rem;
-  position: relative;
-  z-index: 2;
-}
-.filter-btn {
-  background: transparent;
-  border: 1px solid rgba(240,234,216,0.2);
-  color: var(--text-muted);
-  padding: 0.5rem 1.4rem;
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  cursor: pointer !important;
-  transition: all 0.3s ease;
-}
-.filter-btn:hover {
-  border-color: var(--gold);
-  color: var(--text);
-}
-.filter-btn.active {
-  background: var(--gold);
-  color: #080807;
-  border-color: var(--gold);
-  font-weight: 500;
-}
-
-/* ── MASONRY GALERIJA ── */
-.gallery-container {
-  position: relative; z-index: 2;
-  padding: 1rem 5% 8rem;
-  column-count: 3;
-  column-gap: 1.5rem;
-}
-.gallery-item {
-  break-inside: avoid;
-  margin-bottom: 1.5rem;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: var(--bg2);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-.gallery-item::before {
-  content: '';
-  position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(to bottom, transparent 60%, rgba(8,8,7,0.8) 100%);
-  opacity: 0; transition: opacity 0.4s ease;
-  pointer-events: none;
-}
+.gallery-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin: 3rem 5% 2rem; position: relative; z-index: 2; }
+.filter-btn { background: transparent; border: 1px solid rgba(240,234,216,0.2); color: var(--text-muted); padding: 0.5rem 1.4rem; font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer !important; transition: all 0.3s ease; }
+.filter-btn:hover { border-color: var(--gold); color: var(--text); }
+.filter-btn.active { background: var(--gold); color: #080807; border-color: var(--gold); font-weight: 500; }
+.gallery-container { position: relative; z-index: 2; padding: 1rem 5% 8rem; column-count: 3; column-gap: 1.5rem; }
+.gallery-item { break-inside: avoid; margin-bottom: 1.5rem; position: relative; overflow: hidden; border: 1px solid var(--border); background: var(--bg2); transition: opacity 0.4s ease, transform 0.4s ease; }
+.gallery-item::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, transparent 60%, rgba(8,8,7,0.8) 100%); opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
 .gallery-item:hover::before { opacity: 1; }
-
-.gallery-item img {
-  width: 100%;
-  display: block;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.gallery-item:hover img {
-  transform: scale(1.04);
-}
-
-/* ── LIGHTBOX (Modal) ── */
-#lightbox {
-  position: fixed; inset: 0; z-index: 10000;
-  background: rgba(8,8,7,0.96);
-  backdrop-filter: blur(15px);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.4s ease;
-}
-#lightbox.active {
-  opacity: 1; pointer-events: auto;
-}
-#lightbox img {
-  max-width: 90vw; max-height: 90vh;
-  object-fit: contain;
-  border: 1px solid rgba(201,168,76,0.3);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-  transform: scale(0.95); transition: transform 0.4s ease;
-}
+.gallery-item img { width: 100%; display: block; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.gallery-item:hover img { transform: scale(1.04); }
+#lightbox { position: fixed; inset: 0; z-index: 10000; background: rgba(8,8,7,0.96); backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+#lightbox.active { opacity: 1; pointer-events: auto; }
+#lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border: 1px solid rgba(201,168,76,0.3); box-shadow: 0 20px 60px rgba(0,0,0,0.8); transform: scale(0.95); transition: transform 0.4s ease; }
 #lightbox.active img { transform: scale(1); }
-.lb-close {
-  position: fixed; top: 30px; right: 40px;
-  background: none; border: none;
-  color: var(--gold); font-size: 2.5rem; line-height: 1;
-  z-index: 10001; transition: color 0.2s;
-}
+.lb-close { position: fixed; top: 30px; right: 40px; background: none; border: none; color: var(--gold); font-size: 2.5rem; line-height: 1; z-index: 10001; transition: color 0.2s; }
 .lb-close:hover { color: var(--text); }
-
-/* ── FOOTER ── */
 footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 5% 2.5rem; position: relative; z-index: 2; }
 footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
@@ -234,29 +70,8 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
 .footer-bottom { border-top: 1px solid rgba(201,168,76,0.08); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
 .footer-bottom p, .footer-bottom a { font-size: 0.78rem; color: var(--text-faint); text-decoration: none; }
 .footer-bottom a:hover { color: var(--gold); }
-
-/* ── MOBILE ── */
-@media (max-width: 900px) {
-  .gallery-container { column-count: 2; }
-  .nav-links {
-    position: fixed; top: 72px; left: 0; right: 0; background: rgba(8,8,7,0.98);
-    flex-direction: column; gap: 0; padding: 0; border-bottom: 1px solid var(--border);
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease;
-  }
-  .nav-links.open { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  .nav-links li { border-bottom: 1px solid rgba(201,168,76,0.06); }
-  .nav-links a { display: block; padding: 1.5rem 5%; }
-  .nav-cta { display: none; }
-  .hamburger { display: flex; }
-  .footer-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 600px) {
-  .gallery-container { column-count: 1; }
-  .section-title { font-size: 2.2rem; }
-  .gallery-category-title { font-size: 1.8rem; }
-  .lb-close { top: 15px; right: 20px; font-size: 2rem; }
-  .gallery-filters { flex-direction: column; gap: 0.5rem; }
-}
+@media (max-width: 900px) { .gallery-container { column-count: 2; } .nav-links { position: fixed; top: 72px; left: 0; right: 0; background: rgba(8,8,7,0.98); flex-direction: column; gap: 0; padding: 0; border-bottom: 1px solid var(--border); clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease; } .nav-links.open { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } .nav-links li { border-bottom: 1px solid rgba(201,168,76,0.06); } .nav-links a { display: block; padding: 1.5rem 5%; } .nav-cta { display: none; } .hamburger { display: flex; } .footer-grid { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .gallery-container { column-count: 1; } .section-title { font-size: 2.2rem; } .gallery-category-title { font-size: 1.8rem; } .lb-close { top: 15px; right: 20px; font-size: 2rem; } .gallery-filters { flex-direction: column; gap: 0.5rem; } }
 </style>
 </head>
 <body oncontextmenu="return false;">
@@ -272,33 +87,38 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="index.html#o-meni">O nama</a></li>
-      <li><a href="index.html#portfolio">Portfolio</a></li>
-      <li><a href="index.html#cjenik">Usluge i Cjenik</a></li>
-      <li><a href="index.html#kontakt">Kontakt</a></li>
+      <li><a href="index.html#o-meni" data-hr="O nama" data-en="About us">O nama</a></li>
+      <li><a href="index.html#portfolio" data-hr="Portfolio" data-en="Portfolio">Portfolio</a></li>
+      <li><a href="index.html#cjenik" data-hr="Usluge i Cjenik" data-en="Services & Pricing">Usluge i Cjenik</a></li>
+      <li><a href="index.html#kontakt" data-hr="Kontakt" data-en="Contact">Kontakt</a></li>
     </ul>
-    <a href="index.html#kontakt" class="nav-cta">Zatraži Ponudu</a>
+    
+    <!-- Language Switcher -->
+    <div style="display: flex; align-items: center; gap: 8px; margin-left: auto; margin-right: 20px;">
+        <button id="btn-hr" onclick="setLanguage('hr')" style="background:none; border:none; color: var(--gold); font-size: 0.78rem; font-family: var(--sans); font-weight: 600; cursor: pointer; letter-spacing: 0.14em;">HR</button>
+        <span style="color: var(--text-faint); font-size: 0.8rem;">/</span>
+        <button id="btn-en" onclick="setLanguage('en')" style="background:none; border:none; color: var(--text-muted); font-size: 0.78rem; font-family: var(--sans); font-weight: 600; cursor: pointer; letter-spacing: 0.14em; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="if(document.documentElement.lang !== 'en') this.style.color='var(--text-muted)'">EN</button>
+    </div>
+
+    <a href="index.html#kontakt" class="nav-cta" data-hr="Zatraži Ponudu" data-en="Get a Quote">Zatraži Ponudu</a>
   </nav>
 
   <!-- HEADER GALERIJE -->
   <header class="gallery-header">
-    <div class="section-label">Portfolio</div>
-    <h1 class="section-title">Autorska <em>Fotografija</em></h1>
-    <p>Selekcija odabranih radova. Svaki kadar je pomno planiran kako bi prenio autentičnu priču, teksturu i emociju vašeg brenda.</p>
+    <div class="section-label" data-hr="Portfolio" data-en="Portfolio">Portfolio</div>
+    <h1 class="section-title" data-hr="Autorska <em>Fotografija</em>" data-en="Author's <em>Photography</em>">Autorska <em>Fotografija</em></h1>
+    <p data-hr="Selekcija odabranih radova. Svaki kadar je pomno planiran kako bi prenio autentičnu priču, teksturu i emociju vašeg brenda." data-en="A selection of curated works. Every frame is carefully planned to convey the authentic story, texture, and emotion of your brand.">Selekcija odabranih radova. Svaki kadar je pomno planiran kako bi prenio autentičnu priču, teksturu i emociju vašeg brenda.</p>
   </header>
 
   <!-- GUMBI ZA FILTRIRANJE KATEGORIJA -->
   <div class="gallery-filters">
-    <button class="filter-btn active" data-filter="sve">Svi Radovi</button>
-    <button class="filter-btn" data-filter="monochrome">Monochrome</button>
-    <button class="filter-btn" data-filter="editorijal">Studijski Editorijal</button>
-    <button class="filter-btn" data-filter="komercijalno">Komercijalno</button>
+    <button class="filter-btn active" data-filter="sve" data-hr="Svi Radovi" data-en="All Works">Svi Radovi</button>
+    <button class="filter-btn" data-filter="monochrome" data-hr="Monochrome" data-en="Monochrome">Monochrome</button>
+    <button class="filter-btn" data-filter="editorijal" data-hr="Studijski Editorijal" data-en="Studio Editorial">Studijski Editorijal</button>
+    <button class="filter-btn" data-filter="komercijalno" data-hr="Komercijalno" data-en="Commercial">Komercijalno</button>
   </div>
 
-  <!-- MASONRY GRID (Zajednički omotač) -->
   <main class="gallery-container">
-    
-    <!-- 1. KATEGORIJA: MONOCHROME (Mia) -->
     <div class="gallery-item" data-category="monochrome"><img src="slike/foto1.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
     <div class="gallery-item" data-category="monochrome"><img src="slike/foto2.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
     <div class="gallery-item" data-category="monochrome"><img src="slike/foto3.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
@@ -310,7 +130,6 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <div class="gallery-item" data-category="monochrome"><img src="slike/foto9.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
     <div class="gallery-item" data-category="monochrome"><img src="slike/foto10.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
 
-    <!-- 2. KATEGORIJA: STUDIJSKI EDITORIJAL (Iva) -->
     <div class="gallery-item" data-category="editorijal"><img src="slike/studio1.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
     <div class="gallery-item" data-category="editorijal"><img src="slike/studio2.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
     <div class="gallery-item" data-category="editorijal"><img src="slike/studio3.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
@@ -325,13 +144,6 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <div class="gallery-item" data-category="editorijal"><img src="slike/studio12.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
     <div class="gallery-item" data-category="editorijal"><img src="slike/studio13.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
     <div class="gallery-item" data-category="editorijal"><img src="slike/studio14.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-
-    <!-- 3. KATEGORIJA: KOMERCIJALNO (Lidija i Esensse - prazan prostor za kasnije) -->
-    <!-- 
-      Kada budeš imao slike, samo ih zalijepi ovdje ispod. Primjer:
-      <div class="gallery-item" data-category="komercijalno"><img src="slike/parfem1.jpeg" alt="Komercijalna fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
-    -->
-
   </main>
 
   <!-- LIGHTBOX -->
@@ -345,37 +157,57 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="Kezić vizuali transparent xl.png" alt="Kezić Vizuali Logo" style="height: 110px; width: auto;">
-        <p>Studio za vizualne komunikacije i dizajn. Spoj stare škole majstorstva i tehnologije budućnosti.</p>
+        <p data-hr="Studio za vizualne komunikacije i dizajn. Spoj stare škole majstorstva i tehnologije budućnosti." data-en="Studio for visual communications and design. A blend of old-school mastery and future technology.">Studio za vizualne komunikacije i dizajn. Spoj stare škole majstorstva i tehnologije budućnosti.</p>
       </div>
       <div class="footer-col">
-        <h5>Brzi Linkovi</h5>
+        <h5 data-hr="Brzi Linkovi" data-en="Quick Links">Brzi Linkovi</h5>
         <ul>
-          <li><a href="index.html#hero">Početna</a></li>
-          <li><a href="index.html#o-meni">O nama</a></li>
-          <li><a href="index.html#portfolio">Portfolio</a></li>
-          <li><a href="index.html#cjenik">Usluge i Cjenik</a></li>
-          <li><a href="index.html#kontakt">Kontakt</a></li>
+          <li><a href="index.html#hero" data-hr="Početna" data-en="Home">Početna</a></li>
+          <li><a href="index.html#o-meni" data-hr="O nama" data-en="About us">O nama</a></li>
+          <li><a href="index.html#portfolio" data-hr="Portfolio" data-en="Portfolio">Portfolio</a></li>
+          <li><a href="index.html#cjenik" data-hr="Usluge i Cjenik" data-en="Services & Pricing">Usluge i Cjenik</a></li>
+          <li><a href="index.html#kontakt" data-hr="Kontakt" data-en="Contact">Kontakt</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Društvene Mreže</h5>
+        <h5 data-hr="Društvene Mreže" data-en="Social Networks">Društvene Mreže</h5>
         <ul>
-          <li><a href="https://www.facebook.com/kezicvizuali.vg" target="_blank">Službena Stranica</a></li>
-          <li><a href="https://www.facebook.com/kezicvizuali/" target="_blank">Privatni Profil</a></li>
+          <li><a href="https://www.facebook.com/kezicvizuali.vg" target="_blank" data-hr="Službena Stranica" data-en="Official Page">Službena Stranica</a></li>
+          <li><a href="https://www.facebook.com/kezicvizuali/" target="_blank" data-hr="Privatni Profil" data-en="Private Profile">Privatni Profil</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Kezić Vizuali. Sva prava pridržana. <span style="color: var(--text-faint); margin: 0 8px;">|</span> Dizajn i razvoj: <a href="https://www.facebook.com/kezicvizuali.vg" target="_blank" rel="noopener" style="color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.25s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='transparent'">Kezić Vizuali</a></p>
-      <a href="uvjeti.html">Uvjeti korištenja i autorska prava</a>
+      <p><span data-hr="&copy; 2026 Kezić Vizuali. Sva prava pridržana." data-en="&copy; 2026 Kezić Vizuali. All rights reserved.">&copy; 2026 Kezić Vizuali. Sva prava pridržana.</span> <span style="color: var(--text-faint); margin: 0 8px;">|</span> <span data-hr="Dizajn i razvoj:" data-en="Design and development:">Dizajn i razvoj:</span> <a href="https://www.facebook.com/kezicvizuali.vg" target="_blank" rel="noopener" style="color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.25s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='transparent'">Kezić Vizuali</a></p>
+      <a href="uvjeti.html" data-hr="Uvjeti korištenja i autorska prava" data-en="Terms of use and copyrights">Uvjeti korištenja i autorska prava</a>
     </div>
   </footer>
 
   <script>
-    // ── Zabrana desnog klika u cijelom dokumentu ──
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-hr]').forEach(el => {
+            if (lang === 'en' && el.hasAttribute('data-en')) {
+                el.innerHTML = el.getAttribute('data-en');
+            } else {
+                el.innerHTML = el.getAttribute('data-hr');
+            }
+        });
+        const btnHr = document.getElementById('btn-hr');
+        const btnEn = document.getElementById('btn-en');
+        if(btnHr && btnEn) {
+            if (lang === 'en') {
+                btnEn.style.color = 'var(--gold)';
+                btnHr.style.color = 'var(--text-muted)';
+            } else {
+                btnHr.style.color = 'var(--gold)';
+                btnEn.style.color = 'var(--text-muted)';
+            }
+        }
+    }
+
     document.addEventListener('contextmenu', event => event.preventDefault());
 
-    // ── Custom cursor ──
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursor-ring');
     let mx = 0, my = 0, rx = 0, ry = 0;
@@ -390,7 +222,6 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     }
     animateCursor();
 
-    // ── Navbar scroll & Hamburger ──
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
     
@@ -399,19 +230,14 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
     hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-    // ── Logika za filtriranje galerije ──
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Skini active klasu sa svih
         filterBtns.forEach(b => b.classList.remove('active'));
-        // Dodaj onom gumbu koji je kliknut
         btn.classList.add('active');
-
         const filterValue = btn.getAttribute('data-filter');
-
         galleryItems.forEach(item => {
           if (filterValue === 'sve' || item.getAttribute('data-category') === filterValue) {
             item.style.display = 'block';
@@ -422,7 +248,6 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       });
     });
 
-    // ── Lightbox logika ──
     const lightbox = document.getElementById('lightbox');
     const lbImg = document.getElementById('lightbox-img');
     const lbClose = document.querySelector('.lb-close');
