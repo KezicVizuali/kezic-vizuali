@@ -6,7 +6,14 @@
 <meta name="description" content="Kezić Vizuali — Profesionalna web stranica za samo 200€. Bez pretplate, hosting zauvijek besplatan. Za obrte, OPG-ove i udruge.">
 <meta property="og:title" content="Vaš web. Zauvijek vaš. Za samo 200 €.">
 <meta property="og:description" content="Kompletan profesionalni web — fotografiranje, copywriting, SEO, besplatan hosting. Jednom platite, zauvijek vaše.">
-<meta property="og:image" content="https://kezicvizuali.github.io/logo-za-share.jpg">
+<meta property="og:image" content="https://kezicvizuali.com/logo-za-share.jpg">
+<meta property="og:url" content="https://kezicvizuali.com/ponuda100.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vaš web. Zauvijek vaš. Za samo 200 €.">
+<meta name="twitter:description" content="Kompletan profesionalni web — fotografiranje, copywriting, SEO, besplatan hosting. Jednom platite, zauvijek vaše.">
+<meta name="twitter:image" content="https://kezicvizuali.com/logo-za-share.jpg">
+<link rel="canonical" href="https://kezicvizuali.com/ponuda100.html">
 <title>Web za 200 € — Kezić Vizuali</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -394,5 +401,36 @@ footer a:hover { color: var(--gold); }
       } catch { btn.textContent = isEn ? 'Send inquiry →' : 'Pošalji upit →'; btn.disabled = false; }
     });
   </script>
+  <div id="google_translate_element" style="position:fixed;top:18px;right:24px;z-index:200;"></div>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'hr',
+        includedLanguages: 'en,de,it,fr,sl,sk,hu',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <style>
+    #google_translate_element .goog-te-gadget-simple {
+      background: rgba(8,8,7,0.85) !important;
+      border: 1px solid rgba(201,168,76,0.4) !important;
+      border-radius: 2px !important;
+      padding: 2px 8px !important;
+      font-family: sans-serif !important;
+      font-size: 0.75rem !important;
+    }
+    #google_translate_element .goog-te-gadget-simple span,
+    #google_translate_element .goog-te-gadget-simple a {
+      color: #c9a84c !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.1em !important;
+      text-decoration: none !important;
+    }
+    .goog-te-banner-frame { display: none !important; }
+    body { top: 0 !important; }
+  </style>
 </body>
 </html>

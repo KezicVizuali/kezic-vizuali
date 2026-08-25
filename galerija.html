@@ -2,9 +2,19 @@
 <html lang="hr">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Autorska fotografija - Kezić Vizuali. Vrhunski vizualni sadržaj za vaše poslovanje.">
+<meta name="description" content="Autorska fotografija hrane, prostora i događanja. Kezić Vizuali — kreativni studio Velika Gorica.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galerija – Kezić Vizuali</title>
+<meta property="og:title" content="Foto Galerija — Kezić Vizuali">
+<meta property="og:description" content="Autorska fotografija hrane, prostora i događanja. Kezić Vizuali — kreativni studio Velika Gorica.">
+<meta property="og:image" content="https://kezicvizuali.com/logo-za-share.jpg">
+<meta property="og:url" content="https://kezicvizuali.com/galerija.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Foto Galerija — Kezić Vizuali">
+<meta name="twitter:description" content="Autorska fotografija hrane, prostora i događanja. Kezić Vizuali — kreativni studio Velika Gorica.">
+<meta name="twitter:image" content="https://kezicvizuali.com/logo-za-share.jpg">
+<link rel="canonical" href="https://kezicvizuali.com/galerija.html">
+<title>Foto Galerija — Kezić Vizuali</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -276,5 +286,36 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; hei
       if(e.key === "Escape" && lightbox.classList.contains('active')) closeLightbox();
     });
   </script>
+  <div id="google_translate_element" style="position:fixed;top:18px;right:24px;z-index:200;"></div>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'hr',
+        includedLanguages: 'en,de,it,fr,sl,sk,hu',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <style>
+    #google_translate_element .goog-te-gadget-simple {
+      background: rgba(8,8,7,0.85) !important;
+      border: 1px solid rgba(201,168,76,0.4) !important;
+      border-radius: 2px !important;
+      padding: 2px 8px !important;
+      font-family: sans-serif !important;
+      font-size: 0.75rem !important;
+    }
+    #google_translate_element .goog-te-gadget-simple span,
+    #google_translate_element .goog-te-gadget-simple a {
+      color: #c9a84c !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.1em !important;
+      text-decoration: none !important;
+    }
+    .goog-te-banner-frame { display: none !important; }
+    body { top: 0 !important; }
+  </style>
 </body>
 </html>
