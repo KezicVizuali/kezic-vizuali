@@ -4,116 +4,287 @@
 <meta charset="UTF-8">
 <meta name="description" content="Autorska fotografija hrane, prostora i događanja. Kezić Vizuali — kreativni studio Velika Gorica.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Foto Galerija — Kezić Vizuali Editorial</title>
+<meta property="og:title" content="Foto Galerija — Kezić Vizuali">
+<meta property="og:description" content="Autorska fotografija hrane, prostora i događanja. Kezić Vizuali — kreativni studio Velika Gorica.">
+<meta property="og:image" content="https://kezicvizuali.com/logo-za-share.jpg">
+<meta property="og:url" content="https://kezicvizuali.com/galerija.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Foto Galerija — Kezić Vizuali">
+<meta name="twitter:description" content="Autorska fotografija hrane, prostora i događanja. Kezić Vizuali — kreativni studio Velika Gorica.">
+<meta name="twitter:image" content="https://kezicvizuali.com/logo-za-share.jpg">
+<link rel="canonical" href="https://kezicvizuali.com/galerija.html">
+<title>Foto Galerija — Kezić Vizuali</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root { --gold: #c9a84c; --bg: #080807; --bg2: #0f0f0d; --text: #f0ead8; --text-muted: #8a8070; --border: rgba(201,168,76,0.14); --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif; }
-body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; overflow-x: hidden; }
-
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 72px; background: rgba(8,8,7,0.88); backdrop-filter: blur(24px); border-bottom: 1px solid var(--border); }
-.nav-logo { font-family: var(--serif); font-size: 1.35rem; color: var(--gold); text-decoration: none; }
-.gallery-header { padding: 160px 5% 40px; text-align: center; }
-
-/* MAGASIN PAGE-FLIP GALERIJA CONTAINER */
-.magazine-gallery {
-  max-width: 1000px; margin: 0 auto 8rem; padding: 0 5%;
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;
-}
-.gallery-magazine-card {
-  background: var(--bg2); border: 1px solid var(--border); padding: 15px;
-  position: relative; cursor: pointer; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
-  transform-style: preserve-3d; perspective: 1000px;
-}
-.gallery-magazine-card:hover {
-  transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(201,168,76,0.2);
-}
-.gallery-magazine-card img { width: 100%; height: 350px; object-fit: cover; display: block; }
-.card-caption { font-family: var(--serif); font-style: italic; color: var(--gold); margin-top: 10px; font-size: 0.9rem; text-align: center; }
-
-/* LIGHTBOX PAGE-FLIP SPREAD */
-#lightbox { position: fixed; inset: 0; z-index: 10000; background: rgba(8,8,7,0.98); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+:root { --gold: #c9a84c; --gold-light: #e8c96a; --gold-dim: rgba(201,168,76,0.12); --bg: #080807; --bg2: #0f0f0d; --bg3: #161614; --text: #f0ead8; --text-muted: #8a8070; --text-faint: #5a5448; --border: rgba(201,168,76,0.14); --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.7; font-weight: 300; overflow-x: hidden; }
+img { -webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-drag: none; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+*, *::before, *::after { cursor: none !important; }
+#cursor { position: fixed; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: transform 0.1s, width 0.25s, height 0.25s, background 0.25s; will-change: transform; }
+#cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(201,168,76,0.5); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: transform 0.18s ease, width 0.25s, height 0.25s, border-color 0.25s; will-change: transform; }
+body:has(a:hover) #cursor, body:has(button:hover) #cursor, body:has(img:hover) #cursor { width: 14px; height: 14px; }
+body:has(a:hover) #cursor-ring, body:has(button:hover) #cursor-ring, body:has(img:hover) #cursor-ring { width: 44px; height: 44px; border-color: rgba(201,168,76,0.9); }
+@media (pointer: coarse) { #cursor, #cursor-ring { display: none !important; } *, *::before, *::after { cursor: auto !important; } }
+body::before { content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); background-size: 200px; opacity: 0.35; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 72px; background: rgba(8,8,7,0.88); backdrop-filter: blur(24px) saturate(180%); border-bottom: 1px solid var(--border); transition: 0.3s; }
+nav.scrolled { background: rgba(8,8,7,0.97); border-color: rgba(201,168,76,0.22); }
+.nav-logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 0.6rem; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; transition: color 0.2s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s ease; }
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 0.5rem 1.4rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: 0.25s; position: relative; overflow: hidden; }
+.nav-cta::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.25s ease; z-index: -1; }
+.nav-cta:hover { color: #080807; }
+.nav-cta:hover::before { transform: scaleX(1); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer !important; background: none; border: none; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 1px; background: var(--text); transition: 0.3s; }
+.gallery-header { padding: 180px 5% 60px; text-align: center; position: relative; z-index: 2; border-bottom: 1px solid var(--border); background: radial-gradient(ellipse 50% 50% at 50% 0%, rgba(201,168,76,0.03) 0%, transparent 100%); }
+.section-label { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
+.section-label::before, .section-label::after { content:''; width: 36px; height: 1px; background: linear-gradient(to right, transparent, var(--gold)); display: block; }
+.section-label::after { background: linear-gradient(to left, transparent, var(--gold)); }
+.section-title { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem; }
+.section-title em { font-style: italic; color: var(--gold); }
+.gallery-header p { color: var(--text-muted); max-width: 600px; margin: 0 auto; line-height: 1.8; }
+.gallery-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin: 3rem 5% 2rem; position: relative; z-index: 2; }
+.filter-btn { background: transparent; border: 1px solid rgba(240,234,216,0.2); color: var(--text-muted); padding: 0.5rem 1.4rem; font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer !important; transition: all 0.3s ease; }
+.filter-btn:hover { border-color: var(--gold); color: var(--text); }
+.filter-btn.active { background: var(--gold); color: #080807; border-color: var(--gold); font-weight: 500; }
+.gallery-container { position: relative; z-index: 2; padding: 1rem 5% 8rem; column-count: 3; column-gap: 1.5rem; }
+.gallery-item { break-inside: avoid; margin-bottom: 1.5rem; position: relative; overflow: hidden; border: 1px solid var(--border); background: var(--bg2); transition: opacity 0.4s ease, transform 0.4s ease; }
+.gallery-item::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, transparent 60%, rgba(8,8,7,0.8) 100%); opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
+.gallery-item:hover::before { opacity: 1; }
+.gallery-item img { width: 100%; display: block; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.gallery-item:hover img { transform: scale(1.04); }
+#lightbox { position: fixed; inset: 0; z-index: 10000; background: rgba(8,8,7,0.96); backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
 #lightbox.active { opacity: 1; pointer-events: auto; }
-.lightbox-spread {
-  display: flex; background: #121210; border: 1px solid var(--gold); max-width: 90vw; max-height: 85vh;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.9); transform: scale(0.9); transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-#lightbox.active .lightbox-spread { transform: scale(1); }
-.lightbox-page { flex: 1; padding: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.lightbox-page img { max-width: 100%; max-height: 70vh; object-fit: contain; border: 1px solid rgba(201,168,76,0.2); }
-.lb-close { position: fixed; top: 30px; right: 40px; background: none; border: none; color: var(--gold); font-size: 2.5rem; cursor: pointer; }
+#lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border: 1px solid rgba(201,168,76,0.3); box-shadow: 0 20px 60px rgba(0,0,0,0.8); transform: scale(0.95); transition: transform 0.4s ease; }
+#lightbox.active img { transform: scale(1); }
+.lb-close { position: fixed; top: 30px; right: 40px; background: none; border: none; color: var(--gold); font-size: 2.5rem; line-height: 1; z-index: 10001; transition: color 0.2s; }
+.lb-close:hover { color: var(--text); }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 5% 2.5rem; position: relative; z-index: 2; }
+footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-brand p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.8; max-width: 260px; margin-top: 1.2rem; }
+.footer-col h5 { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.65rem; }
+.footer-col ul li a { font-size: 0.84rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid rgba(201,168,76,0.08); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-bottom p, .footer-bottom a { font-size: 0.78rem; color: var(--text-faint); text-decoration: none; }
+.footer-bottom a:hover { color: var(--gold); }
+@media (max-width: 900px) { .gallery-container { column-count: 2; } .nav-links { position: fixed; top: 72px; left: 0; right: 0; background: rgba(8,8,7,0.98); flex-direction: column; gap: 0; padding: 0; border-bottom: 1px solid var(--border); clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease; } .nav-links.open { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } .nav-links li { border-bottom: 1px solid rgba(201,168,76,0.06); } .nav-links a { display: block; padding: 1.5rem 5%; } .nav-cta { display: none; } .hamburger { display: flex; } .footer-grid { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .gallery-container { column-count: 1; } .section-title { font-size: 2.2rem; } .gallery-category-title { font-size: 1.8rem; } .lb-close { top: 15px; right: 20px; font-size: 2rem; } .gallery-filters { flex-direction: column; gap: 0.5rem; } }
 </style>
 </head>
 <body oncontextmenu="return false;">
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
 
-  <nav>
-    <a href="index.html" class="nav-logo">Kezić Vizuali</a>
-    <div style="display: flex; align-items: center; gap: 8px;">
-        <button id="btn-hr" onclick="setLanguage('hr')" style="background:none; border:none; color: var(--gold); font-size: 0.78rem; font-weight: 600; cursor: pointer;">HR</button>
-        <span style="color: var(--text-muted);">/</span>
-        <button id="btn-en" onclick="setLanguage('en')" style="background:none; border:none; color: var(--text-muted); font-size: 0.78rem; font-weight: 600; cursor: pointer;">EN</button>
+  <!-- NAVIGACIJA -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="Kezić vizuali transparent xl.png" alt="Kezić Vizuali Logo" style="height: 110px; width: auto; object-fit: contain; display: block;">
+    </a>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#o-meni" data-hr="O nama" data-en="About us">O nama</a></li>
+      <li><a href="index.html#portfolio" data-hr="Portfolio" data-en="Portfolio">Portfolio</a></li>
+      <li><a href="index.html#cjenik" data-hr="Usluge i Cjenik" data-en="Services & Pricing">Usluge i Cjenik</a></li>
+      <li><a href="index.html#kontakt" data-hr="Kontakt" data-en="Contact">Kontakt</a></li>
+    </ul>
+    
+    <!-- Language Switcher -->
+    <div style="display: flex; align-items: center; gap: 8px; margin-left: auto; margin-right: 20px;">
+        <button id="btn-hr" onclick="setLanguage('hr')" style="background:none; border:none; color: var(--gold); font-size: 0.78rem; font-family: var(--sans); font-weight: 600; cursor: pointer; letter-spacing: 0.14em;">HR</button>
+        <span style="color: var(--text-faint); font-size: 0.8rem;">/</span>
+        <button id="btn-en" onclick="setLanguage('en')" style="background:none; border:none; color: var(--text-muted); font-size: 0.78rem; font-family: var(--sans); font-weight: 600; cursor: pointer; letter-spacing: 0.14em; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="if(document.documentElement.lang !== 'en') this.style.color='var(--text-muted)'">EN</button>
     </div>
-    <a href="index.html#kontakt" style="border:1px solid var(--gold); color:var(--gold); padding:0.5rem 1rem; font-size:0.75rem; text-decoration:none;" data-hr="Kontakt" data-en="Contact">Kontakt</a>
+
+    <a href="index.html#kontakt" class="nav-cta" data-hr="Zatraži Ponudu" data-en="Get a Quote">Zatraži Ponudu</a>
   </nav>
 
+  <!-- HEADER GALERIJE -->
   <header class="gallery-header">
-    <div style="font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;" data-hr="Editorial Spread" data-en="Editorial Spread">Editorial Spread</div>
-    <h1 style="font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 300;" data-hr="Magazin <em>Galerija</em>" data-en="Magazine <em>Gallery</em>">Magazin <em>Galerija</em></h1>
-    <p style="color: var(--text-muted); max-width: 500px; margin: 1rem auto 0;" data-hr="Kliknite na bilo koju fotografiju za listanje u magazinskom pogledu." data-en="Click any photo to browse in magazine spread view.">Kliknite na bilo koju fotografiju za listanje u magazinskom pogledu.</p>
+    <div class="section-label" data-hr="Portfolio" data-en="Portfolio">Portfolio</div>
+    <h1 class="section-title" data-hr="Autorska <em>Fotografija</em>" data-en="Author's <em>Photography</em>">Autorska <em>Fotografija</em></h1>
+    <p data-hr="Selekcija odabranih radova. Svaki kadar je pomno planiran kako bi prenio autentičnu priču, teksturu i emociju vašeg brenda." data-en="A selection of curated works. Every frame is carefully planned to convey the authentic story, texture, and emotion of your brand.">Selekcija odabranih radova. Svaki kadar je pomno planiran kako bi prenio autentičnu priču, teksturu i emociju vašeg brenda.</p>
   </header>
 
-  <main class="magazine-gallery">
-    <div class="gallery-magazine-card" onclick="openLightbox('slike/foto1.jpeg', 'Plate 01 — Monochrome')"><img src="slike/foto1.jpeg" alt="Fotografija 1"><div class="card-caption">Plate 01 — Monochrome</div></div>
-    <div class="gallery-magazine-card" onclick="openLightbox('slike/foto2.jpeg', 'Plate 02 — Portrait')"><img src="slike/foto2.jpeg" alt="Fotografija 2"><div class="card-caption">Plate 02 — Portrait</div></div>
-    <div class="gallery-magazine-card" onclick="openLightbox('slike/foto3.jpeg', 'Plate 03 — Editorial')"><img src="slike/foto3.jpeg" alt="Fotografija 3"><div class="card-caption">Plate 03 — Editorial</div></div>
-    <div class="gallery-magazine-card" onclick="openLightbox('slike/studio1.jpeg', 'Plate 04 — Studio')"><img src="slike/studio1.jpeg" alt="Fotografija 4"><div class="card-caption">Plate 04 — Studio</div></div>
-    <div class="gallery-magazine-card" onclick="openLightbox('slike/studio2.jpeg', 'Plate 05 — Light & Shadow')"><img src="slike/studio2.jpeg" alt="Fotografija 5"><div class="card-caption">Plate 05 — Light & Shadow</div></div>
-    <div class="gallery-magazine-card" onclick="openLightbox('slike/studio3.jpeg', 'Plate 06 — Texture')"><img src="slike/studio3.jpeg" alt="Fotografija 6"><div class="card-caption">Plate 06 — Texture</div></div>
-  </main>
-
-  <!-- LIGHTBOX MAGAZINE SPREAD -->
-  <div id="lightbox" onclick="closeLightbox(event)">
-    <button class="lb-close" onclick="closeLightboxForce()">&times;</button>
-    <div class="lightbox-spread">
-      <div class="lightbox-page">
-        <img id="lb-img" src="" alt="Magazin stranica">
-        <div id="lb-caption" style="font-family:var(--serif); color:var(--gold); margin-top:15px; font-style:italic;"></div>
-      </div>
-    </div>
+  <!-- GUMBI ZA FILTRIRANJE KATEGORIJA -->
+  <div class="gallery-filters">
+    <button class="filter-btn active" data-filter="sve" data-hr="Svi Radovi" data-en="All Works">Svi Radovi</button>
+    <button class="filter-btn" data-filter="monochrome" data-hr="Monochrome" data-en="Monochrome">Monochrome</button>
+    <button class="filter-btn" data-filter="editorijal" data-hr="Studijski Editorijal" data-en="Studio Editorial">Studijski Editorijal</button>
+    <button class="filter-btn" data-filter="komercijalno" data-hr="Komercijalno" data-en="Commercial">Komercijalno</button>
   </div>
 
-  <footer style="background:var(--bg2); border-top:1px solid var(--border); padding:3rem 5%; text-align:center; font-size:0.78rem; color:var(--text-muted);">
-    <p>&copy; 2026 Kezić Vizuali. Sva prava pridržana. <a href="index.html" style="color:var(--gold); text-decoration:none; margin-left:10px;" data-hr="Povratak na naslovnicu" data-en="Back to homepage">Povratak na naslovnicu</a></p>
+  <main class="gallery-container">
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto1.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto2.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto3.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto4.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto5.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto6.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto7.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto8.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto9.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="monochrome"><img src="slike/foto10.jpeg" alt="Portret" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio1.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio2.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio3.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio4.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio5.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio6.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio7.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio8.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio9.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio10.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio11.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio12.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio13.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+    <div class="gallery-item" data-category="editorijal"><img src="slike/studio14.jpeg" alt="Studio fotka" loading="lazy" draggable="false" oncontextmenu="return false;"></div>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <button class="lb-close">&times;</button>
+    <img id="lightbox-img" src="" alt="Povećana fotografija" draggable="false" oncontextmenu="return false;">
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="Kezić vizuali transparent xl.png" alt="Kezić Vizuali Logo" style="height: 110px; width: auto;">
+        <p data-hr="Studio za vizualne komunikacije i dizajn. Spoj stare škole majstorstva i tehnologije budućnosti." data-en="Studio for visual communications and design. A blend of old-school mastery and future technology.">Studio za vizualne komunikacije i dizajn. Spoj stare škole majstorstva i tehnologije budućnosti.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-hr="Brzi Linkovi" data-en="Quick Links">Brzi Linkovi</h5>
+        <ul>
+          <li><a href="index.html#hero" data-hr="Početna" data-en="Home">Početna</a></li>
+          <li><a href="index.html#o-meni" data-hr="O nama" data-en="About us">O nama</a></li>
+          <li><a href="index.html#portfolio" data-hr="Portfolio" data-en="Portfolio">Portfolio</a></li>
+          <li><a href="index.html#cjenik" data-hr="Usluge i Cjenik" data-en="Services & Pricing">Usluge i Cjenik</a></li>
+          <li><a href="index.html#kontakt" data-hr="Kontakt" data-en="Contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-hr="Društvene Mreže" data-en="Social Networks">Društvene Mreže</h5>
+        <ul>
+          <li><a href="https://www.facebook.com/kezicvizuali.vg" target="_blank" data-hr="Službena Stranica" data-en="Official Page">Službena Stranica</a></li>
+          <li><a href="https://www.facebook.com/kezicvizuali/" target="_blank" data-hr="Privatni Profil" data-en="Private Profile">Privatni Profil</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><span data-hr="&copy; 2026 Kezić Vizuali. Sva prava pridržana." data-en="&copy; 2026 Kezić Vizuali. All rights reserved.">&copy; 2026 Kezić Vizuali. Sva prava pridržana.</span> <span style="color: var(--text-faint); margin: 0 8px;">|</span> <span data-hr="Dizajn i razvoj:" data-en="Design and development:">Dizajn i razvoj:</span> <a href="https://www.facebook.com/kezicvizuali.vg" target="_blank" rel="noopener" style="color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.25s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='transparent'">Kezić Vizuali</a></p>
+      <a href="uvjeti.html" data-hr="Uvjeti korištenja i autorska prava" data-en="Terms of use and copyrights">Uvjeti korištenja i autorska prava</a>
+    </div>
   </footer>
 
   <script>
     function setLanguage(lang) {
         document.documentElement.lang = lang;
         document.querySelectorAll('[data-hr]').forEach(el => {
-            if (lang === 'en' && el.hasAttribute('data-en')) el.innerHTML = el.getAttribute('data-en');
-            else el.innerHTML = el.getAttribute('data-hr');
+            if (lang === 'en' && el.hasAttribute('data-en')) {
+                el.innerHTML = el.getAttribute('data-en');
+            } else {
+                el.innerHTML = el.getAttribute('data-hr');
+            }
         });
-        document.getElementById('btn-hr').style.color = lang === 'hr' ? 'var(--gold)' : 'var(--text-muted)';
-        document.getElementById('btn-en').style.color = lang === 'en' ? 'var(--gold)' : 'var(--text-muted)';
+        const btnHr = document.getElementById('btn-hr');
+        const btnEn = document.getElementById('btn-en');
+        if(btnHr && btnEn) {
+            if (lang === 'en') {
+                btnEn.style.color = 'var(--gold)';
+                btnHr.style.color = 'var(--text-muted)';
+            } else {
+                btnHr.style.color = 'var(--gold)';
+                btnEn.style.color = 'var(--text-muted)';
+            }
+        }
     }
 
-    function openLightbox(src, caption) {
-      document.getElementById('lb-img').src = src;
-      document.getElementById('lb-caption').textContent = caption;
-      document.getElementById('lightbox').classList.add('active');
-      document.body.style.overflow = 'hidden';
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    function animateCursor() {
+      if (cursor && ring) {
+        cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+        rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+        ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+      }
+      requestAnimationFrame(animateCursor);
     }
-    function closeLightbox(e) {
-      if(e.target.id === 'lightbox') closeLightboxForce();
-    }
-    function closeLightboxForce() {
-      document.getElementById('lightbox').classList.remove('active');
+    animateCursor();
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+    
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filterValue = btn.getAttribute('data-filter');
+        galleryItems.forEach(item => {
+          if (filterValue === 'sve' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    const lbClose = document.querySelector('.lb-close');
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      setTimeout(() => lbImg.src = '', 400);
       document.body.style.overflow = '';
     }
-    document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightboxForce(); });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if(e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === "Escape" && lightbox.classList.contains('active')) closeLightbox();
+    });
   </script>
 </body>
 </html>
