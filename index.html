@@ -138,7 +138,9 @@ body {
 }
 
 /* ── CURSOR ── */
-*, *::before, *::after { cursor: none !important; }
+@media (min-width: 901px) {
+  *, *::before, *::after { cursor: none !important; }
+}
 #cursor {
   position: fixed; width: 8px; height: 8px;
   background: var(--gold); border-radius: 50%;
@@ -190,12 +192,13 @@ body::before {
 
 /* ── NAV ── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 5%;
   height: 72px;
   background: rgba(8,8,7,0.88);
   backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border-bottom: 1px solid var(--border);
   transition: background 0.3s, border-color 0.3s;
 }
@@ -249,13 +252,14 @@ nav.scrolled { background: rgba(8,8,7,0.97); border-color: rgba(201,168,76,0.22)
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer !important; background: none; border: none; padding: 4px; }
 .hamburger span { display: block; width: 24px; height: 1px; background: var(--text); transition: 0.3s; }
 
-/* ── PROMO BANNER 100€ ── */
+/* ── PROMO BANNER 200€ ── */
 .promo-bar {
   position: relative; z-index: 99;
   background: linear-gradient(90deg, #0d0d0a 0%, #1a1608 40%, #0d0d0a 100%);
   border-bottom: 1px solid rgba(201,168,76,0.3);
   padding: 0;
   overflow: hidden;
+  margin-top: 72px; /* da ne ide ispod fiksnog menija */
 }
 .promo-bar::before {
   content: '';
@@ -306,7 +310,7 @@ nav.scrolled { background: rgba(8,8,7,0.97); border-color: rgba(201,168,76,0.22)
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   align-items: center;
-  padding: 120px 5% 60px;
+  padding: 80px 5% 60px;
   position: relative;
   overflow: hidden;
 }
@@ -330,6 +334,7 @@ nav.scrolled { background: rgba(8,8,7,0.97); border-color: rgba(201,168,76,0.22)
     linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
   background-size: 100px 100px;
   mask-image: radial-gradient(ellipse 80% 80% at 80% 30%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 80% 30%, black 30%, transparent 80%);
 }
 .hero-content { position: relative; z-index: 2; max-width: 850px; }
 .hero-eyebrow {
@@ -985,7 +990,7 @@ footer::before {
 @media (max-width: 900px) {
   .promo-bar { display: none !important; }
   
-  #hero { grid-template-columns: 1fr; text-align: center; min-height: auto; padding-top: 120px; }
+  #hero { grid-template-columns: 1fr; text-align: center; min-height: auto; padding-top: 100px; }
   .hero-content { max-width: 100%; }
   .hero-eyebrow { justify-content: center; }
   .hero-sub { margin-left: auto; margin-right: auto; }
@@ -1009,12 +1014,12 @@ footer::before {
     background: rgba(8,8,7,0.98);
     flex-direction: column; gap: 0; padding: 0;
     border-bottom: 1px solid var(--border);
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transition: clip-path 0.4s ease;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease;
   }
-  .nav-links.open { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  .nav-links li { border-bottom: 1px solid rgba(201,168,76,0.06); }
-  .nav-links a { display: block; padding: 1.5rem 5%; }
+  .nav-links.open { max-height: 400px; }
+  .nav-links li { border-bottom: 1px solid rgba(201,168,76,0.06); width: 100%; text-align: center; }
+  .nav-links a { display: block; padding: 1.2rem 5%; width: 100%; }
   .nav-links a::after { display: none; }
   .nav-cta { display: none; }
   .hamburger { display: flex; }
@@ -1407,7 +1412,7 @@ footer::before {
         <table class="pricing-table">
           <tr><td data-hr="Digitalni vodiči, predlošci i e-knjige (PDF)" data-en="Digital guides, templates, and e-books (PDF)">Digitalni vodiči, predlošci i e-knjige (PDF)</td><td>9,00 – 35,00 €</td></tr>
           <tr><td data-hr="Dizajn personaliziranih artikala <small>majice i promo predmeti</small>" data-en="Design of personalized items <small>t-shirts and promo items</small>">Dizajn personaliziranih artikala <small>majice i promo predmeti</small></td><td>25,00 – 35,00 €</td></tr>
-          <tr><td data-hr="Unikatne uokvirene slike i radovi" data-en="Unique framed paintings and artworks">Unique framed paintings and artworks</td><td data-hr="Na upit" data-en="On request">Na upit</td></tr>
+          <tr><td data-hr="Unikatne uokvirene slike i radovi" data-en="Unique framed paintings and artworks">Unikatne uokvirene slike i radovi</td><td data-hr="Na upit" data-en="On request">Na upit</td></tr>
         </table>
       </div>
 
@@ -1725,7 +1730,7 @@ footer::before {
           </div>
           <div class="form-group">
             <label data-hr="Vaša Poruka" data-en="Your Message">Vaša Poruka</label>
-            <textarea name="message" placeholder="Ukratko opišite što vam je potrebo..." data-hr-placeholder="Ukratko opišite što vam je potrebno..." data-en-placeholder="Briefly describe what you need..." required></textarea>
+            <textarea name="message" placeholder="Ukratko opišite što vam je potrebno..." data-hr-placeholder="Ukratko opišite što vam je potrebno..." data-en-placeholder="Briefly describe what you need..." required></textarea>
           </div>
           <button type="submit" class="btn-primary" style="margin-top: 0.5rem; width: fit-content;" data-hr="Pošalji Upit &rarr;" data-en="Send Inquiry &rarr;">Pošalji Upit &rarr;</button>
         </form>
@@ -1801,7 +1806,6 @@ footer::before {
     function setLanguage(lang) {
         document.documentElement.lang = lang;
         
-        // Mijenjanje običnih tekstova
         document.querySelectorAll('[data-hr]').forEach(el => {
             if (lang === 'en' && el.hasAttribute('data-en')) {
                 el.innerHTML = el.getAttribute('data-en');
@@ -1810,7 +1814,6 @@ footer::before {
             }
         });
 
-        // Mijenjanje placeholdera unutar inputa i textarea
         document.querySelectorAll('[data-hr-placeholder]').forEach(el => {
             if (lang === 'en' && el.hasAttribute('data-en-placeholder')) {
                 el.setAttribute('placeholder', el.getAttribute('data-en-placeholder'));
@@ -1819,7 +1822,6 @@ footer::before {
             }
         });
         
-        // Ažuriranje stilova gumba
         const btnHr = document.getElementById('btn-hr');
         const btnEn = document.getElementById('btn-en');
         
@@ -1875,7 +1877,6 @@ footer::before {
     const navLinks = document.getElementById('nav-links');
     hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
     
-    // FIKSIRAN PROBLEM #1: Zamijenjeno brisanje (.remove) s pravilnim uklanjanjem CSS klase (.classList.remove)
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
     window.addEventListener('scroll', () => { if (navLinks.classList.contains('open')) navLinks.classList.remove('open'); });
 
@@ -1975,7 +1976,7 @@ footer::before {
       } catch { btn.innerHTML = isEn ? 'Send Inquiry &rarr;' : 'Pošalji Upit &rarr;'; btn.disabled = false; }
     });
 
-    // ── Cookie banner + GA4 (učitava se tek nakon privole) ──
+    // ── Cookie banner + GA4 ──
     const GA_ID = 'G-7H37BSQEHQ';
     const cookieBanner = document.getElementById('cookie-banner');
 
