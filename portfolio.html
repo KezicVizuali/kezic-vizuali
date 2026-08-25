@@ -10,490 +10,99 @@
   <meta property="og:url" content="https://kezicvizuali.com/portfolio.html">
   <meta name="twitter:card" content="summary_large_image">
   <title>Portfolio — Kezić Vizuali</title>
-  
-  <!-- UBAČEN FAVICON -->
   <link rel="icon" type="image/png" href="favicon.png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --black: #0a0a0a;
-      --near-black: #111;
-      --surface: #161616;
-      --surface2: #1e1e1e;
-      --border: rgba(255,255,255,0.08);
-      --border-strong: rgba(255,255,255,0.15);
-      --gold: #c9a84c;
-      --gold-light: #e8c97a;
-      --gold-dim: rgba(201,168,76,0.15);
-      --white: #f5f3ee;
-      --muted: #888;
-      --muted2: #555;
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'DM Sans', sans-serif;
-    }
-
+    :root { --black: #0a0a0a; --near-black: #111; --surface: #161616; --surface2: #1e1e1e; --border: rgba(255,255,255,0.08); --border-strong: rgba(255,255,255,0.15); --gold: #c9a84c; --gold-light: #e8c97a; --gold-dim: rgba(201,168,76,0.15); --white: #f5f3ee; --muted: #888; --muted2: #555; --font-display: 'Cormorant Garamond', Georgia, serif; --font-body: 'DM Sans', sans-serif; }
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: var(--font-body);
-      font-weight: 300;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(10,10,10,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 40px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 400;
-      letter-spacing: 0.06em;
-      color: var(--white);
-      text-decoration: none;
-    }
+    body { background: var(--black); color: var(--white); font-family: var(--font-body); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 40px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--font-display); font-size: 20px; font-weight: 400; letter-spacing: 0.06em; color: var(--white); text-decoration: none; }
     .nav-logo span { color: var(--gold); }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      transition: color 0.2s;
-    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 400; letter-spacing: 0.04em; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--white); }
-
-    .nav-cta {
-      background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 7px 18px;
-      font-size: 12px;
-      font-family: var(--font-body);
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
+    .nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 7px 18px; font-size: 12px; font-family: var(--font-body); font-weight: 400; letter-spacing: 0.08em; cursor: pointer; text-decoration: none; transition: background 0.2s, color 0.2s; }
     .nav-cta:hover { background: var(--gold); color: var(--black); }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 120px 40px 80px;
-      position: relative;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 50% at 70% 40%, rgba(201,168,76,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(52px, 8vw, 96px);
-      font-weight: 300;
-      line-height: 1.0;
-      letter-spacing: -0.01em;
-      color: var(--white);
-      max-width: 800px;
-    }
-    .hero-title em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .hero-bottom {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-top: 48px;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .hero-desc {
-      font-size: 15px;
-      color: var(--muted);
-      max-width: 380px;
-      line-height: 1.8;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 40px;
-    }
-    .hero-stat {}
-    .hero-stat-num {
-      font-family: var(--font-display);
-      font-size: 36px;
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1;
-    }
-    .hero-stat-label {
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      margin-top: 4px;
-    }
-
-    .hero-tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 32px;
-    }
-    .hero-tag {
-      font-size: 11px;
-      color: var(--muted);
-      border: 1px solid var(--border-strong);
-      padding: 4px 14px;
-      letter-spacing: 0.06em;
-    }
-
-    /* SECTION */
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 120px 40px 80px; position: relative; border-bottom: 1px solid var(--border); }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 70% 40%, rgba(201,168,76,0.06) 0%, transparent 70%); pointer-events: none; }
+    .hero-eyebrow { font-size: 11px; font-weight: 400; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-bottom: 24px; }
+    .hero-title { font-family: var(--font-display); font-size: clamp(52px, 8vw, 96px); font-weight: 300; line-height: 1.0; letter-spacing: -0.01em; color: var(--white); max-width: 800px; }
+    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; margin-top: 48px; gap: 40px; flex-wrap: wrap; }
+    .hero-desc { font-size: 15px; color: var(--muted); max-width: 380px; line-height: 1.8; }
+    .hero-stats { display: flex; gap: 40px; }
+    .hero-stat-num { font-family: var(--font-display); font-size: 36px; font-weight: 300; color: var(--white); line-height: 1; }
+    .hero-stat-label { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; margin-top: 4px; }
+    .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 32px; }
+    .hero-tag { font-size: 11px; color: var(--muted); border: 1px solid var(--border-strong); padding: 4px 14px; letter-spacing: 0.06em; }
     section { padding: 80px 40px; border-bottom: 1px solid var(--border); }
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-      margin-bottom: 48px;
-    }
-    .section-num {
-      font-family: var(--font-display);
-      font-size: 13px;
-      color: var(--gold);
-      letter-spacing: 0.1em;
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 300;
-      letter-spacing: 0.01em;
-      color: var(--white);
-    }
-    .section-line {
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-      max-width: 200px;
-    }
-
-    /* PROJECT CARDS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-    }
-
-    .project-card {
-      background: var(--near-black);
-      padding: 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      transition: background 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: transparent;
-      transition: background 0.3s;
-    }
+    .section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px; }
+    .section-num { font-family: var(--font-display); font-size: 13px; color: var(--gold); letter-spacing: 0.1em; }
+    .section-title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 42px); font-weight: 300; letter-spacing: 0.01em; color: var(--white); }
+    .section-line { flex: 1; height: 1px; background: var(--border); max-width: 200px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .project-card { background: var(--near-black); padding: 36px; display: flex; flex-direction: column; gap: 20px; transition: background 0.3s; position: relative; overflow: hidden; }
+    .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: transparent; transition: background 0.3s; }
     .project-card:hover { background: var(--surface); }
     .project-card:hover::before { background: var(--gold); }
     .project-card.featured::before { background: var(--gold); }
     .project-card.featured { background: var(--surface); }
-
-    .project-badge {
-      display: inline-block;
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border: 1px solid;
-      align-self: flex-start;
-    }
+    .project-badge { display: inline-block; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 10px; border: 1px solid; align-self: flex-start; }
     .badge-done { color: var(--gold); border-color: var(--gold); background: var(--gold-dim); }
     .badge-soon { color: var(--muted); border-color: var(--muted2); }
-
-    .project-name {
-      font-family: var(--font-display);
-      font-size: 26px;
-      font-weight: 400;
-      line-height: 1.2;
-      color: var(--white);
-    }
-
-    .project-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.8;
-      flex: 1;
-    }
-
-    .project-chips {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .chip {
-      font-size: 10px;
-      color: var(--muted);
-      border: 1px solid var(--border-strong);
-      padding: 3px 10px;
-      letter-spacing: 0.04em;
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--gold);
-      text-decoration: none;
-      letter-spacing: 0.06em;
-      margin-top: 4px;
-      transition: gap 0.2s;
-    }
+    .project-name { font-family: var(--font-display); font-size: 26px; font-weight: 400; line-height: 1.2; color: var(--white); }
+    .project-desc { font-size: 13px; color: var(--muted); line-height: 1.8; flex: 1; }
+    .project-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+    .chip { font-size: 10px; color: var(--muted); border: 1px solid var(--border-strong); padding: 3px 10px; letter-spacing: 0.04em; }
+    .project-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gold); text-decoration: none; letter-spacing: 0.06em; margin-top: 4px; transition: gap 0.2s; }
     .project-link:hover { gap: 10px; }
-    .project-link-soon {
-      font-size: 12px;
-      color: var(--muted2);
-      letter-spacing: 0.06em;
-      margin-top: 4px;
-    }
-
-    /* O MENI */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .about-text p {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.9;
-      margin-bottom: 20px;
-    }
-    .about-text p strong {
-      color: var(--white);
-      font-weight: 400;
-    }
-    .about-quote {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-style: italic;
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.5;
-      border-left: 2px solid var(--gold);
-      padding-left: 24px;
-      margin-bottom: 32px;
-    }
-    .about-skills {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      border: 1px solid var(--border);
-    }
-    .skill-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 20px;
-      border-bottom: 1px solid var(--border);
-      transition: background 0.2s;
-    }
+    .project-link-soon { font-size: 12px; color: var(--muted2); letter-spacing: 0.06em; margin-top: 4px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .about-text p { font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 20px; }
+    .about-text p strong { color: var(--white); font-weight: 400; }
+    .about-quote { font-family: var(--font-display); font-size: 22px; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.5; border-left: 2px solid var(--gold); padding-left: 24px; margin-bottom: 32px; }
+    .about-skills { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); }
+    .skill-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid var(--border); transition: background 0.2s; }
     .skill-row:last-child { border-bottom: none; }
     .skill-row:hover { background: var(--surface); }
     .skill-name { font-size: 13px; color: var(--white); }
     .skill-years { font-size: 11px; color: var(--gold); letter-spacing: 0.06em; }
-
-    /* USLUGE - STILIZIRANJE NOVIH IKONA */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      margin-bottom: 40px;
-    }
-    .service-card {
-      background: var(--near-black);
-      padding: 28px;
-      transition: background 0.2s;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 40px; }
+    .service-card { background: var(--near-black); padding: 28px; transition: background 0.2s; }
     .service-card:hover { background: var(--surface); }
-    
-    .service-icon {
-      color: var(--gold);
-      margin-bottom: 18px;
-      display: block;
-    }
-    .service-icon svg {
-      width: 32px;
-      height: 32px;
-      stroke-width: 1.2;
-    }
-
-    .service-name {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-    .service-desc {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-    .service-price {
-      margin-top: 16px;
-      font-size: 12px;
-      color: var(--gold);
-      letter-spacing: 0.04em;
-    }
-
-    /* KONTAKT */
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .contact-title {
-      font-family: var(--font-display);
-      font-size: clamp(36px, 5vw, 60px);
-      font-weight: 300;
-      line-height: 1.1;
-      margin-bottom: 24px;
-    }
+    .service-icon { color: var(--gold); margin-bottom: 18px; display: block; }
+    .service-icon svg { width: 32px; height: 32px; stroke-width: 1.2; }
+    .service-name { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--white); margin-bottom: 8px; }
+    .service-desc { font-size: 12px; color: var(--muted); line-height: 1.7; }
+    .service-price { margin-top: 16px; font-size: 12px; color: var(--gold); letter-spacing: 0.04em; }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact-title { font-family: var(--font-display); font-size: clamp(36px, 5vw, 60px); font-weight: 300; line-height: 1.1; margin-bottom: 24px; }
     .contact-title em { font-style: italic; color: var(--gold); }
     .contact-desc { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 32px; }
     .contact-items { display: flex; flex-direction: column; gap: 0; }
-    .contact-item {
-      display: flex;
-      flex-direction: column;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-    }
+    .contact-item { display: flex; flex-direction: column; padding: 16px 0; border-bottom: 1px solid var(--border); }
     .contact-item:last-child { border-bottom: none; }
     .contact-label { font-size: 10px; letter-spacing: 0.14em; color: var(--muted2); text-transform: uppercase; margin-bottom: 4px; }
     .contact-value { font-size: 14px; color: var(--white); text-decoration: none; transition: color 0.2s; }
     .contact-value:hover { color: var(--gold); }
-    .contact-cta {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--black);
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      padding: 14px 32px;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: background 0.2s, transform 0.15s;
-      margin-top: 32px;
-      align-self: flex-start;
-      display: block;
-      width: fit-content;
-    }
+    .contact-cta { display: inline-block; background: var(--gold); color: var(--black); font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; padding: 14px 32px; text-decoration: none; text-transform: uppercase; transition: background 0.2s, transform 0.15s; margin-top: 32px; align-self: flex-start; display: block; width: fit-content; }
     .contact-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-    /* FOOTER */
-    footer {
-      padding: 32px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .footer-logo {
-      font-family: var(--font-display);
-      font-size: 18px;
-      color: var(--muted);
-      text-decoration: none;
-    }
+    footer { padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-family: var(--font-display); font-size: 18px; color: var(--muted); text-decoration: none; }
     .footer-logo span { color: var(--gold); }
     .footer-copy { font-size: 11px; color: var(--muted2); }
     .footer-link { font-size: 11px; color: var(--muted); text-decoration: none; }
     .footer-link:hover { color: var(--gold); }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .hero-eyebrow { animation: fadeUp 0.6s ease both; }
     .hero-title   { animation: fadeUp 0.6s 0.1s ease both; }
     .hero-bottom  { animation: fadeUp 0.6s 0.2s ease both; }
     .hero-tags    { animation: fadeUp 0.6s 0.3s ease both; }
-
-    /* MOBILE */
-    @media (max-width: 700px) {
-      nav { padding: 0 20px; }
-      .nav-links { display: none; }
-      .hero { padding: 100px 20px 60px; }
-      section { padding: 60px 20px; }
-      .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
-      .hero-stats { gap: 24px; }
-      footer { padding: 24px 20px; }
-      .projects-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 700px) { nav { padding: 0 20px; } .nav-links { display: none; } .hero { padding: 100px 20px 60px; } section { padding: 60px 20px; } .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 40px; } .hero-stats { gap: 24px; } footer { padding: 24px 20px; } .projects-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -501,41 +110,46 @@
 <nav>
   <a href="https://kezicvizuali.com/" class="nav-logo">KEZIĆ <span>VIZUALI</span></a>
   <ul class="nav-links">
-    <li><a href="#projekti" class="active">Projekti</a></li>
-    <li><a href="#o-meni">O meni</a></li>
-    <li><a href="#usluge">Usluge</a></li>
-    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="#projekti" class="active" data-hr="Projekti" data-en="Projects">Projekti</a></li>
+    <li><a href="#o-meni" data-hr="O meni" data-en="About me">O meni</a></li>
+    <li><a href="#usluge" data-hr="Usluge" data-en="Services">Usluge</a></li>
+    <li><a href="#kontakt" data-hr="Kontakt" data-en="Contact">Kontakt</a></li>
   </ul>
-  <a href="#kontakt" class="nav-cta">Zatraži ponudu</a>
+  <div style="display: flex; align-items: center; gap: 8px; margin-left: auto; margin-right: 20px;">
+        <button id="btn-hr" onclick="setLanguage('hr')" style="background:none; border:none; color: var(--gold); font-size: 13px; font-family: var(--font-body); font-weight: 600; cursor: pointer; letter-spacing: 0.08em;">HR</button>
+        <span style="color: var(--muted); font-size: 13px;">/</span>
+        <button id="btn-en" onclick="setLanguage('en')" style="background:none; border:none; color: var(--muted); font-size: 13px; font-family: var(--font-body); font-weight: 600; cursor: pointer; letter-spacing: 0.08em; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="if(document.documentElement.lang !== 'en') this.style.color='var(--muted)'">EN</button>
+  </div>
+  <a href="#kontakt" class="nav-cta" data-hr="Zatraži ponudu" data-en="Get a quote">Zatraži ponudu</a>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">Portfolio — Kezić Vizuali · Velika Gorica</div>
-  <h1 class="hero-title">
+  <div class="hero-eyebrow" data-hr="Portfolio — Kezić Vizuali · Velika Gorica" data-en="Portfolio — Kezić Vizuali · Velika Gorica">Portfolio — Kezić Vizuali · Velika Gorica</div>
+  <h1 class="hero-title" data-hr="Web. Vizuali.<br><em>Za lokalne poduzetnike.</em>" data-en="Web. Visuals.<br><em>For local entrepreneurs.</em>">
     Web. Vizuali.<br><em>Za lokalne poduzetnike.</em>
   </h1>
   <div class="hero-tags">
-    <span class="hero-tag">Web dizajn</span>
-    <span class="hero-tag">Fotografija</span>
-    <span class="hero-tag">Grafički dizajn</span>
-    <span class="hero-tag">Branding</span>
-    <span class="hero-tag">Portreti</span>
+    <span class="hero-tag" data-hr="Web dizajn" data-en="Web design">Web dizajn</span>
+    <span class="hero-tag" data-hr="Fotografija" data-en="Photography">Fotografija</span>
+    <span class="hero-tag" data-hr="Grafički dizajn" data-en="Graphic design">Grafički dizajn</span>
+    <span class="hero-tag" data-hr="Branding" data-en="Branding">Branding</span>
+    <span class="hero-tag" data-hr="Portreti" data-en="Portraits">Portreti</span>
   </div>
   <div class="hero-bottom">
-    <p class="hero-desc">15+ godina iskustva iza objektiva i tipkovnice. Kombinacija autorske fotografije, grafičkog dizajna i modernog web razvoja — sve na jednom mjestu.</p>
+    <p class="hero-desc" data-hr="15+ godina iskustva iza objektiva i tipkovnice. Kombinacija autorske fotografije, grafičkog dizajna i modernog web razvoja — sve na jednom mjestu." data-en="15+ years of experience behind the lens and keyboard. A combination of original photography, graphic design, and modern web development — all in one place.">15+ godina iskustva iza objektiva i tipkovnice. Kombinacija autorske fotografije, grafičkog dizajna i modernog web razvoja — sve na jednom mjestu.</p>
     <div class="hero-stats">
       <div class="hero-stat">
         <div class="hero-stat-num">15+</div>
-        <div class="hero-stat-label">godina iskustva</div>
+        <div class="hero-stat-label" data-hr="godina iskustva" data-en="years of experience">godina iskustva</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">8</div>
-        <div class="hero-stat-label">kategorija usluga</div>
+        <div class="hero-stat-label" data-hr="kategorija usluga" data-en="service categories">kategorija usluga</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">100€</div>
-        <div class="hero-stat-label">web od</div>
+        <div class="hero-stat-label" data-hr="web od" data-en="web from">web od</div>
       </div>
     </div>
   </div>
@@ -545,78 +159,74 @@
 <section id="projekti">
   <div class="section-header">
     <span class="section-num">01</span>
-    <h2 class="section-title">Projekti</h2>
+    <h2 class="section-title" data-hr="Projekti" data-en="Projects">Projekti</h2>
     <div class="section-line"></div>
   </div>
 
   <div class="projects-grid">
-
-    <!-- Royal Rides -->
     <div class="project-card featured">
-      <span class="project-badge badge-done">Objavljeno</span>
-      <div class="project-name">Royal Rides<br>Hrvatska</div>
-      <p class="project-desc">
+      <span class="project-badge badge-done" data-hr="Objavljeno" data-en="Published">Objavljeno</span>
+      <div class="project-name" data-hr="Royal Rides<br>Hrvatska" data-en="Royal Rides<br>Croatia">Royal Rides<br>Hrvatska</div>
+      <p class="project-desc" data-hr="Ekskluzivni najam luksuznih oldtimera i vučna služba iz Čakovca. Kompletan projekt: dark luxury estetika, bogata galerija Rolls-Royce, Bentley i Lincoln vozila, SEO optimizacija, copywriting i kontakt forma." data-en="Exclusive rental of luxury classic cars and towing service from Čakovec. Complete project: dark luxury aesthetics, rich gallery of Rolls-Royce, Bentley, and Lincoln vehicles, SEO optimization, copywriting, and contact form.">
         Ekskluzivni najam luksuznih oldtimera i vučna služba iz Čakovca. Kompletan projekt: dark luxury estetika, bogata galerija Rolls-Royce, Bentley i Lincoln vozila, SEO optimizacija, copywriting i kontakt forma.
       </p>
       <div class="project-chips">
-        <span class="chip">Web dizajn</span>
-        <span class="chip">Copywriting</span>
+        <span class="chip" data-hr="Web dizajn" data-en="Web design">Web dizajn</span>
+        <span class="chip" data-hr="Copywriting" data-en="Copywriting">Copywriting</span>
         <span class="chip">SEO</span>
         <span class="chip">Dark luxury</span>
-        <span class="chip">Galerija</span>
+        <span class="chip" data-hr="Galerija" data-en="Gallery">Galerija</span>
       </div>
-      <a href="https://royalrides.hr/" class="project-link" target="_blank" rel="noopener">
+      <a href="https://royalrides.hr/" class="project-link" target="_blank" rel="noopener" data-hr="Pogledaj stranicu &rarr;" data-en="View website &rarr;">
         Pogledaj stranicu &rarr;
       </a>
     </div>
 
-    <!-- Galerija Arts -->
     <div class="project-card featured">
-      <span class="project-badge badge-done">Objavljeno</span>
+      <span class="project-badge badge-done" data-hr="Objavljeno" data-en="Published">Objavljeno</span>
       <div class="project-name">Galerija Arts</div>
-      <p class="project-desc">
+      <p class="project-desc" data-hr="Digitalni dom za umjetnost i kreativno izražavanje. Izrada modernog i responzivnog weba prilagođenog za isticanje vizualnih djela s naglaskom na detalje i brzu navigaciju." data-en="A digital home for art and creative expression. Development of a modern and responsive website tailored to highlight visual works with an emphasis on details and fast navigation.">
         Digitalni dom za umjetnost i kreativno izražavanje. Izrada modernog i responzivnog weba prilagođenog za isticanje vizualnih djela s naglaskom na detalje i brzu navigaciju.
       </p>
       <div class="project-chips">
-        <span class="chip">Web dizajn</span>
+        <span class="chip" data-hr="Web dizajn" data-en="Web design">Web dizajn</span>
         <span class="chip">Art Portfolio</span>
         <span class="chip">UI/UX</span>
-        <span class="chip">Copywriting</span>
+        <span class="chip" data-hr="Copywriting" data-en="Copywriting">Copywriting</span>
         <span class="chip">SEO</span>
       </div>
-      <a href="https://galerijaarts.com/" class="project-link" target="_blank" rel="noopener">
+      <a href="https://galerijaarts.com/" class="project-link" target="_blank" rel="noopener" data-hr="Pogledaj stranicu &rarr;" data-en="View website &rarr;">
         Pogledaj stranicu &rarr;
       </a>
     </div>
 
     <div class="project-card">
-      <span class="project-badge badge-soon">Uskoro</span>
-      <div class="project-name">Pizzeria<br>(u pregovorima)</div>
-      <p class="project-desc">
+      <span class="project-badge badge-soon" data-hr="Uskoro" data-en="Soon">Uskoro</span>
+      <div class="project-name" data-hr="Pizzeria<br>(u pregovorima)" data-en="Pizzeria<br>(in talks)">Pizzeria<br>(u pregovorima)</div>
+      <p class="project-desc" data-hr="Web stranica s digitalnim jelovnikom, fotografija hrane i vizuali za društvene mreže. Lokalni branding prilagođen gastro publici." data-en="Website with a digital menu, food photography, and visuals for social media. Local branding tailored to a gastro audience.">
         Web stranica s digitalnim jelovnikom, fotografija hrane i vizuali za društvene mreže. Lokalni branding prilagođen gastro publici.
       </p>
       <div class="project-chips">
-        <span class="chip">Web dizajn</span>
-        <span class="chip">Gastro fotografija</span>
-        <span class="chip">Vizuali</span>
-        <span class="chip">Jelovnik</span>
+        <span class="chip" data-hr="Web dizajn" data-en="Web design">Web dizajn</span>
+        <span class="chip" data-hr="Gastro fotografija" data-en="Gastro photography">Gastro fotografija</span>
+        <span class="chip" data-hr="Vizuali" data-en="Visuals">Vizuali</span>
+        <span class="chip" data-hr="Jelovnik" data-en="Menu">Jelovnik</span>
       </div>
-      <span class="project-link-soon">Projekt u pripremi</span>
+      <span class="project-link-soon" data-hr="Projekt u pripremi" data-en="Project in preparation">Projekt u pripremi</span>
     </div>
 
-    <!-- Kafić placeholder -->
     <div class="project-card">
-      <span class="project-badge badge-soon">Uskoro</span>
-      <div class="project-name">Kafić<br>(u pregovorima)</div>
-      <p class="project-desc">
+      <span class="project-badge badge-soon" data-hr="Uskoro" data-en="Soon">Uskoro</span>
+      <div class="project-name" data-hr="Kafić<br>(u pregovorima)" data-en="Cafe<br>(in talks)">Kafić<br>(u pregovorima)</div>
+      <p class="project-desc" data-hr="Vizualni identitet, branding i vođenje društvenih mreža za lokalni kafić. Konzistentna estetika koja privlači i zadržava goste." data-en="Visual identity, branding, and social media management for a local cafe. Consistent aesthetics that attract and retain guests.">
         Vizualni identitet, branding i vođenje društvenih mreža za lokalni kafić. Konzistentna estetika koja privlači i zadržava goste.
       </p>
       <div class="project-chips">
-        <span class="chip">Branding</span>
+        <span class="chip" data-hr="Branding" data-en="Branding">Branding</span>
         <span class="chip">Social media</span>
-        <span class="chip">Vizualni identitet</span>
+        <span class="chip" data-hr="Vizualni identitet" data-en="Visual identity">Vizualni identitet</span>
       </div>
-      <span class="project-link-soon">Projekt u pripremi</span>
+      <span class="project-link-soon" data-hr="Projekt u pripremi" data-en="Project in preparation">Projekt u pripremi</span>
     </div>
 
   </div>
@@ -626,38 +236,38 @@
 <section id="o-meni">
   <div class="section-header">
     <span class="section-num">02</span>
-    <h2 class="section-title">O meni</h2>
+    <h2 class="section-title" data-hr="O meni" data-en="About me">O meni</h2>
     <div class="section-line"></div>
   </div>
 
   <div class="about-grid">
     <div class="about-text">
-      <div class="about-quote">"Fotografija me naučila gledati. Tehnologija me naučila stvoriti."</div>
-      <p>Moje ime je <strong>Krunoslav Kezić</strong>. Kreativni put započeo mi je prije više od 15 godina iza objektiva fotoaparata — kroz to sam desetljeće i pol naučio da svaki vizual mora imati svrhu i priču.</p>
-      <p>Danas kroz obrt <strong>Kezić Vizuali</strong> tu strast i profesionalnu preciznost unosim u digitalnu komunikaciju lokalnih poduzetnika. Ne radim generičke web stranice — svaki projekt je autorski rad koji odražava identitet klijenta.</p>
-      <p>Moj pristup: <strong>autorska fotografija kao osnova</strong>, AI kao alat za rafiniranje, a web kao platforma koja sve to spoji u cjelinu koja prodaje.</p>
+      <div class="about-quote" data-hr="&quot;Fotografija me naučila gledati. Tehnologija me naučila stvoriti.&quot;" data-en="&quot;Photography taught me how to look. Technology taught me how to create.&quot;">"Fotografija me naučila gledati. Tehnologija me naučila stvoriti."</div>
+      <p data-hr="Moje ime je <strong>Krunoslav Kezić</strong>. Kreativni put započeo mi je prije više od 15 godina iza objektiva fotoaparata — kroz to sam desetljeće i pol naučio da svaki vizual mora imati svrhu i priču." data-en="My name is <strong>Krunoslav Kezić</strong>. My creative journey started more than 15 years ago behind a camera lens — over that decade and a half, I learned that every visual must have a purpose and a story.">Moje ime je <strong>Krunoslav Kezić</strong>. Kreativni put započeo mi je prije više od 15 godina iza objektiva fotoaparata — kroz to sam desetljeće i pol naučio da svaki vizual mora imati svrhu i priču.</p>
+      <p data-hr="Danas kroz obrt <strong>Kezić Vizuali</strong> tu strast i profesionalnu preciznost unosim u digitalnu komunikaciju lokalnih poduzetnika. Ne radim generičke web stranice — svaki projekt je autorski rad koji odražava identitet klijenta." data-en="Today, through my business <strong>Kezić Vizuali</strong>, I bring that passion and professional precision to the digital communication of local entrepreneurs. I don't do generic websites — every project is an author's work that reflects the client's identity.">Danas kroz obrt <strong>Kezić Vizuali</strong> tu strast i profesionalnu preciznost unosim u digitalnu komunikaciju lokalnih poduzetnika. Ne radim generičke web stranice — svaki projekt je autorski rad koji odražava identitet klijenta.</p>
+      <p data-hr="Moj pristup: <strong>autorska fotografija kao osnova</strong>, AI kao alat za rafiniranje, a web kao platforma koja sve to spoji u cjelinu koja prodaje." data-en="My approach: <strong>author's photography as the foundation</strong>, AI as a tool for refinement, and the web as a platform that brings it all together into a whole that sells.">Moj pristup: <strong>autorska fotografija kao osnova</strong>, AI kao alat za rafiniranje, a web kao platforma koja sve to spoji u cjelinu koja prodaje.</p>
     </div>
     <div>
       <div class="about-skills">
         <div class="skill-row">
-          <span class="skill-name">Fotografija</span>
-          <span class="skill-years">15+ godina</span>
+          <span class="skill-name" data-hr="Fotografija" data-en="Photography">Fotografija</span>
+          <span class="skill-years" data-hr="15+ godina" data-en="15+ years">15+ godina</span>
         </div>
         <div class="skill-row">
           <span class="skill-name">Web development</span>
-          <span class="skill-years">Aktivno</span>
+          <span class="skill-years" data-hr="Aktivno" data-en="Active">Aktivno</span>
         </div>
         <div class="skill-row">
-          <span class="skill-name">Grafički dizajn</span>
-          <span class="skill-years">Aktivno</span>
+          <span class="skill-name" data-hr="Grafički dizajn" data-en="Graphic design">Grafički dizajn</span>
+          <span class="skill-years" data-hr="Aktivno" data-en="Active">Aktivno</span>
         </div>
         <div class="skill-row">
-          <span class="skill-name">SEO i copywriting</span>
-          <span class="skill-years">Aktivno</span>
+          <span class="skill-name" data-hr="SEO i copywriting" data-en="SEO and copywriting">SEO i copywriting</span>
+          <span class="skill-years" data-hr="Aktivno" data-en="Active">Aktivno</span>
         </div>
         <div class="skill-row">
-          <span class="skill-name">Branding i vizualni identitet</span>
-          <span class="skill-years">Aktivno</span>
+          <span class="skill-name" data-hr="Branding i vizualni identitet" data-en="Branding and visual identity">Branding i vizualni identitet</span>
+          <span class="skill-years" data-hr="Aktivno" data-en="Active">Aktivno</span>
         </div>
       </div>
     </div>
@@ -668,55 +278,40 @@
 <section id="usluge">
   <div class="section-header">
     <span class="section-num">03</span>
-    <h2 class="section-title">Usluge</h2>
+    <h2 class="section-title" data-hr="Usluge" data-en="Services">Usluge</h2>
     <div class="section-line"></div>
   </div>
 
   <div class="services-grid">
     <div class="service-card">
-      <span class="service-icon">
-        <!-- Ikona za Web -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-      </span>
-      <div class="service-name">Web stranice</div>
-      <p class="service-desc">Ultra-brze web stranice bez mjesečnih troškova hostinga. Fotografiranje, copywriting i SEO uključeni.</p>
-      <div class="service-price">Od 100 €</div>
+      <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+      <div class="service-name" data-hr="Web stranice" data-en="Websites">Web stranice</div>
+      <p class="service-desc" data-hr="Ultra-brze web stranice bez mjesečnih troškova hostinga. Fotografiranje, copywriting i SEO uključeni." data-en="Ultra-fast websites with no monthly hosting costs. Photography, copywriting, and SEO included.">Ultra-brze web stranice bez mjesečnih troškova hostinga. Fotografiranje, copywriting i SEO uključeni.</p>
+      <div class="service-price" data-hr="Od 100 €" data-en="From 100 €">Od 100 €</div>
     </div>
     <div class="service-card">
-      <span class="service-icon">
-        <!-- Ikona za Fotografiju -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-      </span>
-      <div class="service-name">Fotografija</div>
-      <p class="service-desc">Autorska fotografija hrane, prostora i događanja. Profesionalna obrada i isporuka u produkcijskoj kvaliteti.</p>
-      <div class="service-price">Od 15 € / kom</div>
+      <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+      <div class="service-name" data-hr="Fotografija" data-en="Photography">Fotografija</div>
+      <p class="service-desc" data-hr="Autorska fotografija hrane, prostora i događanja. Profesionalna obrada i isporuka u produkcijskoj kvaliteti." data-en="Author's photography of food, spaces, and events. Professional editing and delivery in production quality.">Autorska fotografija hrane, prostora i događanja. Profesionalna obrada i isporuka u produkcijskoj kvaliteti.</p>
+      <div class="service-price" data-hr="Od 15 € / kom" data-en="From 15 € / piece">Od 15 € / kom</div>
     </div>
     <div class="service-card">
-      <span class="service-icon">
-        <!-- Ikona za Portrete -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="12" cy="10" r="3"/><path d="M7 21v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg>
-      </span>
-      <div class="service-name">Portreti & Headshots</div>
-      <p class="service-desc">Profesionalni portreti za web, LinkedIn i tisak. Poslovne i osobne sesije s obradom svih finalnih fotografija.</p>
-      <div class="service-price">Od 80 €</div>
+      <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="12" cy="10" r="3"/><path d="M7 21v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg></span>
+      <div class="service-name" data-hr="Portreti & Headshots" data-en="Portraits & Headshots">Portreti & Headshots</div>
+      <p class="service-desc" data-hr="Profesionalni portreti za web, LinkedIn i tisak. Poslovne i osobne sesije s obradom svih finalnih fotografija." data-en="Professional portraits for the web, LinkedIn, and print. Business and personal sessions with editing of all final photos.">Profesionalni portreti za web, LinkedIn i tisak. Poslovne i osobne sesije s obradom svih finalnih fotografija.</p>
+      <div class="service-price" data-hr="Od 80 €" data-en="From 80 €">Od 80 €</div>
     </div>
     <div class="service-card">
-      <span class="service-icon">
-        <!-- Ikona za Dizajn -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg>
-      </span>
-      <div class="service-name">Grafički dizajn</div>
-      <p class="service-desc">Logotipi, jelovnici, vizitke, plakati i ostali tiskani materijali. Priprema za tisak uključena.</p>
-      <div class="service-price">Od 30 €</div>
+      <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg></span>
+      <div class="service-name" data-hr="Grafički dizajn" data-en="Graphic design">Grafički dizajn</div>
+      <p class="service-desc" data-hr="Logotipi, jelovnici, vizitke, plakati i ostali tiskani materijali. Priprema za tisak uključena." data-en="Logos, menus, business cards, posters, and other printed materials. Pre-press included.">Logotipi, jelovnici, vizitke, plakati i ostali tiskani materijali. Priprema za tisak uključena.</p>
+      <div class="service-price" data-hr="Od 30 €" data-en="From 30 €">Od 30 €</div>
     </div>
     <div class="service-card">
-      <span class="service-icon">
-        <!-- Ikona za Mreže -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-      </span>
-      <div class="service-name">Društvene mreže</div>
-      <p class="service-desc">Vođenje Facebook i Instagram stranica s kreativnim vizualima i tekstovima prilagođenim brendu.</p>
-      <div class="service-price">Od 300 € / mj.</div>
+      <span class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span>
+      <div class="service-name" data-hr="Društvene mreže" data-en="Social media">Društvene mreže</div>
+      <p class="service-desc" data-hr="Vođenje Facebook i Instagram stranica s kreativnim vizualima i tekstovima prilagođenim brendu." data-en="Management of Facebook and Instagram pages with creative visuals and texts tailored to the brand.">Vođenje Facebook i Instagram stranica s kreativnim vizualima i tekstovima prilagođenim brendu.</p>
+      <div class="service-price" data-hr="Od 300 € / mj." data-en="From 300 € / mo.">Od 300 € / mj.</div>
     </div>
   </div>
 </section>
@@ -725,9 +320,9 @@
 <section id="kontakt">
   <div class="contact-inner">
     <div>
-      <h2 class="contact-title">Pokrenimo<br>vaš <em>projekt.</em></h2>
-      <p class="contact-desc">Imate ideju ili trebate savjet? Javite se — odgovaramo u najkraćem roku s konkretnim prijedlogom i okvirnom cijenom.</p>
-      <a href="mailto:kezicvizuali@gmail.com" class="contact-cta">Pošalji upit &rarr;</a>
+      <h2 class="contact-title" data-hr="Pokrenimo<br>vaš <em>projekt.</em>" data-en="Let's start<br>your <em>project.</em>">Pokrenimo<br>vaš <em>projekt.</em></h2>
+      <p class="contact-desc" data-hr="Imate ideju ili trebate savjet? Javite se — odgovaramo u najkraćem roku s konkretnim prijedlogom i okvirnom cijenom." data-en="Have an idea or need advice? Get in touch — we respond as soon as possible with a concrete proposal and estimated price.">Imate ideju ili trebate savjet? Javite se — odgovaramo u najkraćem roku s konkretnim prijedlogom i okvirnom cijenom.</p>
+      <a href="mailto:kezicvizuali@gmail.com" class="contact-cta" data-hr="Pošalji upit &rarr;" data-en="Send inquiry &rarr;">Pošalji upit &rarr;</a>
     </div>
     <div>
       <div class="contact-items">
@@ -736,16 +331,16 @@
           <a href="mailto:kezicvizuali@gmail.com" class="contact-value">kezicvizuali@gmail.com</a>
         </div>
         <div class="contact-item">
-          <span class="contact-label">Telefon</span>
+          <span class="contact-label" data-hr="Telefon" data-en="Phone">Telefon</span>
           <a href="tel:+385976002753" class="contact-value">+385 97 600 2753</a>
         </div>
         <div class="contact-item">
-          <span class="contact-label">Lokacija</span>
-          <span class="contact-value">Velika Gorica · Cijela Hrvatska · Online globalno</span>
+          <span class="contact-label" data-hr="Lokacija" data-en="Location">Lokacija</span>
+          <span class="contact-value" data-hr="Velika Gorica · Cijela Hrvatska · Online globalno" data-en="Velika Gorica · All of Croatia · Online globally">Velika Gorica · Cijela Hrvatska · Online globalno</span>
         </div>
         <div class="contact-item">
-          <span class="contact-label">Radno vrijeme</span>
-          <span class="contact-value">Pon–Pet 09:00–17:00 · Sub po dogovoru</span>
+          <span class="contact-label" data-hr="Radno vrijeme" data-en="Working hours">Radno vrijeme</span>
+          <span class="contact-value" data-hr="Pon–Pet 09:00–17:00 · Sub po dogovoru" data-en="Mon–Fri 09:00–17:00 · Sat by appointment">Pon–Pet 09:00–17:00 · Sub po dogovoru</span>
         </div>
         <div class="contact-item">
           <span class="contact-label">Facebook</span>
@@ -758,9 +353,32 @@
 
 <footer>
   <a href="https://kezicvizuali.com/" class="footer-logo">KEZIĆ <span>VIZUALI</span></a>
-  <span class="footer-copy">&copy; 2026 Kezić Vizuali. Sva prava pridržana.</span>
+  <span class="footer-copy" data-hr="&copy; 2026 Kezić Vizuali. Sva prava pridržana." data-en="&copy; 2026 Kezić Vizuali. All rights reserved.">&copy; 2026 Kezić Vizuali. Sva prava pridržana.</span>
   <a href="https://kezicvizuali.com/" class="footer-link">kezicvizuali.com</a>
 </footer>
 
+<script>
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-hr]').forEach(el => {
+            if (lang === 'en' && el.hasAttribute('data-en')) {
+                el.innerHTML = el.getAttribute('data-en');
+            } else {
+                el.innerHTML = el.getAttribute('data-hr');
+            }
+        });
+        const btnHr = document.getElementById('btn-hr');
+        const btnEn = document.getElementById('btn-en');
+        if(btnHr && btnEn) {
+            if (lang === 'en') {
+                btnEn.style.color = 'var(--gold)';
+                btnHr.style.color = 'var(--muted)';
+            } else {
+                btnHr.style.color = 'var(--gold)';
+                btnEn.style.color = 'var(--muted)';
+            }
+        }
+    }
+</script>
 </body>
 </html>
