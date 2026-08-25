@@ -97,7 +97,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .kontakt-left p { color: var(--text-muted); margin-bottom: 2rem; line-height: 1.9; }
 .contact-item { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.2rem; padding: 1rem 1.2rem; border: 1px solid transparent; transition: border-color 0.3s, background 0.3s; }
 .contact-item:hover { border-color: var(--border); background: var(--bg2); }
-.contact-icon { width: 42px; height: 42px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--gold); flex-shrink: 0; }
+.contact-icon { width: 44px; height: 44px; border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; color: var(--gold); flex-shrink: 0; background: rgba(201,168,76,0.04); transition: border-color 0.3s, background 0.3s; }
+.contact-item:hover .contact-icon { border-color: var(--gold); background: rgba(201,168,76,0.1); }
 .contact-text label { display: block; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.2rem; }
 .contact-text span { font-size: 0.9rem; color: var(--text); }
 .contact-text a { color: var(--text); text-decoration: none; }
@@ -286,21 +287,27 @@ footer a:hover { color: var(--gold); }
       <div class="kontakt-left reveal">
         <p data-hr="Pošaljite upit i odgovorit ću vam u najkraćem mogućem roku. Razgovaramo bez obveza, samo da vidimo odgovara li vam ova ponuda." data-en="Send an inquiry and I will reply as soon as possible. We talk without obligations, just to see if this offer suits you.">Pošaljite upit i odgovorit ću vam u najkraćem mogućem roku. Razgovaramo bez obveza, samo da vidimo odgovara li vam ova ponuda.</p>
         <div class="contact-item">
-          <div class="contact-icon">📱</div>
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
           <div class="contact-text">
             <label data-hr="Telefon" data-en="Phone">Telefon</label>
             <span><a href="tel:+385976002753">+385 97 600 2753</a></span>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">✉</div>
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
           <div class="contact-text">
             <label data-hr="Email" data-en="Email">Email</label>
             <span><a href="mailto:kezicvizuali@gmail.com">kezicvizuali@gmail.com</a></span>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">🌍</div>
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
           <div class="contact-text">
             <label data-hr="Područje rada" data-en="Area of work">Područje rada</label>
             <span data-hr="Cijela Hrvatska, Slovenija i BiH" data-en="All of Croatia, Slovenia and BiH">Cijela Hrvatska, Slovenija i BiH</span>
@@ -401,36 +408,5 @@ footer a:hover { color: var(--gold); }
       } catch { btn.textContent = isEn ? 'Send inquiry →' : 'Pošalji upit →'; btn.disabled = false; }
     });
   </script>
-  <div id="google_translate_element" style="position:fixed;top:18px;right:24px;z-index:200;"></div>
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'hr',
-        includedLanguages: 'en,de,it,fr,sl,sk,hu',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <style>
-    #google_translate_element .goog-te-gadget-simple {
-      background: rgba(8,8,7,0.85) !important;
-      border: 1px solid rgba(201,168,76,0.4) !important;
-      border-radius: 2px !important;
-      padding: 2px 8px !important;
-      font-family: sans-serif !important;
-      font-size: 0.75rem !important;
-    }
-    #google_translate_element .goog-te-gadget-simple span,
-    #google_translate_element .goog-te-gadget-simple a {
-      color: #c9a84c !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.1em !important;
-      text-decoration: none !important;
-    }
-    .goog-te-banner-frame { display: none !important; }
-    body { top: 0 !important; }
-  </style>
 </body>
 </html>

@@ -530,13 +530,13 @@ nav.scrolled { background: rgba(8,8,7,0.97); border-color: rgba(201,168,76,0.22)
 /* ── SECTIONS ── */
 section { padding: 8rem 5%; position: relative; z-index: 2; }
 .section-label {
-  font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
+  font-size: 0.65rem; letter-spacing: 0.38em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 1.2rem;
   display: flex; align-items: center; gap: 1rem;
 }
 .section-label::before { content:''; width: 36px; height: 1px; background: linear-gradient(to right, transparent, var(--gold)); display: block; }
 .section-title {
-  font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 4rem);
+  font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 5rem);
   font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem;
 }
 .section-title em { font-style: italic; color: var(--gold); }
@@ -1078,8 +1078,12 @@ footer::before {
       <li><a href="#kontakt" data-hr="Kontakt" data-en="Contact">Kontakt</a></li>
     </ul>
 
-    <!-- Google Translate -->
-    <div id="google_translate_element" style="margin-left: auto; margin-right: 20px;"></div>
+    <!-- Language Switcher -->
+    <div style="display: flex; align-items: center; gap: 8px; margin-left: auto; margin-right: 20px;">
+        <button id="btn-hr" onclick="setLanguage('hr')" style="background:none; border:none; color: var(--gold); font-size: 0.78rem; font-family: var(--sans); font-weight: 600; cursor: pointer; letter-spacing: 0.14em;">HR</button>
+        <span style="color: var(--text-faint); font-size: 0.8rem;">/</span>
+        <button id="btn-en" onclick="setLanguage('en')" style="background:none; border:none; color: var(--text-muted); font-size: 0.78rem; font-family: var(--sans); font-weight: 600; cursor: pointer; letter-spacing: 0.14em; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="if(document.documentElement.lang !== 'en') this.style.color='var(--text-muted)'">EN</button>
+    </div>
 
     <a href="#kontakt" class="nav-cta" data-hr="Zatraži Ponudu" data-en="Get a Quote">Zatraži Ponudu</a>
   </nav>
@@ -1793,14 +1797,39 @@ footer::before {
   </footer>
 
   <script>
-    // ── GOOGLE TRANSLATE INICIJALIZACIJA ──
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'hr',
-        includedLanguages: 'en,de,it,fr,sl,sk,hu',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
+    // ── FUNKCIJA ZA PROMJENU JEZIKA ──
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        
+        // Mijenjanje običnih tekstova
+        document.querySelectorAll('[data-hr]').forEach(el => {
+            if (lang === 'en' && el.hasAttribute('data-en')) {
+                el.innerHTML = el.getAttribute('data-en');
+            } else {
+                el.innerHTML = el.getAttribute('data-hr');
+            }
+        });
+
+        // Mijenjanje placeholdera unutar inputa i textarea
+        document.querySelectorAll('[data-hr-placeholder]').forEach(el => {
+            if (lang === 'en' && el.hasAttribute('data-en-placeholder')) {
+                el.setAttribute('placeholder', el.getAttribute('data-en-placeholder'));
+            } else {
+                el.setAttribute('placeholder', el.getAttribute('data-hr-placeholder'));
+            }
+        });
+        
+        // Ažuriranje stilova gumba
+        const btnHr = document.getElementById('btn-hr');
+        const btnEn = document.getElementById('btn-en');
+        
+        if (lang === 'en') {
+            btnEn.style.color = 'var(--gold)';
+            btnHr.style.color = 'var(--text-muted)';
+        } else {
+            btnHr.style.color = 'var(--gold)';
+            btnEn.style.color = 'var(--text-muted)';
+        }
     }
 
     // ── Custom cursor ──
@@ -1982,30 +2011,5 @@ footer::before {
       cookieBanner.classList.remove('visible');
     });
   </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <style>
-    /* Stilizacija Google Translate widgeta u nav baru */
-    #google_translate_element .goog-te-gadget-simple {
-      background: transparent !important;
-      border: 1px solid rgba(201,168,76,0.4) !important;
-      border-radius: 2px !important;
-      padding: 2px 8px !important;
-      font-family: var(--sans) !important;
-      font-size: 0.75rem !important;
-    }
-    #google_translate_element .goog-te-gadget-simple span,
-    #google_translate_element .goog-te-gadget-simple a {
-      color: var(--gold) !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.1em !important;
-      text-decoration: none !important;
-    }
-    #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:first-child {
-      display: none;
-    }
-    .goog-te-banner-frame { display: none !important; }
-    body { top: 0 !important; }
-  </style>
 </body>
 </html>
