@@ -23,14 +23,11 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Kezić Vizuali",
-  "description": "Editorial magazin studio za vizualne komunikacije, web dizajn i fotografiju.",
+  "description": "Editorial magazin studio za vizualne komunikacije, web dizajn i fotografiju. Izrada ultra-brzih web stranica bez mjesečnih troškova hostinga.",
   "url": "https://kezicvizuali.com",
   "telephone": "+385976002753",
   "email": "kezicvizuali@gmail.com",
-  "founder": {
-    "@type": "Person",
-    "name": "Krunoslav Kezić"
-  },
+  "founder": { "@type": "Person", "name": "Krunoslav Kezić" },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Velika Gorica",
@@ -38,202 +35,472 @@
     "postalCode": "10410",
     "addressCountry": "HR"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 45.7169,
-    "longitude": 16.0758
-  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 45.7169, "longitude": 16.0758 },
   "areaServed": [{"@type": "Country", "name": "Hrvatska"}, {"@type": "Country", "name": "Slovenija"}],
   "openingHours": ["Mo-Fr 09:00-17:00"],
   "priceRange": "€€",
   "image": "https://kezicvizuali.com/logo-za-share.jpg",
   "logo": "https://kezicvizuali.com/Kezić vizuali transparent xl.png",
-  "sameAs": ["https://www.facebook.com/kezicvizuali.vg", "https://www.facebook.com/kezicvizuali/"]
+  "sameAs": ["https://www.facebook.com/kezicvizuali.vg", "https://www.facebook.com/kezicvizuali/"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Usluge",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Izrada web stranice", "description": "Profesionalna izrada web stranica bez mjesečnih troškova hostinga" },
+        "price": "100", "priceCurrency": "EUR"
+      }
+    ]
+  }
 }
 </script>
 <link rel="icon" type="image/png" href="favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kezić Vizuali – Editorial Magazine Studio</title>
+<title>Kezić Vizuali – Editorial Magazine Studio, Velika Gorica</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --gold: #c9a84c; --gold-light: #e8c96a; --gold-pale: #f5e9c8;
-  --gold-dim: rgba(201,168,76,0.12); --bg: #080807; --bg2: #0f0f0d;
-  --bg3: #161614; --white-sec: #f4f1ea; --white-text: #111110;
-  --text: #f0ead8; --text-muted: #8a8070; --text-faint: #5a5448;
-  --border: rgba(201,168,76,0.14); --serif: 'Cormorant Garamond', Georgia, serif;
+  --gold: #c9a84c;
+  --gold-light: #e8c96a;
+  --gold-pale: #f5e9c8;
+  --gold-dim: rgba(201,168,76,0.12);
+  --bg: #080807;
+  --bg2: #0f0f0d;
+  --bg3: #161614;
+  --bg4: #1c1c19;
+  --paper-white: #f4f1ea;
+  --paper-text: #111110;
+  --text: #f0ead8;
+  --text-muted: #8a8070;
+  --text-faint: #5a5448;
+  --border: rgba(201,168,76,0.14);
+  --border-hover: rgba(201,168,76,0.3);
+  --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'DM Sans', system-ui, sans-serif;
 }
-html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.7; font-weight: 300; overflow-x: hidden; }
 
-/* CURSOR */
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* CUSTOM CURSOR */
 *, *::before, *::after { cursor: none !important; }
-#cursor { position: fixed; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: transform 0.1s, width 0.25s, height 0.25s; will-change: transform; }
-#cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(201,168,76,0.5); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%, -50%); transition: transform 0.18s ease, width 0.25s, height 0.25s; will-change: transform; }
+#cursor {
+  position: fixed; width: 8px; height: 8px;
+  background: var(--gold); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s, width 0.25s, height 0.25s, background 0.25s;
+  will-change: transform;
+}
+#cursor-ring {
+  position: fixed; width: 32px; height: 32px;
+  border: 1px solid rgba(201,168,76,0.5); border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.18s ease, width 0.25s, height 0.25s, border-color 0.25s;
+  will-change: transform;
+}
 body:has(a:hover) #cursor, body:has(button:hover) #cursor { width: 14px; height: 14px; }
 body:has(a:hover) #cursor-ring, body:has(button:hover) #cursor-ring { width: 44px; height: 44px; border-color: rgba(201,168,76,0.9); }
-@media (pointer: coarse) { #cursor, #cursor-ring { display: none !important; } *, *::before, *::after { cursor: auto !important; } }
 
-body::before { content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); background-size: 200px; opacity: 0.35; }
+@media (pointer: coarse) {
+  #cursor, #cursor-ring { display: none !important; }
+  *, *::before, *::after { cursor: auto !important; }
+}
 
-/* EDITORIAL VERTICAL SIDEBAR NAVIGATION (DESKTOP) / NORMAL TOP (MOBILE) */
+/* NOISE OVERLAY */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px;
+  opacity: 0.35;
+}
+
+/* TOP NAVBAR (MOBILE & HEADER LOGO) */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 5%; height: 72px; background: rgba(8,8,7,0.92);
-  backdrop-filter: blur(24px); border-bottom: 1px solid var(--border);
+  padding: 0 5%;
+  height: 72px;
+  background: rgba(8,8,7,0.92);
+  backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid var(--border);
 }
-.nav-logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 0.6rem; }
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  text-decoration: none;
+  display: flex; align-items: center; gap: 0.6rem;
+}
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-.nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; transition: color 0.2s; position: relative; }
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
 .nav-links a:hover { color: var(--gold); }
-.nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 0.5rem 1.4rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: 0.25s; }
+.nav-cta {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 0.5rem 1.4rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s;
+}
 .nav-cta:hover { background: var(--gold); color: #080807; }
-.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer !important; background: none; border: none; padding: 4px; }
 .hamburger span { display: block; width: 24px; height: 1px; background: var(--text); transition: 0.3s; }
 
+/* EDITORIAL MAGAZINE VERTICAL SIDEBAR NAVIGATION (90 DEG ROTATED ON DESKTOP) */
 @media (min-width: 901px) {
-  /* Rotirana vertikalna navigacija uz lijevi rub za desktop magazin štih */
   .editorial-sidebar-nav {
-    position: fixed; left: 20px; top: 50%; transform: translateY(-50%) rotate(-90deg);
-    transform-origin: left center; z-index: 95; display: flex; gap: 3rem; list-style: none;
-    letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.7rem; font-family: var(--sans);
+    position: fixed; left: -65px; top: 50%; transform: translateY(-50%) rotate(-90deg);
+    transform-origin: center; z-index: 95; display: flex; gap: 3.5rem; list-style: none;
+    letter-spacing: 0.25em; text-transform: uppercase; font-size: 0.72rem; font-family: var(--sans);
   }
-  .editorial-sidebar-nav a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+  .editorial-sidebar-nav a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
   .editorial-sidebar-nav a:hover { color: var(--gold); }
 }
 @media (max-width: 900px) { .editorial-sidebar-nav { display: none; } }
 
-/* PROMO BAR */
-.promo-bar { position: relative; z-index: 99; background: linear-gradient(90deg, #0d0d0a 0%, #1a1608 40%, #0d0d0a 100%); border-bottom: 1px solid rgba(201,168,76,0.3); padding: 0.65rem 5%; display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+/* PROMO BAR 200€ */
+.promo-bar {
+  position: relative; z-index: 99;
+  background: linear-gradient(90deg, #0d0d0a 0%, #1a1608 40%, #0d0d0a 100%);
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  padding: 0.65rem 5%;
+  display: flex; align-items: center; justify-content: center; gap: 2rem;
+  flex-wrap: wrap;
+}
 .promo-bar-badge { background: var(--gold); color: #080807; font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; padding: 0.22rem 0.7rem; font-weight: 500; }
 .promo-bar-text { font-size: 0.82rem; color: var(--text); }
 .promo-bar-text strong { color: var(--gold); }
-.promo-bar-cta { border: 1px solid var(--gold); color: var(--gold); padding: 0.35rem 1rem; font-size: 0.72rem; text-transform: uppercase; text-decoration: none; }
+.promo-bar-cta { border: 1px solid var(--gold); color: var(--gold); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.35rem 1rem; text-decoration: none; transition: 0.2s; }
 .promo-bar-cta:hover { background: var(--gold); color: #080807; }
+.promo-bar-close { background: none; border: none; color: var(--text-faint); font-size: 1rem; cursor: pointer !important; }
 
-/* SPLIT-SCREEN EDITORIAL HERO */
+/* EDITORIAL SPLIT-SCREEN HERO (BLEEDING EDGE) */
 #hero {
-  min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch;
-  padding-top: 72px; position: relative; overflow: hidden;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: stretch;
+  padding-top: 72px;
+  position: relative;
+  overflow: hidden;
 }
 .hero-left-bleed {
-  position: relative; overflow: hidden; min-height: 50vh;
+  position: relative;
+  overflow: hidden;
+  min-height: 50vh;
 }
 .hero-left-bleed img {
-  width: 100%; height: 100%; object-fit: cover; display: block; filter: contrast(1.1) grayscale(10%);
-  transition: transform 1s ease;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.15) grayscale(15%);
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
-.hero-left-bleed:hover img { transform: scale(1.03); }
+.hero-left-bleed:hover img { transform: scale(1.04); }
+
 .hero-right-content {
-  display: flex; flex-direction: column; justify-content: center; padding: 5rem 6%;
-  background: var(--bg); position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 8%;
+  background: var(--bg);
+  position: relative;
 }
-.hero-issue { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+.hero-issue {
+  font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.5rem;
+}
+
+/* 130px BRUTAL EDITORIAL TYPOGRAPHY */
 .hero-title-editorial {
-  font-family: var(--serif); font-size: clamp(3.5rem, 7vw, 6.5rem); font-weight: 300; line-height: 0.95; margin-bottom: 2rem;
+  font-family: var(--serif);
+  font-size: clamp(4.5rem, 9.5vw, 11rem);
+  font-weight: 300;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  margin-bottom: 2.5rem;
+  color: var(--text);
 }
-.hero-title-editorial span { display: block; color: var(--gold); font-style: italic; }
-.hero-sub { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2.5rem; max-width: 500px; }
-.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-.btn-gold { background: var(--gold); color: #080807; border: none; padding: 1rem 2.2rem; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; text-decoration: none; transition: 0.25s; }
-.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
-.btn-outline-editorial { background: transparent; color: var(--text); border: 1px solid rgba(240,234,216,0.3); padding: 1rem 2.2rem; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: 0.25s; }
-.btn-outline-editorial:hover { border-color: var(--gold); color: var(--gold); }
+.hero-title-editorial span {
+  display: block;
+  color: var(--gold);
+  font-style: italic;
+}
+.hero-sub {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin-bottom: 3rem;
+  line-height: 1.85;
+}
+.hero-btns { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--gold); color: #080807; border: none; padding: 1.1rem 2.4rem;
+  font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.14em;
+  text-transform: uppercase; font-weight: 500; text-decoration: none;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s; display: inline-block;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.3); }
+.btn-outline {
+  background: transparent; color: var(--text);
+  border: 1px solid rgba(240,234,216,0.25);
+  padding: 1.1rem 2.4rem; font-family: var(--sans); font-size: 0.8rem;
+  letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
+  transition: border-color 0.25s, color 0.25s, transform 0.2s; display: inline-block;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
-@media (max-width: 900px) { #hero { grid-template-columns: 1fr; } .hero-left-bleed { height: 60vh; } }
+@media (max-width: 900px) {
+  #hero { grid-template-columns: 1fr; }
+  .hero-left-bleed { height: 60vh; }
+  .hero-right-content { padding: 4rem 5%; }
+}
 
-/* MARQUEE */
-.marquee-strip { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg2); overflow: hidden; padding: 0.9rem 0; }
-.marquee-track { display: flex; animation: marquee 25s linear infinite; width: max-content; }
-.marquee-item { display: flex; align-items: center; gap: 1.5rem; padding: 0 2.5rem; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-faint); white-space: nowrap; }
+/* MARQUEE STRIP */
+.marquee-strip {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  overflow: hidden;
+  padding: 0.9rem 0;
+  position: relative; z-index: 2;
+}
+.marquee-track {
+  display: flex; gap: 0;
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+.marquee-item {
+  display: flex; align-items: center; gap: 1.5rem;
+  padding: 0 2.5rem;
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--text-faint); white-space: nowrap;
+}
 .marquee-dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* STATS */
-#brand-stats { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 5rem 5%; }
-.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1400px; margin: 0 auto; text-align: center; }
-.stat-number { font-family: var(--serif); font-size: clamp(3.5rem, 6vw, 5.5rem); font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
+/* BRAND STATS */
+#brand-stats {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 5rem 5%;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.stat-box { text-align: center; padding: 2rem 1rem; position: relative; }
+.stat-box:not(:last-child)::after {
+  content: ''; position: absolute; right: 0; top: 25%; height: 50%; width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--border), transparent);
+}
+.stat-number {
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
 .stat-label { font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); }
 
 /* SECTIONS */
-section { padding: 8rem 5%; position: relative; }
-.section-label { font-size: 0.65rem; letter-spacing: 0.38em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; }
+section { padding: 8rem 5%; position: relative; z-index: 2; }
+.section-label {
+  font-size: 0.65rem; letter-spacing: 0.38em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.2rem;
+  display: flex; align-items: center; gap: 1rem;
+}
 .section-label::before { content:''; width: 36px; height: 1px; background: var(--gold); display: block; }
-.section-title { font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 5rem); font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem; }
+.section-title {
+  font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 5rem);
+  font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem;
+}
 .section-title em { font-style: italic; color: var(--gold); }
-.divider { width: 50px; height: 1px; background: linear-gradient(to right, var(--gold), transparent); margin: 1.5rem 0; }
+.divider {
+  width: 50px; height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin: 1.5rem 0 3rem;
+}
 
 /* O MENI */
-.omeni-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; align-items: start; }
-.omeni-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; border: 1px solid var(--border); filter: grayscale(15%); }
+.omeni-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 6rem; align-items: start; }
+.omeni-photo-frame { position: relative; }
+.omeni-photo-frame::before {
+  content: ''; position: absolute; top: -12px; left: -12px; right: 12px; bottom: 12px;
+  border: 1px solid var(--border); z-index: 0;
+}
+.omeni-photo {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover;
+  display: block; position: relative; z-index: 1;
+  border: 1px solid var(--border); filter: grayscale(15%);
+}
 .omeni-text p { color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.9; }
+.omeni-step {
+  display: flex; gap: 1.2rem; margin-bottom: 1.4rem; align-items: flex-start;
+  padding: 1rem 1.2rem; border: 1px solid transparent; transition: 0.3s;
+}
+.omeni-step:hover { border-color: var(--border); background: var(--bg2); }
+.omeni-step-icon {
+  width: 36px; height: 36px; flex-shrink: 0; border: 1px solid var(--gold);
+  color: var(--gold); display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-style: italic; font-size: 1rem;
+}
+.omeni-step-body strong { display: block; font-size: 0.92rem; color: var(--text); font-weight: 400; margin-bottom: 0.3rem; }
+.omeni-step-body span { font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; }
 
-/* 200€ BANNER */
-.akcija-banner { margin: 0 5%; background: linear-gradient(135deg, #0d0d0a, #141410); border: 1px solid rgba(201,168,76,0.3); padding: 3rem; display: grid; grid-template-columns: auto 1fr auto; gap: 3rem; align-items: center; }
+/* FASHION LOOKBOOK USLUGE (01, 02, 03 STYLE) */
+.lookbook-services {
+  display: flex; flex-direction: column; gap: 0;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  margin: 3rem 0;
+}
+.lookbook-item {
+  display: grid; grid-template-columns: 120px 1fr auto; align-items: center;
+  padding: 3rem 2rem; border-bottom: 1px solid var(--border);
+  transition: background 0.3s, padding-left 0.3s; position: relative;
+}
+.lookbook-item:last-child { border-bottom: none; }
+.lookbook-item:hover { background: var(--bg2); padding-left: 2.8rem; }
+.lookbook-num { font-family: var(--serif); font-size: 3.5rem; color: var(--gold); font-weight: 300; line-height: 1; }
+.lookbook-title { font-family: var(--serif); font-size: 2.4rem; font-weight: 300; color: var(--text); }
+.lookbook-title span { display: block; font-size: 0.85rem; font-family: var(--sans); color: var(--text-muted); margin-top: 0.4rem; }
+.lookbook-price { font-family: var(--serif); font-size: 1.8rem; color: var(--gold); font-weight: 300; }
+@media(max-width: 768px) { .lookbook-item { grid-template-columns: 1fr; gap: 1rem; padding: 2rem 1rem; } }
+
+/* AKCIJA 200€ BANNER & WEB OFFER */
+.akcija-banner {
+  margin: 0 5%; background: linear-gradient(135deg, #0d0d0a 0%, #141410 50%, #0d0b08 100%);
+  border: 1px solid rgba(201,168,76,0.3); padding: 3rem;
+  display: grid; grid-template-columns: auto 1fr auto; gap: 3rem; align-items: center;
+}
 .akcija-price { font-family: var(--serif); font-size: 4.5rem; font-weight: 300; color: var(--gold); line-height: 1; }
 
-/* 01, 02, 03 LOOKBOOK USLUGE (BRUTAL EDITORIAL STYLE) */
-.lookbook-services { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 4rem 0; }
-.lookbook-item { display: grid; grid-template-columns: 100px 1fr auto; align-items: center; padding: 2.5rem 2rem; border-bottom: 1px solid var(--border); transition: background 0.3s; position: relative; }
-.lookbook-item:last-child { border-bottom: none; }
-.lookbook-item:hover { background: var(--bg2); }
-.lookbook-num { font-family: var(--serif); font-size: 3rem; color: var(--gold); font-weight: 300; }
-.lookbook-title { font-family: var(--serif); font-size: 2.2rem; font-weight: 300; color: var(--text); }
-.lookbook-title span { display: block; font-size: 0.85rem; font-family: var(--sans); color: var(--text-muted); margin-top: 0.3rem; }
-.lookbook-price { font-family: var(--serif); font-size: 1.5rem; color: var(--gold); }
-@media(max-width: 768px) { .lookbook-item { grid-template-columns: 1fr; gap: 1rem; } }
+.web-offer-banner {
+  margin: 4rem 5% 0; background: linear-gradient(135deg, #0d0d0a 0%, #141410 60%, #0a0a08 100%);
+  border: 1px solid var(--border); padding: 3.5rem 4rem;
+  display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
+}
 
-/* BRUTALAN BIJELI KONTRAST (BRUTAL WHITE SECTION) */
+/* PRICING TABLE */
+#cjenik { background: var(--bg2); }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 2px; background: var(--border); border: 1px solid var(--border); }
+.pricing-category { background: var(--bg2); padding: 2.2rem; transition: background 0.3s; }
+.pricing-category:hover { background: rgba(15,15,13,0.8); }
+.pricing-category-num { font-family: var(--serif); font-size: 3rem; color: rgba(201,168,76,0.15); line-height: 1; margin-bottom: 0.25rem; }
+.pricing-category-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; padding-top: 0.5rem; border-top: 1px solid var(--border); color: var(--gold); margin-bottom: 1rem; }
+.pricing-table { width: 100%; border-collapse: collapse; }
+.pricing-table tr { border-bottom: 1px solid rgba(201,168,76,0.06); }
+.pricing-table tr:last-child { border-bottom: none; }
+.pricing-table td { padding: 0.75rem 0; font-size: 0.84rem; vertical-align: top; }
+.pricing-table td:first-child { color: var(--text-muted); padding-right: 12px; }
+.pricing-table td:last-child { text-align: right; color: var(--gold); font-family: var(--serif); font-size: 0.92rem; font-weight: 600; white-space: nowrap; }
+.pricing-table td small { display: block; font-size: 0.7rem; color: var(--text-faint); margin-top: 0.2rem; }
+
+/* ⚡ BRUTALAN BIJELI KONTRAST (RECENZIJE U PAPIRNATOM MODU) */
 .brutal-white-section {
-  background: var(--white-sec); color: var(--white-text); padding: 8rem 5%; position: relative;
-  border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+  background: var(--paper-white);
+  color: var(--paper-text);
+  padding: 9rem 5%;
+  position: relative; z-index: 2;
+  border-top: 3px solid var(--gold);
+  border-bottom: 3px solid var(--gold);
 }
 .brutal-white-section .section-label { color: #8c732b; }
 .brutal-white-section .section-label::before { background: #8c732b; }
-.brutal-white-section .section-title { color: var(--white-text); }
-.brutal-white-section .section-title em { color: #8c732b; }
-.brutal-white-section .testimonial-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.1); color: var(--white-text); }
-.brutal-white-section .testimonial-text { color: #444442; }
-.brutal-white-section .testimonial-author strong { color: var(--white-text); }
-.brutal-white-section .testimonial-author span { color: #8c732b; }
-
-/* RECENZIJE GRID */
-.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
-.testimonial-card { background: var(--bg2); border: 1px solid var(--border); padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
-.stars { color: var(--gold); display: flex; gap: 0.2rem; }
-.stars svg { width: 16px; height: 16px; fill: currentColor; }
-.testimonial-text { font-style: italic; color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; flex: 1; }
-.testimonial-author strong { display: block; color: var(--text); font-family: var(--serif); font-size: 1.2rem; }
-.testimonial-author span { display: block; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+.brutal-white-section .section-title { color: var(--paper-text); }
+.brutal-white-section .section-title em { color: #9c7f2b; }
+.brutal-white-section .divider { background: linear-gradient(to right, #9c7f2b, transparent); }
+.brutal-white-section .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.brutal-white-section .testimonial-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+.brutal-white-section .stars { color: #b89735; }
+.brutal-white-section .testimonial-text { color: #3d3b36; font-style: italic; line-height: 1.8; font-size: 0.95rem; }
+.brutal-white-section .testimonial-author { border-top: 1px solid rgba(0,0,0,0.08); padding-top: 1rem; margin-top: 1.5rem; }
+.brutal-white-section .testimonial-author strong { color: var(--paper-text); font-family: var(--serif); font-size: 1.2rem; }
+.brutal-white-section .testimonial-author span { color: #8c732b; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
 
 /* FAQ */
+#faq { background: var(--bg); }
 .faq-container { max-width: 800px; margin: 0 auto; }
 .faq-item { border-bottom: 1px solid var(--border); }
-.faq-question { width: 100%; background: none; border: none; text-align: left; padding: 1.5rem 0; font-family: var(--sans); font-size: 1.05rem; color: var(--text); cursor: pointer !important; display: flex; justify-content: space-between; align-items: center; }
+.faq-question {
+  width: 100%; background: none; border: none; text-align: left;
+  padding: 1.5rem 0; font-family: var(--sans); font-size: 1.05rem;
+  color: var(--text); cursor: pointer !important;
+  display: flex; justify-content: space-between; align-items: center;
+}
 .faq-question:hover { color: var(--gold); }
 .faq-icon { font-size: 1.5rem; font-weight: 300; color: var(--gold); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
 .faq-answer-inner { padding-bottom: 1.5rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.8; }
 
-/* CONTACT */
+/* INSTAGRAM FEED */
+.ig-feed { display: grid; grid-template-columns: repeat(5, 1fr); width: 100%; }
+.ig-item { position: relative; aspect-ratio: 1/1; overflow: hidden; display: block; border-right: 1px solid var(--border); }
+.ig-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.ig-item:hover img { transform: scale(1.05); }
+
+/* KONTAKT */
+#kontakt { background: var(--bg); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; }
 .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
 .form-group label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); }
-.form-group input, .form-group textarea, .form-group select { background: var(--bg2); border: 1px solid var(--border); color: var(--text); font-family: var(--sans); font-size: 0.9rem; padding: 0.85rem 1.1rem; outline: none; }
+.form-group input, .form-group textarea, .form-group select {
+  background: var(--bg2); border: 1px solid var(--border); color: var(--text);
+  font-family: var(--sans); font-size: 0.9rem; padding: 0.85rem 1.1rem; outline: none;
+}
 .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--gold); }
 
 /* FOOTER */
-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 5% 2.5rem; }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 5% 2.5rem; position: relative; z-index: 2; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
 .footer-bottom { border-top: 1px solid rgba(201,168,76,0.08); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.78rem; color: var(--text-faint); }
 
-#cookie-banner { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 10001; background: rgba(8,8,7,0.97); backdrop-filter: blur(20px); border-top: 1px solid var(--border); padding: 1rem 5%; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+#cookie-banner {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 10001;
+  background: rgba(8,8,7,0.97); backdrop-filter: blur(20px); border-top: 1px solid var(--border);
+  padding: 1rem 5%; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
 #cookie-banner.visible { display: flex; }
 #cookie-banner p { font-size: 0.85rem; color: var(--text-muted); max-width: 620px; }
 #cookie-banner a { color: var(--gold); }
@@ -242,12 +509,17 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4
 
 @media (max-width: 900px) {
   .promo-bar { display: none !important; }
-  .contact-grid, .omeni-grid, .akcija-banner, .stats-grid, .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .nav-links { position: fixed; top: 72px; left: 0; right: 0; background: rgba(8,8,7,0.98); flex-direction: column; gap: 0; padding: 0; border-bottom: 1px solid var(--border); clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease; }
+  .contact-grid, .omeni-grid, .akcija-banner, .stats-grid, .footer-grid, .web-offer-banner { grid-template-columns: 1fr; gap: 3rem; }
+  .nav-links {
+    position: fixed; top: 72px; left: 0; right: 0; background: rgba(8,8,7,0.98);
+    flex-direction: column; gap: 0; padding: 0; border-bottom: 1px solid var(--border);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease;
+  }
   .nav-links.open { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
   .nav-links li { border-bottom: 1px solid rgba(201,168,76,0.06); }
   .nav-links a { display: block; padding: 1.5rem 5%; }
   .nav-cta { display: none; } .hamburger { display: flex; }
+  .ig-feed { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
 </head>
@@ -255,17 +527,17 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4
   <div id="cursor"></div>
   <div id="cursor-ring"></div>
 
-  <!-- Vertikalna magazin navigacija za desktop -->
+  <!-- ROTIRANA VERTIKALNA NAVIGACIJA UZ LIJEVI RUB (DESKTOP MAGAZINE STYLE) -->
   <ul class="editorial-sidebar-nav">
     <li><a href="#o-meni" data-hr="O nama" data-en="About us">O nama</a></li>
     <li><a href="portfolio.html" data-hr="Portfolio" data-en="Portfolio">Portfolio</a></li>
     <li><a href="galerija.html" data-hr="Galerija" data-en="Gallery">Galerija</a></li>
-    <li><a href="#cjenik" data-hr="Usluge" data-en="Services">Usluge</a></li>
+    <li><a href="#cjenik" data-hr="Usluge i Cjenik" data-en="Services & Pricing">Usluge i Cjenik</a></li>
     <li><a href="#kontakt" data-hr="Kontakt" data-en="Contact">Kontakt</a></li>
   </ul>
 
   <div id="cookie-banner" role="dialog" aria-label="Privola za kolačiće">
-    <p data-hr="Koristimo kolačiće za analitiku (Google Analytics). <a href='uvjeti.html'>Više informacija</a>" data-en="We use cookies for analytics. <a href='uvjeti.html'>More info</a>">Koristimo kolačiće za analitiku (Google Analytics). <a href="uvjeti.html">Više informacija</a></p>
+    <p data-hr="Koristimo kolačiće za analitiku (Google Analytics) kako bismo poboljšali stranicu. <a href='uvjeti.html'>Više informacija</a>" data-en="We use cookies for analytics (Google Analytics). <a href='uvjeti.html'>More info</a>">Koristimo kolačiće za analitiku (Google Analytics) kako bismo poboljšali stranicu. <a href="uvjeti.html">Više informacija</a></p>
     <div class="cookie-banner-btns">
       <button type="button" id="cookie-reject" data-hr="Odbij" data-en="Decline">Odbij</button>
       <button type="button" id="cookie-accept" data-hr="Prihvati" data-en="Accept">Prihvati</button>
@@ -287,7 +559,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4
       <li><a href="#o-meni" data-hr="O nama" data-en="About us">O nama</a></li>
       <li><a href="portfolio.html" data-hr="Web Portfolio" data-en="Web Portfolio">Web Portfolio</a></li>
       <li><a href="galerija.html" data-hr="Foto Galerija" data-en="Photo Gallery">Foto Galerija</a></li>
-      <li><a href="#cjenik" data-hr="Usluge" data-en="Services">Usluge</a></li>
+      <li><a href="#cjenik" data-hr="Usluge i Cjenik" data-en="Services & Pricing">Usluge i Cjenik</a></li>
       <li><a href="#kontakt" data-hr="Kontakt" data-en="Contact">Kontakt</a></li>
     </ul>
     <div style="display: flex; align-items: center; gap: 8px; margin-left: auto; margin-right: 20px;">
@@ -298,7 +570,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4
     <a href="#kontakt" class="nav-cta" data-hr="Zatraži Ponudu" data-en="Get a Quote">Zatraži Ponudu</a>
   </nav>
 
-  <!-- SPLIT HERO -->
+  <!-- SPLIT-SCREEN HERO (BLEEDING EDGE + 130px TYPOGRAPHY) -->
   <header id="hero">
     <div class="hero-left-bleed">
       <img src="IMG_20260321_233803_378.jpg" alt="Krunoslav Kezić">
@@ -306,41 +578,41 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4
     <div class="hero-right-content">
       <div class="hero-issue" data-hr="Izdanje 2026 · Velika Gorica" data-en="Edition 2026 · Velika Gorica">Izdanje 2026 · Velika Gorica</div>
       <h1 class="hero-title-editorial">
-        WEB. FOTO. <span>AI.</span>
+        WEB.<br>FOTO.<br><span>AI.</span>
       </h1>
-      <p class="hero-sub" data-hr="Spoj vrhunskog grafičkog dizajna, profesionalne fotografije i strateškog marketinga, za lokalne poduzetnike koji misle globalno." data-en="A blend of premium graphic design, professional photography, and strategic marketing, for local entrepreneurs who think globally.">
-        Spoj vrhunskog grafičkog dizajna, profesionalne fotografije i strateškog marketinga, za lokalne poduzetnike koji misle globalno.
+      <p class="hero-sub" data-hr="Spoj vrhunskog grafičkog dizajna, profesionalne fotografije i strateškog marketinga, sve na jednom mjestu, za lokalne poduzetnike koji misle globalno." data-en="A blend of premium graphic design, professional photography, and strategic marketing, all in one place, for local entrepreneurs who think globally.">
+        Spoj vrhunskog grafičkog dizajna, profesionalne fotografije i strateškog marketinga, sve na jednom mjestu, za lokalne poduzetnike koji misle globalno.
       </p>
       <div class="hero-btns">
-        <a href="#cjenik" class="btn-gold" data-hr="Istraži Usluge" data-en="Explore Services">Istraži Usluge</a>
-        <a href="#kontakt" class="btn-outline-editorial" data-hr="Kontaktirajte Nas" data-en="Contact Us">Kontaktirajte Nas</a>
+        <a href="#cjenik" class="btn-primary" data-hr="Istraži Usluge" data-en="Explore Services">Istraži Usluge</a>
+        <a href="#kontakt" class="btn-outline" data-hr="Kontaktirajte Nas" data-en="Contact Us">Kontaktirajte Nas</a>
       </div>
     </div>
   </header>
 
   <div class="marquee-strip">
     <div class="marquee-track">
-      <div class="marquee-item"><span class="marquee-dot"></span><span>Fotografija</span></div>
-      <div class="marquee-item"><span class="marquee-dot"></span><span>Web Dizajn</span></div>
-      <div class="marquee-item"><span class="marquee-dot"></span><span>Grafički Dizajn</span></div>
-      <div class="marquee-item"><span class="marquee-dot"></span><span>Branding</span></div>
-      <div class="marquee-item"><span class="marquee-dot"></span><span>PR & Komunikacije</span></div>
-      <div class="marquee-item"><span class="marquee-dot"></span><span>Portreti</span></div>
-      <div class="marquee-item"><span class="marquee-dot"></span><span>Vizualni Identitet</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Fotografija" data-en="Photography">Fotografija</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Web Dizajn" data-en="Web Design">Web Dizajn</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Grafički Dizajn" data-en="Graphic Design">Grafički Dizajn</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Branding" data-en="Branding">Branding</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="PR & Komunikacije" data-en="PR & Communications">PR & Komunikacije</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Portreti" data-en="Portraits">Portreti</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Vizualni Identitet" data-en="Visual Identity">Vizualni Identitet</span></div>
     </div>
   </div>
 
   <section id="brand-stats">
     <div class="stats-grid">
-      <div>
+      <div class="stat-box">
         <div class="stat-number">15+</div>
         <div class="stat-label" data-hr="Godina iskustva" data-en="Years of experience">Godina iskustva</div>
       </div>
-      <div>
+      <div class="stat-box">
         <div class="stat-number">9</div>
         <div class="stat-label" data-hr="Kategorija usluga" data-en="Service categories">Kategorija usluga</div>
       </div>
-      <div>
+      <div class="stat-box">
         <div class="stat-number">100%</div>
         <div class="stat-label" data-hr="Posvećenost viziji" data-en="Dedication to vision">Posvećenost viziji</div>
       </div>
@@ -356,29 +628,46 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4
         <div class="section-label" data-hr="O meni | KEZIĆ VIZUALI" data-en="About me | KEZIĆ VIZUALI">O meni | KEZIĆ VIZUALI</div>
         <h2 class="section-title" data-hr="Tamo gdje iskustvo <em>susreće inovaciju</em>" data-en="Where experience <em>meets innovation</em>">Tamo gdje iskustvo <em>susreće inovaciju</em></h2>
         <div class="divider"></div>
-        <p data-hr="Moje ime je <strong>Krunoslav Kezić</strong>, a moj kreativni put započeo je prije više od 15 godina iza objektiva fotoaparata. Kroz to desetljeće i pol, naučio sam da fotografija nije samo pritisak na gumb, to je razumijevanje svjetla i pričanje priče." data-en="My name is <strong>Krunoslav Kezić</strong>, and my creative journey began over 15 years ago behind the camera lens.">Moje ime je <strong>Krunoslav Kezić</strong>, a moj kreativni put započeo je prije više od 15 godina iza objektiva fotoaparata.</p>
-        <p data-hr="Danas, kroz svoj obrt Kezić Vizuali, tu istu strast unosim u novu eru vizualnih komunikacija." data-en="Today, through my studio Kezić Vizuali, I bring that same passion into a new era.">Danas, kroz svoj obrt Kezić Vizuali, tu istu strast unosim u novu eru vizualnih komunikacija.</p>
+        <p data-hr="Moje ime je <strong>Krunoslav Kezić</strong>, a moj kreativni put započeo je prije više od 15 godina iza objektiva fotoaparata. Kroz to desetljeće i pol, naučio sam da fotografija nije samo pritisak na gumb, to je razumijevanje svjetla, hvatanje teksture i pričanje priče koja ne treba riječi." data-en="My name is <strong>Krunoslav Kezić</strong>, and my creative journey began over 15 years ago behind the camera lens.">Moje ime je <strong>Krunoslav Kezić</strong>, a moj kreativni put započeo je prije više od 15 godina iza objektiva fotoaparata.</p>
+        <p data-hr="Danas, kroz svoj obrt Kezić Vizuali, tu istu strast i profesionalnu preciznost unosim u novu eru vizualnih komunikacija." data-en="Today, through my studio Kezić Vizuali, I bring that same passion and professional precision into a new era of visual communications.">Danas, kroz svoj obrt Kezić Vizuali, tu istu strast i profesionalnu preciznost unosim u novu eru vizualnih komunikacija.</p>
+        
+        <div style="margin: 2.5rem 0;">
+          <div class="omeni-step">
+            <div class="omeni-step-icon">I</div>
+            <div class="omeni-step-body">
+              <strong data-hr="Autentična baza" data-en="Authentic base">Autentična baza</strong>
+              <span data-hr="Svaki moj rad počinje s mojom autorskom fotografijom, originalni snimci kao strukturna referenca i temelj." data-en="Every piece of my work begins with my original photography.">Svaki moj rad počinje s mojom autorskom fotografijom, originalni snimci kao strukturna referenca i temelj.</span>
+            </div>
+          </div>
+          <div class="omeni-step">
+            <div class="omeni-step-icon">II</div>
+            <div class="omeni-step-body">
+              <strong data-hr="Tehnička preciznost" data-en="Technical precision">Tehnička preciznost</strong>
+              <span data-hr="Napredne tehnike osvjetljenja, kontrola dubinske oštrine i autentične teksture usavršavane godinama." data-en="Advanced lighting techniques and authentic textures.">Napredne tehnike osvjetljenja, kontrola dubinske oštrine i autentične teksture usavršavane godinama.</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 200€ AKCIJA BANNER -->
+  <!-- AKCIJA 200€ BANNER -->
   <div class="akcija-banner">
     <div>
       <div class="akcija-price"><sup>€</sup>200</div>
       <div style="font-size: 0.7rem; color: var(--text-faint); text-transform: uppercase;" data-hr="Jednokratno" data-en="One-time">Jednokratno</div>
     </div>
     <div>
-      <span style="background: var(--gold); color: #080807; font-size: 0.6rem; padding: 0.2rem 0.6rem; text-transform: uppercase; font-weight: 500;" data-hr="Top ponuda" data-en="Top offer">Top ponuda</span>
+      <span style="background: var(--gold); color: #080807; font-size: 0.6rem; padding: 0.2rem 0.6rem; text-transform: uppercase; font-weight: 500;" data-hr="🔥 Najjača ponuda" data-en="🔥 Best offer">🔥 Najjača ponuda</span>
       <h3 style="font-family: var(--serif); font-size: 2rem; font-weight: 300; margin-top: 0.5rem;" data-hr="Vaš web. Zauvijek vaš.<br><em>Besplatan hosting — zauvijek.</em>" data-en="Your web. Yours forever.<br><em>Free hosting — forever.</em>">Vaš web. Zauvijek vaš.<br><em>Besplatan hosting — zauvijek.</em></h3>
       <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 0.5rem;" data-hr="Kompletan profesionalni web za obrt, OPG ili udrugu. Fotografiranje, copywriting, SEO i kontakt forma uključeni." data-en="Complete professional website for trades, farms, or associations. Photography, copywriting, SEO included.">Kompletan profesionalni web za obrt, OPG ili udrugu. Fotografiranje, copywriting, SEO i kontakt forma uključeni.</p>
     </div>
     <div>
-      <a href="ponuda100.html" class="btn-gold" data-hr="Pogledaj ponudu &rarr;" data-en="View offer &rarr;">Pogledaj ponudu &rarr;</a>
+      <a href="ponuda100.html" class="btn-primary" data-hr="Pogledaj ponudu &rarr;" data-en="View offer &rarr;">Pogledaj ponudu &rarr;</a>
     </div>
   </div>
 
-  <!-- LOOKBOOK USLUGE (01, 02, 03 STYLE) -->
+  <!-- FASHION LOOKBOOK USLUGE (01, 02, 03 STYLE) -->
   <section style="padding: 6rem 5%;">
     <div class="section-label" data-hr="Katalog Usluga" data-en="Service Catalog">Katalog Usluga</div>
     <h2 class="section-title" data-hr="Glavne <em>Kategorije</em>" data-en="Main <em>Categories</em>">Glavne <em>Kategorije</em></h2>
@@ -403,7 +692,69 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4
     </div>
   </section>
 
-  <!-- BRUTALAN BIJELI KONTRAST (RECENZIJE KLIJENATA) -->
+  <div class="web-offer-banner">
+    <div>
+      <div style="font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;" data-hr="Web Development — Napredni projekti" data-en="Web Development — Advanced projects">Web Development — Napredni projekti</div>
+      <h3 style="font-family: var(--serif); font-size: 2.2rem; font-weight: 300;" data-hr="Ultra-brza web rješenja bez mjesečnih troškova" data-en="Ultra-fast web solutions without monthly costs">Ultra-brza web rješenja bez mjesečnih troškova</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;" data-hr="Webshop, višejezičnost, posebne funkcionalnosti — cijena po dogovoru." data-en="Webshop, multilingualism, special features — price on agreement.">Webshop, višejezičnost, posebne funkcionalnosti — cijena po dogovoru.</p>
+    </div>
+    <div style="text-align: right;">
+      <div style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-faint);" data-hr="Od" data-en="From">Od</div>
+      <div style="font-family: var(--serif); font-size: 4rem; color: var(--gold); line-height: 1; margin-bottom: 1rem;"><sup>€</sup>500</div>
+      <a href="#kontakt" class="btn-primary" data-hr="Zatraži Ponudu" data-en="Get a Quote">Zatraži Ponudu</a>
+    </div>
+  </div>
+
+  <section id="cjenik">
+    <div class="section-label" data-hr="Kompletna Ponuda" data-en="Complete Offer">Kompletna Ponuda</div>
+    <h2 class="section-title" data-hr="Naše Usluge i <em>Cjenik</em>" data-en="Our Services &amp; <em>Pricing</em>">Naše Usluge i <em>Cjenik</em></h2>
+    <div class="divider"></div>
+
+    <div class="pricing-grid">
+      <div class="pricing-category">
+        <div class="pricing-category-num">01</div>
+        <div class="pricing-category-title" data-hr="Fotografiranje" data-en="Photography">Fotografiranje</div>
+        <table class="pricing-table">
+          <tr><td>Portretno fotografiranje</td><td>od 80,00 €</td></tr>
+          <tr><td>Poslovni portreti / Headshots</td><td>od 100,00 €</td></tr>
+          <tr><td>Obiteljsko fotografiranje</td><td>od 150,00 €</td></tr>
+          <tr><td>Vjenčano fotografiranje</td><td>od 600,00 €</td></tr>
+          <tr><td>Fotografiranje za društvene mreže</td><td>od 80,00 € / sat</td></tr>
+          <tr><td>Događanja i PR</td><td>80,00 € / 50,00 €</td></tr>
+          <tr><td>Interijeri i nekretnine</td><td>od 120,00 € / obj.</td></tr>
+          <tr><td>E-commerce</td><td>20,00 € / art.</td></tr>
+        </table>
+      </div>
+
+      <div class="pricing-category">
+        <div class="pricing-category-num">02</div>
+        <div class="pricing-category-title" data-hr="Web Dizajn i Digitalna Rješenja" data-en="Web Design and Digital Solutions">Web Dizajn i Digitalna Rješenja</div>
+        <table class="pricing-table">
+          <tr><td>Web stranica – akcija</td><td>200,00 €</td></tr>
+          <tr><td>Web stranica – standard</td><td>od 350,00 €</td></tr>
+          <tr><td>Web stranica – napredni projekt</td><td>od 500,00 €</td></tr>
+          <tr><td>Payhip online trgovina</td><td>150,00 €</td></tr>
+          <tr><td>Tehničko održavanje</td><td>40,00 € / mj.</td></tr>
+          <tr><td>Hosting i domena</td><td>od 120,00 € / god.</td></tr>
+        </table>
+      </div>
+
+      <div class="pricing-category">
+        <div class="pricing-category-num">03</div>
+        <div class="pricing-category-title" data-hr="Grafički Dizajn" data-en="Graphic Design">Grafički Dizajn</div>
+        <table class="pricing-table">
+          <tr><td>Vizualni identitet</td><td>od 250,00 €</td></tr>
+          <tr><td>Dizajn jelovnika</td><td>40,00 € / str.</td></tr>
+          <tr><td>Letak, brošura, plakat</td><td>od 60,00 €</td></tr>
+          <tr><td>Ambalaža i naljepnice</td><td>od 100,00 €</td></tr>
+          <tr><td>Vizitke i pozivnice</td><td>30,00 €</td></tr>
+          <tr><td>Prijelom publikacija</td><td>25,00 € / str.</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚡ BRUTALAN BIJELI KONTRAST (RECENZIJE U MODU LUKSUZNOG PAPIRNATOG MAGAZINA) -->
   <div class="brutal-white-section">
     <div class="section-label" data-hr="Iskustva klijenata" data-en="Client Experiences">Iskustva klijenata</div>
     <h2 class="section-title" data-hr="Što kažu o <em>našem radu</em>" data-en="What they say about <em>our work</em>">Što kažu o <em>našem radu</em></h2>
@@ -412,23 +763,37 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4
     <div class="testimonials-grid">
       <div class="testimonial-card">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text" data-hr="&quot;Baš mi je drago vidjeti da još ima ljudi koji vole svoj posao i tako ga predano rade...&quot;" data-en="&quot;I'm so glad to see there are still people who love their job...&quot;">"Baš mi je drago vidjeti da još ima ljudi koji vole svoj posao i tako ga predano rade..."</p>
+        <p class="testimonial-text" data-hr="&quot;Baš mi je drago vidjeti da još ima ljudi koji vole svoj posao i tako ga predano rade, uglavnom svakako ćemo surađivati i dalje 😊. I još jednom veliko hvala.&quot;" data-en="&quot;I'm so glad to see there are still people who love their job and do it so dedicatedly...&quot;">"Baš mi je drago vidjeti da još ima ljudi koji vole svoj posao i tako ga predano rade, uglavnom svakako ćemo surađivati i dalje 😊. I još jednom veliko hvala."</p>
         <div class="testimonial-author"><strong>Nataša</strong><span>Galerija Arts</span></div>
       </div>
       <div class="testimonial-card">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text" data-hr="&quot;Ma vi ste stvarno genijalci 💖 hvala vam puno, stvarno ste na sve mislili od A do Ž.&quot;" data-en="&quot;You are truly geniuses 💖 thank you so much...&quot;">"Ma vi ste stvarno genijalci 💖 hvala vam puno, stvarno ste na sve mislili od A do Ž."</p>
-        <div class="testimonial-author"><strong>Osnivač</strong><span>Royal Rides Hrvatska</span></div>
+        <p class="testimonial-text" data-hr="&quot;Ma vi ste stvarno genijalci 💖 hvala vam puno, stvarno ste na sve mislili od A do Ž. Hvala hvala nemate pojma koliko me veseli što je ovako lijepa stranica ❤️.&quot;" data-en="&quot;You are truly geniuses 💖 thank you so much...&quot;">"Ma vi ste stvarno genijalci 💖 hvala vam puno, stvarno ste na sve mislili od A do Ž. Hvala hvala nemate pojma koliko me veseli što je ovako lijepa stranica ❤️."</p>
+        <div class="testimonial-author"><strong data-hr="Osnivač" data-en="Founder">Osnivač</strong><span>Royal Rides Hrvatska</span></div>
       </div>
       <div class="testimonial-card">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text" data-hr="&quot;Prezadovoljna sam stranicom, kada sam već odustala... Web za sitnicu a izgleda vrhunski.&quot;" data-en="&quot;I am extremely satisfied with the site...&quot;">"Prezadovoljna sam stranicom, kada sam već odustala... Web za sitnicu a izgleda vrhunski."</p>
-        <div class="testimonial-author"><strong>Vedrana</strong><span>Zadovoljni klijent</span></div>
+        <p class="testimonial-text" data-hr="&quot;Prezadovoljna sam stranicom, kada sam već odustala od svega jer su svi htjeli brdo para, vi ste mi napravili Web za sitnicu a izgleda vrhunski. Podijelit ću vaš link hvala vam od ❤️.&quot;" data-en="&quot;I am extremely satisfied with the site...&quot;">"Prezadovoljna sam stranicom, kada sam već odustala od svega jer su svi htjeli brdo para, vi ste mi napravili Web za sitnicu a izgleda vrhunski. Podijelit ću vaš link hvala vam od ❤️."</p>
+        <div class="testimonial-author"><strong>Vedrana</strong><span data-hr="Zadovoljni klijent" data-en="Satisfied client">Zadovoljni klijent</span></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text" data-hr="&quot;Frende ovo što si napravio je ludilo, ovaj moj Web je sada bolji od tvojeg 😁, ove animacije, video, ma sve si napravio na razini većoj nego je to bilo predviđeno. Web leti, hvala ti.&quot;" data-en="&quot;Man, what you did is crazy...&quot;">"Frende ovo što si napravio je ludilo, ovaj moj Web je sada bolji od tvojeg 😁, ove animacije, video, ma sve si napravio na razini većoj nego je to bilo predviđeno. Web leti, hvala ti."</p>
+        <div class="testimonial-author"><strong>Tonči</strong><span data-hr="Zadovoljni klijent" data-en="Satisfied client">Zadovoljni klijent</span></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text" data-hr="&quot;Ovakav logo nisam mogla niti zamisliti. Sve možemo sami inače napraviti u Canvi a ovo što ste vi napravili je više nego predivno. Preporučit ćemo vas dalje. Hvala vam.&quot;" data-en="&quot;I couldn't even imagine a logo like this...&quot;">"Ovakav logo nisam mogla niti zamisliti. Sve možemo sami inače napraviti u Canvi a ovo što ste vi napravili je više nego predivno. Preporučit ćemo vas dalje. Hvala vam."</p>
+        <div class="testimonial-author"><strong>Sonja</strong><span data-hr="Zadovoljni klijent" data-en="Satisfied client">Zadovoljni klijent</span></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text" data-hr="&quot;Jako ste srdačni i puni razumijevanja. Ne volim razgovarati s nepoznatim ljudima, ali vi ste ostavili predivan utisak na mene kada smo se konačno čuli. Napravili ste posao fenomenalno.&quot;" data-en="&quot;You are very cordial and full of understanding...&quot;">"Jako ste srdačni i puni razumijevanja. Ne volim razgovarati s nepoznatim ljudima, ali vi ste ostavili predivan utisak na mene kada smo se konačno čuli. Napravili ste posao fenomenalno."</p>
+        <div class="testimonial-author"><strong>Meri</strong><span data-hr="Zadovoljni klijent" data-en="Satisfied client">Zadovoljni klijent</span></div>
       </div>
     </div>
   </div>
 
-  <!-- FAQ -->
   <section id="faq">
     <div class="section-label" data-hr="Imate pitanja?" data-en="Have questions?">Imate pitanja?</div>
     <h2 class="section-title" data-hr="Često postavljana <em>Pitanja</em>" data-en="Frequently Asked <em>Questions</em>">Često postavljana <em>Pitanja</em></h2>
@@ -436,50 +801,77 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4
     <div class="faq-container">
       <div class="faq-item">
         <button class="faq-question"><span data-hr="Što točno znači besplatan hosting?" data-en="What exactly does free hosting mean?">Što točno znači besplatan hosting?</span> <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner" data-hr="Koristimo najmodernije platforme za lansiranje ultra-brzih statičnih web stranica bez mjesečnih troškova." data-en="We use modern platforms to launch ultra-fast static websites without monthly costs.">Koristimo najmodernije platforme za lansiranje ultra-brzih statičnih web stranica bez mjesečnih troškova.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner" data-hr="Koristimo najmodernije platforme (poput GitHuba) za lansiranje ultra-brzih statičnih web stranica. To znači da je vaša stranica vrhunski optimizirana i smještena na globalnim serverima, a vi nemate apsolutno nikakvih skrivenih mjesečnih troškova za hosting." data-en="We use cutting-edge platforms (like GitHub) to launch ultra-fast static websites with no monthly costs.">Koristimo najmodernije platforme (poput GitHuba) za lansiranje ultra-brzih statičnih web stranica bez mjesečnih troškova.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question"><span data-hr="Koliko se čeka na izradu weba?" data-en="How long is the wait for a website?">Koliko se čeka na izradu weba?</span> <span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner" data-hr="Stranica je najčešće gotova i lansirana unutar 7 do 10 radnih dana." data-en="The site is usually ready within 7 to 10 working days.">Stranica je najčešće gotova i lansirana unutar 7 do 10 radnih dana.</div></div>
+        <button class="faq-question"><span data-hr="Koliko se čeka na izradu web stranice od 200€?" data-en="How long is the wait for the 200€ website?">Koliko se čeka na izradu web stranice od 200€?</span> <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-hr="Zahvaljujući našem optimiziranom procesu, stranica je najčešće gotova i lansirana unutar 7 do 10 radnih dana." data-en="Thanks to our optimized process, the site is usually finished within 7 to 10 working days.">Zahvaljujući našem optimiziranom procesu, stranica je najčešće gotova i lansirana unutar 7 do 10 radnih dana.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span data-hr="Plaćam li održavanje stranice?" data-en="Do I pay for website maintenance?">Plaćam li održavanje stranice?</span> <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-hr="Ne! Stranica je u vašem potpunom vlasništvu i dizajnirana je da dugoročno radi bez greške." data-en="No! The site is entirely in your ownership and designed to run flawlessly.">Ne! Stranica je u vašem potpunom vlasništvu i dizajnirana je da dugoročno radi bez greške.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span data-hr="Jesu li fotografiranje i pisanje tekstova uključeni?" data-en="Are photography and copywriting included?">Jesu li fotografiranje i pisanje tekstova uključeni?</span> <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner" data-hr="Da! U paketu je uključeno osnovno fotografiranje vašeg objekta/usluge i copywriting ključnih tekstova." data-en="Yes! Basic photography and copywriting are included in the package.">Da! U paketu je uključeno osnovno fotografiranje vašeg objekta/usluge i copywriting ključnih tekstova.</div></div>
       </div>
     </div>
   </section>
 
-  <!-- KONTAKT -->
   <section id="kontakt">
     <div class="section-label" data-hr="Povežimo se" data-en="Let's connect">Povežimo se</div>
-    <h2 class="section-title" data-hr="Kontaktirajte <em>nas</em>" data-en="Contact <em>us</em>">Kontaktirajte <em>nas</em></h2>
+    <h2 class="section-title" data-hr="Kontakt" data-en="Contact">Kontakt</h2>
     <div class="divider"></div>
     <div class="contact-grid">
       <div>
-        <p style="color: var(--text-muted); line-height: 1.8;" data-hr="Spremni ste podići vizualni identitet na višu razinu? Pošaljite nam upit." data-en="Ready to elevate your visual identity? Send us an inquiry.">Spremni ste podići vizualni identitet na višu razinu? Pošaljite nam upit.</p>
+        <p style="color: var(--text-muted); line-height: 1.8;" data-hr="Spremni ste podići vizualni identitet svog poslovanja na višu razinu? Pošaljite nam upit i odgovorit ćemo vam u najkraćem mogućem roku." data-en="Ready to take your business's visual identity to the next level? Send us an inquiry.">Spremni ste podići vizualni identitet svog poslovanja na višu razinu? Pošaljite nam upit i odgovorit ćemo vam u najkraćem mogućem roku.</p>
         <p style="margin-top: 2rem; color: var(--gold);">kezicvizuali@gmail.com<br>+385 97 600 2753</p>
       </div>
       <div>
         <form class="contact-form" action="https://formspree.io/f/mgoqkdek" method="POST" id="contact-form">
           <div class="form-row">
-            <div class="form-group"><label data-hr="Ime i Prezime" data-en="Full Name">Ime i Prezime</label><input type="text" name="name" required></div>
+            <div class="form-group"><label data-hr="Ime i Prezime / Tvrtka" data-en="Full Name / Company">Ime i Prezime / Tvrtka</label><input type="text" name="name" required></div>
             <div class="form-group"><label data-hr="Email Adresa" data-en="Email Address">Email Adresa</label><input type="email" name="email" required></div>
           </div>
-          <div class="form-group"><label data-hr="Poruka" data-en="Message">Poruka</label><textarea name="message" required></textarea></div>
-          <button type="submit" class="btn-gold" data-hr="Pošalji Upit &rarr;" data-en="Send Inquiry &rarr;">Pošalji Upit &rarr;</button>
+          <div class="form-group">
+            <label data-hr="Vrsta Usluge" data-en="Service Type">Vrsta Usluge</label>
+            <select name="service">
+              <option>Web za 200 € — akcijska ponuda</option>
+              <option>Fotografiranje</option>
+              <option>Grafički Dizajn</option>
+              <option>Izrada Web Stranice (od 500 €)</option>
+              <option>Ostalo / Opći upit</option>
+            </select>
+          </div>
+          <div class="form-group"><label data-hr="Vaša Poruka" data-en="Your Message">Vaša Poruka</label><textarea name="message" required></textarea></div>
+          <button type="submit" class="btn-primary" data-hr="Pošalji Upit &rarr;" data-en="Send Inquiry &rarr;">Pošalji Upit &rarr;</button>
         </form>
+        <div id="form-success" style="display:none; color:var(--gold); margin-top:1rem;" data-hr="Hvala vam! Vaš upit je uspješno poslan." data-en="Thank you! Your inquiry was successfully sent.">Hvala vam! Vaš upit je uspješno poslan.</div>
       </div>
     </div>
   </section>
+
+  <div class="ig-feed">
+    <a href="https://www.instagram.com/kezicvizuali/" target="_blank" class="ig-item"><img src="slike/foto1.jpeg" alt="Instagram"></a>
+    <a href="https://www.instagram.com/kezicvizuali/" target="_blank" class="ig-item"><img src="slike/studio1.jpeg" alt="Instagram"></a>
+    <a href="https://www.instagram.com/kezicvizuali/" target="_blank" class="ig-item"><img src="slike/foto4.jpeg" alt="Instagram"></a>
+    <a href="https://www.instagram.com/kezicvizuali/" target="_blank" class="ig-item"><img src="slike/studio5.jpeg" alt="Instagram"></a>
+    <a href="https://www.instagram.com/kezicvizuali/" target="_blank" class="ig-item"><img src="slike/foto8.jpeg" alt="Instagram"></a>
+  </div>
 
   <footer>
     <div class="footer-grid">
       <div>
         <img src="Kezić vizuali transparent xl.png" alt="Logo" style="height: 60px; width: auto;">
-        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem;" data-hr="Studio za vizualne komunikacije i dizajn." data-en="Studio for visual communications and design.">Studio za vizualne komunikacije i dizajn.</p>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem;" data-hr="Studio za vizualne komunikacije i dizajn." data-en="Studio for visual communications and design.">Studio za vizualne komunikacije i dizajn. Spoj stare škole majstorstva i tehnologije budućnosti.</p>
       </div>
       <div>
-        <h5 style="color: var(--gold); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;" data-hr="Linkovi" data-en="Links">Linkovi</h5>
+        <h5 style="color: var(--gold); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;" data-hr="Brzi Linkovi" data-en="Quick Links">Brzi Linkovi</h5>
         <ul style="list-style: none;">
-          <li><a href="portfolio.html" style="color: var(--text-muted); text-decoration: none;" data-hr="Portfolio" data-en="Portfolio">Portfolio</a></li>
-          <li><a href="galerija.html" style="color: var(--text-muted); text-decoration: none;" data-hr="Galerija" data-en="Gallery">Galerija</a></li>
+          <li><a href="portfolio.html" style="color: var(--text-muted); text-decoration: none;" data-hr="Web Portfolio" data-en="Web Portfolio">Web Portfolio</a></li>
+          <li><a href="galerija.html" style="color: var(--text-muted); text-decoration: none;" data-hr="Foto Galerija" data-en="Photo Gallery">Foto Galerija</a></li>
           <li><a href="uvjeti.html" style="color: var(--text-muted); text-decoration: none;" data-hr="Uvjeti korištenja" data-en="Terms of use">Uvjeti korištenja</a></li>
+          <li><a href="ponuda100.html" style="color: var(--text-muted); text-decoration: none;" data-hr="Web za 200 €" data-en="Web for 200 €">Web za 200 €</a></li>
         </ul>
       </div>
     </div>
@@ -503,6 +895,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
     if(hamburger) hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(btn => {
@@ -510,6 +903,13 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4
         const answer = this.nextElementSibling;
         answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + "px";
       });
+    });
+
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+      if (res.ok) { form.style.display = 'none'; document.getElementById('form-success').style.display = 'block'; }
     });
 
     const cookieBanner = document.getElementById('cookie-banner');
