@@ -723,7 +723,7 @@ section { padding: 8rem 5%; position: relative; z-index: 2; }
 .pricing-category {
   background: var(--bg2);
   padding: 2rem 2.2rem;
-  position: relative; overflow: hidden;
+  position: relative overflow: hidden;
   transition: background 0.35s, box-shadow 0.35s, transform 0.3s;
 }
 .pricing-category:hover {
@@ -1040,25 +1040,25 @@ footer::before {
   <div id="particles"></div>
 
   <div id="cookie-banner" role="dialog" aria-label="Privola za kolačiće">
-    <p>Koristimo kolačiće za analitiku (Google Analytics) kako bismo poboljšali stranicu. Možete prihvatiti ili odbiti. <a href="uvjeti.html">Više informacija</a></p>
+    <p data-hr="Koristimo kolačiće za analitiku (Google Analytics) kako bismo poboljšali stranicu. Možete prihvatiti ili odbiti. <a href='uvjeti.html'>Više informacija</a>" data-en="We use cookies for analytics (Google Analytics) to improve the site. You can accept or decline. <a href='uvjeti.html'>More information</a>">Koristimo kolačiće za analitiku (Google Analytics) kako bismo poboljšali stranicu. Možete prihvatiti ili odbiti. <a href="uvjeti.html">Više informacija</a></p>
     <div class="cookie-banner-btns">
-      <button type="button" id="cookie-reject">Odbij</button>
-      <button type="button" id="cookie-accept">Prihvati</button>
+      <button type="button" id="cookie-reject" data-hr="Odbij" data-en="Decline">Odbij</button>
+      <button type="button" id="cookie-accept" data-hr="Prihvati" data-en="Accept">Prihvati</button>
     </div>
   </div>
 
   <!-- ══ PROMO BAR 200€ ══ -->
   <div class="promo-bar" id="promo-bar">
     <div class="promo-bar-inner">
-      <span class="promo-bar-badge">🔥 Akcija</span>
+      <span class="promo-bar-badge" data-hr="🔥 Akcija" data-en="🔥 Special Offer">🔥 Akcija</span>
       <span class="promo-bar-text">
-        <strong>Web stranica za samo 200 €</strong>
+        <strong data-hr="Web stranica za samo 200 €" data-en="Website for only 200 €">Web stranica za samo 200 €</strong>
         <span class="sep">·</span>
-        Hosting zauvijek besplatan
+        <span data-hr="Hosting zauvijek besplatan" data-en="Free hosting forever">Hosting zauvijek besplatan</span>
         <span class="sep">·</span>
-        Fotografiranje + tekstovi uključeni
+        <span data-hr="Fotografiranje + tekstovi uključeni" data-en="Photography + texts included">Fotografiranje + tekstovi uključeni</span>
       </span>
-      <a href="ponuda100.html" class="promo-bar-cta">Saznaj više →</a>
+      <a href="ponuda100.html" class="promo-bar-cta" data-hr="Saznaj više &rarr;" data-en="Learn more &rarr;">Saznaj više &rarr;</a>
       <button class="promo-bar-close" id="promo-close" aria-label="Zatvori">✕</button>
     </div>
   </div>
@@ -1077,7 +1077,7 @@ footer::before {
       <li><a href="#cjenik" data-hr="Usluge i Cjenik" data-en="Services & Pricing">Usluge i Cjenik</a></li>
       <li><a href="#kontakt" data-hr="Kontakt" data-en="Contact">Kontakt</a></li>
     </ul>
-    
+
     <!-- Language Switcher -->
     <div style="display: flex; align-items: center; gap: 8px; margin-left: auto; margin-right: 20px;">
         <button id="btn-hr" onclick="setLanguage('hr')" style="background:none; border:none; color: var(--gold); font-size: 0.78rem; font-family: var(--sans); font-weight: 600; cursor: pointer; letter-spacing: 0.14em;">HR</button>
@@ -1094,29 +1094,29 @@ footer::before {
       <div class="hero-lines"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-eyebrow">Digitalni Kreativni Studio &mdash; Velika Gorica</div>
-      <h1 class="hero-title">
+      <div class="hero-eyebrow" data-hr="Digitalni Kreativni Studio &mdash; Velika Gorica" data-en="Digital Creative Studio &mdash; Velika Gorica">Digitalni Kreativni Studio &mdash; Velika Gorica</div>
+      <h1 class="hero-title" data-hr="Vizuali koji pričaju <em>priču</em> vašeg brenda." data-en="Visuals that tell the <em>story</em> of your brand.">
         Vizuali koji pričaju <em>priču</em> vašeg brenda.
       </h1>
-      <p class="hero-sub">
+      <p class="hero-sub" data-hr="Spoj vrhunskog grafičkog dizajna, profesionalne fotografije i strateškog marketinga, sve na jednom mjestu, za lokalne poduzetnike koji misle globalno." data-en="A blend of premium graphic design, professional photography, and strategic marketing, all in one place, for local entrepreneurs who think globally.">
         Spoj vrhunskog grafičkog dizajna, profesionalne fotografije i strateškog marketinga, sve na jednom mjestu, za lokalne poduzetnike koji misle globalno.
       </p>
       <div class="hero-btns">
-        <a href="#cjenik" class="btn-primary">Istraži Usluge</a>
-        <a href="#kontakt" class="btn-outline">Kontaktirajte Nas</a>
+        <a href="#cjenik" class="btn-primary" data-hr="Istraži Usluge" data-en="Explore Services">Istraži Usluge</a>
+        <a href="#kontakt" class="btn-outline" data-hr="Kontaktirajte Nas" data-en="Contact Us">Kontaktirajte Nas</a>
       </div>
     </div>
     
     <div class="hero-side-details">
       <div class="hero-location-tag">
-        <h4>Hrvatska</h4>
-        <p>Terenski rad & Online globalno</p>
+        <h4 data-hr="Hrvatska" data-en="Croatia">Hrvatska</h4>
+        <p data-hr="Terenski rad & Online globalno" data-en="Field work & Online globally">Terenski rad & Online globalno</p>
       </div>
-      <div class="hero-badge-vertical">Kreativnost bez granica</div>
+      <div class="hero-badge-vertical" data-hr="Kreativnost bez granica" data-en="Creativity without borders">Kreativnost bez granica</div>
     </div>
 
     <div class="scroll-hint">
-      <span>Pomakni</span>
+      <span data-hr="Pomakni" data-en="Scroll">Pomakni</span>
       <div class="scroll-line"></div>
     </div>
   </header>
@@ -1124,20 +1124,21 @@ footer::before {
   <!-- MARQUEE -->
   <div class="marquee-strip">
     <div class="marquee-track" id="marquee">
-      <div class="marquee-item"><span class="marquee-dot"></span>Fotografija</div>
-      <div class="marquee-item"><span class="marquee-dot"></span>Web Dizajn</div>
-      <div class="marquee-item"><span class="marquee-dot"></span>Grafički Dizajn</div>
-      <div class="marquee-item"><span class="marquee-dot"></span>Branding</div>
-      <div class="marquee-item"><span class="marquee-dot"></span>PR & Komunikacije</div>
-      <div class="marquee-item"><span class="marquee-dot"></span>Portreti</div>
-      <div class="marquee-item"><span class="marquee-dot"></span>Vizualni Identitet</div>
-      <div class="marquee-item"><span class="marquee-dot"></span>Fotografija</div>
-      <div class="marquee-item"><span class="marquee-dot"></span>Web Dizajn</div>
-      <div class="marquee-item"><span class="marquee-dot"></span>Grafički Dizajn</div>
-      <div class="marquee-item"><span class="marquee-dot"></span>Branding</div>
-      <div class="marquee-item"><span class="marquee-dot"></span>PR & Komunikacije</div>
-      <div class="marquee-item"><span class="marquee-dot"></span>Portreti</div>
-      <div class="marquee-item"><span class="marquee-dot"></span>Vizualni Identitet</div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Fotografija" data-en="Photography">Fotografija</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Web Dizajn" data-en="Web Design">Web Dizajn</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Grafički Dizajn" data-en="Graphic Design">Grafički Dizajn</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Branding" data-en="Branding">Branding</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="PR & Komunikacije" data-en="PR & Communications">PR & Komunikacije</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Portreti" data-en="Portraits">Portreti</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Vizualni Identitet" data-en="Visual Identity">Vizualni Identitet</span></div>
+      
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Fotografija" data-en="Photography">Fotografija</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Web Dizajn" data-en="Web Design">Web Dizajn</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Grafički Dizajn" data-en="Graphic Design">Grafički Dizajn</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Branding" data-en="Branding">Branding</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="PR & Komunikacije" data-en="PR & Communications">PR & Komunikacije</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Portreti" data-en="Portraits">Portreti</span></div>
+      <div class="marquee-item"><span class="marquee-dot"></span><span data-hr="Vizualni Identitet" data-en="Visual Identity">Vizualni Identitet</span></div>
     </div>
   </div>
 
@@ -1146,15 +1147,15 @@ footer::before {
     <div class="stats-grid">
       <div class="stat-box">
         <div class="stat-number" data-count="15" data-suffix="+">0</div>
-        <div class="stat-label">Godina iskustva</div>
+        <div class="stat-label" data-hr="Godina iskustva" data-en="Years of experience">Godina iskustva</div>
       </div>
       <div class="stat-box">
         <div class="stat-number" data-count="9" data-suffix="">0</div>
-        <div class="stat-label">Kategorija usluga</div>
+        <div class="stat-label" data-hr="Kategorija usluga" data-en="Service categories">Kategorija usluga</div>
       </div>
       <div class="stat-box">
         <div class="stat-number" data-count="100" data-suffix="%">0</div>
-        <div class="stat-label">Posvećenost viziji</div>
+        <div class="stat-label" data-hr="Posvećenost viziji" data-en="Dedication to vision">Posvećenost viziji</div>
       </div>
     </div>
   </section>
@@ -1167,45 +1168,45 @@ footer::before {
         </div>
       </div>
       <div class="omeni-text reveal">
-        <div class="section-label">O meni | KEZIĆ VIZUALI</div>
-        <h2 class="section-title">Tamo gdje iskustvo <em>susreće inovaciju</em></h2>
+        <div class="section-label" data-hr="O meni | KEZIĆ VIZUALI" data-en="About me | KEZIĆ VIZUALI">O meni | KEZIĆ VIZUALI</div>
+        <h2 class="section-title" data-hr="Tamo gdje iskustvo <em>susreće inovaciju</em>" data-en="Where experience <em>meets innovation</em>">Tamo gdje iskustvo <em>susreće inovaciju</em></h2>
         <div class="divider"></div>
-        <p>Moje ime je <strong>Krunoslav Kezić</strong>, a moj kreativni put započeo je prije više od 15 godina iza objektiva fotoaparata. Kroz to desetljeće i pol, naučio sam da fotografija nije samo pritisak na gumb, to je razumijevanje svjetla, hvatanje teksture i pričanje priče koja ne treba riječi.</p>
-        <p>Danas, kroz svoj obrt Kezić Vizuali, tu istu strast i profesionalnu preciznost unosim u novu eru vizualnih komunikacija.</p>
+        <p data-hr="Moje ime je <strong>Krunoslav Kezić</strong>, a moj kreativni put započeo je prije više od 15 godina iza objektiva fotoaparata. Kroz to desetljeće i pol, naučio sam da fotografija nije samo pritisak na gumb, to je razumijevanje svjetla, hvatanje teksture i pričanje priče koja ne treba riječi." data-en="My name is <strong>Krunoslav Kezić</strong>, and my creative journey began over 15 years ago behind the camera lens. Through that decade and a half, I learned that photography isn't just pressing a button; it's understanding light, capturing texture, and telling a story that needs no words.">Moje ime je <strong>Krunoslav Kezić</strong>, a moj kreativni put započeo je prije više od 15 godina iza objektiva fotoaparata. Kroz to desetljeće i pol, naučio sam da fotografija nije samo pritisak na gumb, to je razumijevanje svjetla, hvatanje teksture i pričanje priče koja ne treba riječi.</p>
+        <p data-hr="Danas, kroz svoj obrt Kezić Vizuali, tu istu strast i profesionalnu preciznost unosim u novu eru vizualnih komunikacija." data-en="Today, through my studio Kezić Vizuali, I bring that same passion and professional precision into a new era of visual communications.">Danas, kroz svoj obrt Kezić Vizuali, tu istu strast i profesionalnu preciznost unosim u novu eru vizualnih komunikacija.</p>
         
         <div class="omeni-philosophy">
-          <div class="omeni-philosophy-title">Moja filozofija: Umjetnost vođena ljudskim okom</div>
-          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">U svijetu prepavljenom generičkim AI vizualima, moj pristup je bitno drugačiji. Ja ne dopuštam algoritmu da vodi moju viziju, ja vodim njega.</p>
+          <div class="omeni-philosophy-title" data-hr="Moja filozofija: Umjetnost vođena ljudskim okom" data-en="My philosophy: Art guided by the human eye">Moja filozofija: Umjetnost vođena ljudskim okom</div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;" data-hr="U svijetu prepavljenom generičkim AI vizualima, moj pristup je bitno drugačiji. Ja ne dopuštam algoritmu da vodi moju viziju, ja vodim njega." data-en="In a world flooded with generic AI visuals, my approach is fundamentally different. I don't let the algorithm guide my vision; I guide it.">U svijetu prepavljenom generičkim AI vizualima, moj pristup je bitno drugačiji. Ja ne dopuštam algoritmu da vodi moju viziju, ja vodim njega.</p>
           
           <div class="omeni-step reveal reveal-delay-1">
             <div class="omeni-step-icon">I</div>
             <div class="omeni-step-body">
-              <strong>Autentična baza</strong>
-              <span>Svaki moj rad počinje s mojom autorskom fotografijom, originalni snimci kao strukturna referenca i temelj.</span>
+              <strong data-hr="Autentična baza" data-en="Authentic base">Autentična baza</strong>
+              <span data-hr="Svaki moj rad počinje s mojom autorskom fotografijom, originalni snimci kao strukturna referenca i temelj." data-en="Every piece of my work begins with my original photography, authentic shots as a structural reference and foundation.">Svaki moj rad počinje s mojom autorskom fotografijom, originalni snimci kao strukturna referenca i temelj.</span>
             </div>
           </div>
           <div class="omeni-step reveal reveal-delay-2">
             <div class="omeni-step-icon">II</div>
             <div class="omeni-step-body">
-              <strong>Tehnička preciznost</strong>
-              <span>Napredne tehnike osvjetljenja, kontrola dubinske oštrine i autentične teksture usavršavane godinama profesionalnog rada.</span>
+              <strong data-hr="Tehnička preciznost" data-en="Technical precision">Tehnička preciznost</strong>
+              <span data-hr="Napredne tehnike osvjetljenja, kontrola dubinske oštrine i autentične teksture usavršavane godinama profesionalnog rada." data-en="Advanced lighting techniques, depth of field control, and authentic textures perfected through years of professional work.">Napredne tehnike osvjetljenja, kontrola dubinske oštrine i autentične teksture usavršavane godinama profesionalnog rada.</span>
             </div>
           </div>
           <div class="omeni-step reveal reveal-delay-3">
             <div class="omeni-step-icon">III</div>
             <div class="omeni-step-body">
-              <strong>Image-to-Image proces</strong>
-              <span>AI kao vrhunski alat — rafiniranje svakog piksela do hiper-realizma koji zadržava integritet prave fotografije, ali širi granice mašte.</span>
+              <strong data-hr="Image-to-Image proces" data-en="Image-to-Image process">Image-to-Image proces</strong>
+              <span data-hr="AI kao vrhunski alat &mdash; rafiniranje svakog piksela do hiper-realizma koji zadržava integritet prave fotografije, ali širi granice mašte." data-en="AI as a premium tool &mdash; refining every pixel to hyper-realism that maintains the integrity of true photography while pushing the boundaries of imagination.">AI kao vrhunski alat &mdash; rafiniranje svakog piksela do hiper-realizma koji zadržava integritet prave fotografije, ali širi granice mašte.</span>
             </div>
           </div>
         </div>
 
-        <h3 style="font-family: var(--serif); font-size: 1.5rem; color: var(--gold); margin: 2.5rem 0 1rem;">Zašto Kezić Vizuali?</h3>
-        <p>Bilo da radimo na brendiranju lokalnih restorana u Velikoj Gorici, dizajnu unikatnih plakata ili stvaranju digitalne umjetnosti za globalno tržište, naš cilj je uvijek isti: produkcijski spremni vizuali najviše klase.</p>
-        <p>Kada surađujete s nama, ne dobivate samo digitalnu datoteku. Dobivate komad vizualne umjetnosti koji je rezultat 15 godina promatranja svijeta kroz tražilo fotoaparata.</p>
+        <h3 style="font-family: var(--serif); font-size: 1.5rem; color: var(--gold); margin: 2.5rem 0 1rem;" data-hr="Zašto Kezić Vizuali?" data-en="Why Kezić Vizuali?">Zašto Kezić Vizuali?</h3>
+        <p data-hr="Bilo da radimo na brendiranju lokalnih restorana u Velikoj Gorici, dizajnu unikatnih plakata ili stvaranju digitalne umjetnosti za globalno tržište, naš cilj je uvijek isti: produkcijski spremni vizuali najviše klase." data-en="Whether we are branding local restaurants in Velika Gorica, designing unique posters, or creating digital art for the global market, our goal is always the same: production-ready visuals of the highest class.">Bilo da radimo na brendiranju lokalnih restorana u Velikoj Gorici, dizajnu unikatnih plakata ili stvaranju digitalne umjetnosti za globalno tržište, naš cilj je uvijek isti: produkcijski spremni vizuali najviše klase.</p>
+        <p data-hr="Kada surađujete s nama, ne dobivate samo digitalnu datoteku. Dobivate komad vizualne umjetnosti koji je rezultat 15 godina promatranja svijeta kroz tražilo fotoaparata." data-en="When you work with us, you don't just get a digital file. You get a piece of visual art that is the result of 15 years of observing the world through a camera viewfinder.">Kada surađujete s nama, ne dobivate samo digitalnu datoteku. Dobivate komad vizualne umjetnosti koji je rezultat 15 godina promatranja svijeta kroz tražilo fotoaparata.</p>
 
         <div class="omeni-quote">
-          <p>"Kao tim strastvenih vizionara, posvećeni smo tome da svaki projekt tretiramo s individualnom pažnjom. Naša misija je transformirati vaše ideje u vizualne koncepte koji ne samo da privlače poglede, već i ostvaruju mjerljive poslovne rezultate."</p>
+          <p data-hr="&quot;Kao tim strastvenih vizionara, posvećeni smo tome da svaki projekt tretiramo s individualnom pažnjom. Naša misija je transformirati vaše ideje u vizualne koncepte koji ne samo da privlače poglede, već i ostvaruju mjerljive poslovne rezultate.&quot;" data-en="&quot;As a team of passionate visionaries, we are dedicated to treating every project with individual attention. Our mission is to transform your ideas into visual concepts that not only catch the eye but also deliver measurable business results.&quot;">"Kao tim strastvenih vizionara, posvećeni smo tome da svaki projekt tretiramo s individualnom pažnjom. Naša misija je transformirati vaše ideje u vizualne koncepte koji ne samo da privlače poglede, već i ostvaruju mjerljive poslovne rezultate."</p>
         </div>
       </div>
     </div>
@@ -1216,24 +1217,24 @@ footer::before {
     <div class="akcija-banner-inner">
       <div class="akcija-banner-content">
         <div class="akcija-price-col">
-          <div class="akcija-price-label">Akcijska cijena</div>
+          <div class="akcija-price-label" data-hr="Akcijska cijena" data-en="Special price">Akcijska cijena</div>
           <div class="akcija-price-num"><sup>€</sup>200</div>
-          <div class="akcija-price-sub">jednokratno</div>
+          <div class="akcija-price-sub" data-hr="jednokratno" data-en="one-time">jednokratno</div>
         </div>
         <div class="akcija-text-col">
-          <span class="akcija-badge">🔥 Najjača ponuda</span>
-          <div class="akcija-title">Vaš web. Zauvijek vaš.<br><em>Besplatan hosting — zauvijek.</em></div>
-          <div class="akcija-desc">Kompletan profesionalni web za obrt, OPG ili udrugu. Fotografiranje, copywriting, SEO, kontakt forma i domena — sve u jednoj cijeni. Jednom platite, nikad više nikome.</div>
+          <span class="akcija-badge" data-hr="🔥 Najjača ponuda" data-en="🔥 Best offer">🔥 Najjača ponuda</span>
+          <div class="akcija-title" data-hr="Vaš web. Zauvijek vaš.<br><em>Besplatan hosting — zauvijek.</em>" data-en="Your web. Yours forever.<br><em>Free hosting — forever.</em>">Vaš web. Zauvijek vaš.<br><em>Besplatan hosting — zauvijek.</em></div>
+          <div class="akcija-desc" data-hr="Kompletan profesionalni web za obrt, OPG ili udrugu. Fotografiranje, copywriting, SEO, kontakt forma i domena — sve u jednoj cijeni. Jednom platite, nikad više nikome." data-en="Complete professional website for trades, family farms, or associations. Photography, copywriting, SEO, contact form, and domain — all in one price. Pay once, never again to anyone.">Kompletan profesionalni web za obrt, OPG ili udrugu. Fotografiranje, copywriting, SEO, kontakt forma i domena — sve u jednoj cijeni. Jednom platite, nikad više nikome.</div>
           <div class="akcija-feats">
-            <span class="akcija-feat">Ultra-brzo</span>
-            <span class="akcija-feat">Do 6 podstranica</span>
-            <span class="akcija-feat">SEO optimizirano</span>
-            <span class="akcija-feat">Bez pretplate</span>
+            <span class="akcija-feat" data-hr="Ultra-brzo" data-en="Ultra-fast">Ultra-brzo</span>
+            <span class="akcija-feat" data-hr="Do 6 podstranica" data-en="Up to 6 subpages">Do 6 podstranica</span>
+            <span class="akcija-feat" data-hr="SEO optimizirano" data-en="SEO optimized">SEO optimizirano</span>
+            <span class="akcija-feat" data-hr="Bez pretplate" data-en="No subscription">Bez pretplate</span>
           </div>
         </div>
         <div class="akcija-cta-col">
-          <a href="ponuda100.html" class="btn-primary" style="white-space: nowrap; display: block; text-align: center;">Pogledaj ponudu →</a>
-          <a href="#kontakt" class="btn-outline" style="white-space: nowrap; display: block; text-align: center;">Kontakt</a>
+          <a href="ponuda100.html" class="btn-primary" style="white-space: nowrap; display: block; text-align: center;" data-hr="Pogledaj ponudu &rarr;" data-en="View offer &rarr;">Pogledaj ponudu &rarr;</a>
+          <a href="#kontakt" class="btn-outline" style="white-space: nowrap; display: block; text-align: center;" data-hr="Kontakt" data-en="Contact">Kontakt</a>
         </div>
       </div>
     </div>
@@ -1242,70 +1243,70 @@ footer::before {
   <!-- WEB OFFER BANNER -->
   <div class="web-offer-banner reveal">
     <div>
-      <div class="web-offer-badge">Web Development — Napredni projekti</div>
-      <div class="web-offer-title">Ultra-brza web rješenja<br>bez <em style="font-family: var(--serif); font-style: italic; color: var(--gold);">mjesečnih troškova</em></div>
-      <div class="web-offer-desc">Webshop, višejezičnost, posebne funkcionalnosti — cijena se dogovara individualno.</div>
+      <div class="web-offer-badge" data-hr="Web Development — Napredni projekti" data-en="Web Development — Advanced projects">Web Development — Napredni projekti</div>
+      <div class="web-offer-title" data-hr="Ultra-brza web rješenja<br>bez <em style='font-family: var(--serif); font-style: italic; color: var(--gold);'>mjesečnih troškova</em>" data-en="Ultra-fast web solutions<br>without <em style='font-family: var(--serif); font-style: italic; color: var(--gold);'>monthly costs</em>">Ultra-brza web rješenja<br>bez <em style="font-family: var(--serif); font-style: italic; color: var(--gold);">mjesečnih troškova</em></div>
+      <div class="web-offer-desc" data-hr="Webshop, višejezičnost, posebne funkcionalnosti — cijena se dogovara individualno." data-en="Webshop, multilingualism, special features — price negotiated individually.">Webshop, višejezičnost, posebne funkcionalnosti — cijena se dogovara individualno.</div>
       <div class="web-offer-features">
-        <div class="web-offer-feat">Ultra-brzo učitavanje</div>
-        <div class="web-offer-feat">Bez hostinga</div>
-        <div class="web-offer-feat">Visoka sigurnost</div>
-        <div class="web-offer-feat">Mobile-first</div>
+        <div class="web-offer-feat" data-hr="Ultra-brzo učitavanje" data-en="Ultra-fast loading">Ultra-brzo učitavanje</div>
+        <div class="web-offer-feat" data-hr="Bez hostinga" data-en="No hosting">Bez hostinga</div>
+        <div class="web-offer-feat" data-hr="Visoka sigurnost" data-en="High security">Visoka sigurnost</div>
+        <div class="web-offer-feat" data-hr="Mobile-first" data-en="Mobile-first">Mobile-first</div>
       </div>
     </div>
     <div class="web-offer-price-box">
-      <div class="web-offer-price-label">Od</div>
+      <div class="web-offer-price-label" data-hr="Od" data-en="From">Od</div>
       <div class="web-offer-price"><sup>€</sup>500</div>
-      <a href="#kontakt" class="btn-primary" style="display: block; text-align: center;">Zatražite Ponudu</a>
+      <a href="#kontakt" class="btn-primary" style="display: block; text-align: center;" data-hr="Zatražite Ponudu" data-en="Get a Quote">Zatražite Ponudu</a>
     </div>
   </div>
 
 
   <section id="cjenik">
-    <div class="section-label">Kompletna Ponuda</div>
-    <h2 class="section-title">Naše Usluge i <em>Cjenik</em></h2>
+    <div class="section-label" data-hr="Kompletna Ponuda" data-en="Complete Offer">Kompletna Ponuda</div>
+    <h2 class="section-title" data-hr="Naše Usluge i <em>Cjenik</em>" data-en="Our Services &amp; <em>Pricing</em>">Naše Usluge i <em>Cjenik</em></h2>
     <div class="divider"></div>
     <div class="pricing-intro reveal">
-      <p>Sve cijene su izražene u eurima (€). Kezić Vizuali nisu u sustavu PDV-a. Prikazani cjenik je informativnog karaktera, konačna cijena ovisi o specifičnostima projekta.</p>
+      <p data-hr="Sve cijene su izražene u eurima (€). Kezić Vizuali nisu u sustavu PDV-a. Prikazani cjenik je informativnog karaktera, konačna cijena ovisi o specifičnostima projekta." data-en="All prices are in euros (€). Kezić Vizuali is not in the VAT system. The displayed price list is informative; the final price depends on project specifics.">Sve cijene su izražene u eurima (€). Kezić Vizuali nisu u sustavu PDV-a. Prikazani cjenik je informativnog karaktera, konačna cijena ovisi o specifičnostima projekta.</p>
     </div>
 
     <div class="pricing-grid reveal">
       <div class="pricing-category">
         <div class="pricing-category-header">
           <div class="pricing-category-num">01</div>
-          <div class="pricing-category-title">Fotografiranje</div>
+          <div class="pricing-category-title" data-hr="Fotografiranje" data-en="Photography">Fotografiranje</div>
         </div>
         <table class="pricing-table">
           <tr>
-            <td>Portretno fotografiranje <small>osnovna sesija, do 1 sat, digitalne fotografije obrađene</small></td>
-            <td>od 80,00 €</td>
+            <td data-hr="Portretno fotografiranje <small>osnovna sesija, do 1 sat, digitalne fotografije obrađene</small>" data-en="Portrait photography <small>basic session, up to 1 hr, digital photos processed</small>">Portretno fotografiranje <small>osnovna sesija, do 1 sat, digitalne fotografije obrađene</small></td>
+            <td data-hr="od 80,00 €" data-en="from 80.00 €">od 80,00 €</td>
           </tr>
           <tr>
-            <td>Poslovni portreti / Headshots <small>za web, LinkedIn, tisak – do 10 finalnih fotografija</small></td>
-            <td>od 100,00 €</td>
+            <td data-hr="Poslovni portreti / Headshots <small>za web, LinkedIn, tisak – do 10 finalnih fotografija</small>" data-en="Business portraits / Headshots <small>for web, LinkedIn, print &ndash; up to 10 final photos</small>">Poslovni portreti / Headshots <small>za web, LinkedIn, tisak – do 10 finalnih fotografija</small></td>
+            <td data-hr="od 100,00 €" data-en="from 100.00 €">od 100,00 €</td>
           </tr>
           <tr>
-            <td>Obiteljsko fotografiranje <small>do 1,5 sat, vanjska ili unutarnja lokacija</small></td>
-            <td>od 150,00 €</td>
+            <td data-hr="Obiteljsko fotografiranje <small>do 1,5 sat, vanjska ili unutarnja lokacija</small>" data-en="Family photography <small>up to 1.5 hrs, outdoor or indoor location</small>">Obiteljsko fotografiranje <small>do 1,5 sat, vanjska ili unutarnja lokacija</small></td>
+            <td data-hr="od 150,00 €" data-en="from 150.00 €">od 150,00 €</td>
           </tr>
           <tr>
-            <td>Vjenčano fotografiranje <small>cijeli dan, neograničen broj fotografija, online galerija</small></td>
-            <td>od 600,00 €</td>
+            <td data-hr="Vjenčano fotografiranje <small>cijeli dan, neograničen broj fotografija, online galerija</small>" data-en="Wedding photography <small>full day, unlimited photos, online gallery</small>">Vjenčano fotografiranje <small>cijeli dan, neograničen broj fotografija, online galerija</small></td>
+            <td data-hr="od 600,00 €" data-en="from 600.00 €">od 600,00 €</td>
           </tr>
           <tr>
-            <td>Fotografiranje za društvene mreže <small>za obrte, restorane, brendove – sesija + obrada</small></td>
-            <td>od 80,00 € <small>/ sat</small></td>
+            <td data-hr="Fotografiranje za društvene mreže <small>za obrte, restorane, brendove – sesija + obrada</small>" data-en="Social media photography <small>for trades, restaurants, brands &ndash; session + processing</small>">Fotografiranje za društvene mreže <small>za obrte, restorane, brendove – sesija + obrada</small></td>
+            <td data-hr="od 80,00 € <small>/ sat</small>" data-en="from 80.00 € <small>/ hr</small>">od 80,00 € <small>/ sat</small></td>
           </tr>
           <tr>
-            <td>Vizualno dokumentiranje događanja i PR <small>prvi sat / svaki sljedeći sat</small></td>
+            <td data-hr="Vizualno dokumentiranje događanja i PR <small>prvi sat / svaki sljedeći sat</small>" data-en="Visual documentation of events and PR <small>first hour / each subsequent hour</small>">Vizualno dokumentiranje događanja i PR <small>prvi sat / svaki sljedeći sat</small></td>
             <td>80,00 € / 50,00 €</td>
           </tr>
           <tr>
-            <td>Fotografiranje interijera i nekretnina <small>do 15 finalnih vizuala po objektu</small></td>
-            <td>od 120,00 € <small>/ obj.</small></td>
+            <td data-hr="Fotografiranje interijera i nekretnina <small>do 15 finalnih vizuala po objektu</small>" data-en="Interior and real estate photography <small>up to 15 final visuals per object</small>">Fotografiranje interijera i nekretnina <small>do 15 finalnih vizuala po objektu</small></td>
+            <td data-hr="od 120,00 € <small>/ obj.</small>" data-en="from 120.00 € <small>/ obj.</small>">od 120,00 € <small>/ obj.</small></td>
           </tr>
           <tr>
-            <td>Vizualni sadržaj za kataloge i e-commerce</td>
-            <td>20,00 € <small>/ art.</small></td>
+            <td data-hr="Vizualni sadržaj za kataloge i e-commerce" data-en="Visual content for catalogs and e-commerce">Vizualni sadržaj za kataloge i e-commerce</td>
+            <td data-hr="20,00 € <small>/ art.</small>" data-en="20.00 € <small>/ item</small>">20,00 € <small>/ art.</small></td>
           </tr>
         </table>
       </div>
@@ -1313,32 +1314,32 @@ footer::before {
       <div class="pricing-category">
         <div class="pricing-category-header">
           <div class="pricing-category-num">02</div>
-          <div class="pricing-category-title">Web Dizajn i Digitalna Rješenja</div>
+          <div class="pricing-category-title" data-hr="Web Dizajn i Digitalna Rješenja" data-en="Web Design and Digital Solutions">Web Dizajn i Digitalna Rješenja</div>
         </div>
         <table class="pricing-table">
           <tr>
-            <td>Izrada web stranice – akcijska ponuda <small>fotografiranje, copywriting, SEO, kontakt forma</small></td>
+            <td data-hr="Izrada web stranice – akcijska ponuda <small>fotografiranje, copywriting, SEO, kontakt forma</small>" data-en="Website creation &ndash; special offer <small>photography, copywriting, SEO, contact form</small>">Izrada web stranice – akcijska ponuda <small>fotografiranje, copywriting, SEO, kontakt forma</small></td>
             <td>200,00 €</td>
           </tr>
           <tr>
-            <td>Izrada web stranice – standardna ponuda <small>do 6 podstranica, prilagođeni dizajn</small></td>
-            <td>od 350,00 €</td>
+            <td data-hr="Izrada web stranice – standardna ponuda <small>do 6 podstranica, prilagođeni dizajn</small>" data-en="Website creation &ndash; standard offer <small>up to 6 subpages, custom design</small>">Izrada web stranice – standardna ponuda <small>do 6 podstranica, prilagođeni dizajn</small></td>
+            <td data-hr="od 350,00 €" data-en="from 350.00 €">od 350,00 €</td>
           </tr>
           <tr>
-            <td>Web stranica – napredni projekt <small>webshop, višejezičnost, posebne funkcionalnosti</small></td>
-            <td>od 500,00 €</td>
+            <td data-hr="Web stranica – napredni projekt <small>webshop, višejezičnost, posebne funkcionalnosti</small>" data-en="Website &ndash; advanced project <small>webshop, multilingualism, special features</small>">Web stranica – napredni projekt <small>webshop, višejezičnost, posebne funkcionalnosti</small></td>
+            <td data-hr="od 500,00 €" data-en="from 500.00 €">od 500,00 €</td>
           </tr>
           <tr>
-            <td>Postavljanje Payhip online trgovine</td>
+            <td data-hr="Postavljanje Payhip online trgovine" data-en="Payhip online store setup">Postavljanje Payhip online trgovine</td>
             <td>150,00 €</td>
           </tr>
           <tr>
-            <td>Tehničko održavanje web stranice <small>mjesečni paušal</small></td>
-            <td>40,00 € <small>/ mj.</small></td>
+            <td data-hr="Tehničko održavanje web stranice <small>mjesečni paušal</small>" data-en="Technical website maintenance <small>monthly flat rate</small>">Tehničko održavanje web stranice <small>mjesečni paušal</small></td>
+            <td data-hr="40,00 € <small>/ mj.</small>" data-en="40.00 € <small>/ mo</small>">40,00 € <small>/ mj.</small></td>
           </tr>
           <tr>
-            <td>Zakup hostinga i domene</td>
-            <td>od 120,00 € <small>/ god.</small></td>
+            <td data-hr="Zakup hostinga i domene" data-en="Hosting and domain registration">Zakup hostinga i domene</td>
+            <td data-hr="od 120,00 € <small>/ god.</small>" data-en="from 120.00 € <small>/ yr</small>">od 120,00 € <small>/ god.</small></td>
           </tr>
         </table>
       </div>
@@ -1346,116 +1347,116 @@ footer::before {
       <div class="pricing-category">
         <div class="pricing-category-header">
           <div class="pricing-category-num">03</div>
-          <div class="pricing-category-title">Grafički Dizajn i Priprema</div>
+          <div class="pricing-category-title" data-hr="Grafički Dizajn i Priprema" data-en="Graphic Design and Pre-press">Grafički Dizajn i Priprema</div>
         </div>
         <table class="pricing-table">
-          <tr><td>Vizualni identitet <small>Logotip + knjiga standarda</small></td><td>od 250,00 €</td></tr>
-          <tr><td>Dizajn jelovnika i cjenika</td><td>40,00 € <small>/ str.</small></td></tr>
-          <tr><td>Dizajn letka, brošure ili plakata</td><td>od 60,00 €</td></tr>
-          <tr><td>Dizajn ambalaže i naljepnica</td><td>od 100,00 €</td></tr>
-          <tr><td>Dizajn vizitke, zahvalnice ili pozivnice</td><td>30,00 €</td></tr>
-          <tr><td>Prijelom i grafička priprema publikacija</td><td>25,00 € <small>/ str.</small></td></tr>
+          <tr><td data-hr="Vizualni identitet <small>Logotip + knjiga standarda</small>" data-en="Visual identity <small>Logo + brand guidelines</small>">Vizualni identitet <small>Logotip + knjiga standarda</small></td><td data-hr="od 250,00 €" data-en="from 250.00 €">od 250,00 €</td></tr>
+          <tr><td data-hr="Dizajn jelovnika i cjenika" data-en="Menu and price list design">Dizajn jelovnika i cjenika</td><td data-hr="40,00 € <small>/ str.</small>" data-en="40.00 € <small>/ pg</small>">40,00 € <small>/ str.</small></td></tr>
+          <tr><td data-hr="Dizajn letka, brošure ili plakata" data-en="Flyer, brochure, or poster design">Dizajn letka, brošure ili plakata</td><td data-hr="od 60,00 €" data-en="from 60.00 €">od 60,00 €</td></tr>
+          <tr><td data-hr="Dizajn ambalaže i naljepnica" data-en="Packaging and label design">Dizajn ambalaže i naljepnica</td><td data-hr="od 100,00 €" data-en="from 100.00 €">od 100,00 €</td></tr>
+          <tr><td data-hr="Dizajn vizitke, zahvalnice ili pozivnice" data-en="Business card, thank you note, or invitation design">Dizajn vizitke, zahvalnice ili pozivnice</td><td>30,00 €</td></tr>
+          <tr><td data-hr="Prijelom i grafička priprema publikacija" data-en="Layout and pre-press of publications">Prijelom i grafička priprema publikacija</td><td data-hr="25,00 € <small>/ str.</small>" data-en="25.00 € <small>/ pg</small>">25,00 € <small>/ str.</small></td></tr>
         </table>
       </div>
 
       <div class="pricing-category">
         <div class="pricing-category-header">
           <div class="pricing-category-num">04</div>
-          <div class="pricing-category-title">Marketing, PR i Komunikacije</div>
+          <div class="pricing-category-title" data-hr="Marketing, PR i Komunikacije" data-en="Marketing, PR and Communications">Marketing, PR i Komunikacije</div>
         </div>
         <table class="pricing-table">
-          <tr><td>Vođenje društvenih mreža (FB, IG) <small>mjesečni paket</small></td><td>od 300,00 €</td></tr>
-          <tr><td>Izrada i provedba digitalne promotivne kampanje</td><td>od 500,00 €</td></tr>
-          <tr><td>PR savjetovanje i komunikacijska strategija</td><td>60,00 € <small>/ sat</small></td></tr>
-          <tr><td>Pisanje autorskih tekstova i promo-članaka</td><td>40,00 € <small>/ tekst</small></td></tr>
-          <tr><td>Uređivanje biltena i informativnih listova</td><td>60,00 € <small>/ sat</small></td></tr>
+          <tr><td data-hr="Vođenje društvenih mreža (FB, IG) <small>mjesečni paket</small>" data-en="Social media management (FB, IG) <small>monthly package</small>">Vođenje društvenih mreža (FB, IG) <small>mjesečni paket</small></td><td data-hr="od 300,00 €" data-en="from 300.00 €">od 300,00 €</td></tr>
+          <tr><td data-hr="Izrada i provedba digitalne promotivne kampanje" data-en="Creation and execution of digital promo campaigns">Izrada i provedba digitalne promotivne kampanje</td><td data-hr="od 500,00 €" data-en="from 500.00 €">od 500,00 €</td></tr>
+          <tr><td data-hr="PR savjetovanje i komunikacijska strategija" data-en="PR consulting and communication strategy">PR savjetovanje i komunikacijska strategija</td><td data-hr="60,00 € <small>/ sat</small>" data-en="60.00 € <small>/ hr</small>">60,00 € <small>/ sat</small></td></tr>
+          <tr><td data-hr="Pisanje autorskih tekstova i promo-članaka" data-en="Writing original texts and promo articles">Pisanje autorskih tekstova i promo-članaka</td><td data-hr="40,00 € <small>/ tekst</small>" data-en="40.00 € <small>/ text</small>">40,00 € <small>/ tekst</small></td></tr>
+          <tr><td data-hr="Uređivanje biltena i informativnih listova" data-en="Editing newsletters and info sheets">Uređivanje biltena i informativnih listova</td><td data-hr="60,00 € <small>/ sat</small>" data-en="60.00 € <small>/ hr</small>">60,00 € <small>/ sat</small></td></tr>
         </table>
       </div>
 
       <div class="pricing-category">
         <div class="pricing-category-header">
           <div class="pricing-category-num">05</div>
-          <div class="pricing-category-title">Jezične Usluge i Prijevodi</div>
+          <div class="pricing-category-title" data-hr="Jezične Usluge i Prijevodi" data-en="Language Services and Translations">Jezične Usluge i Prijevodi</div>
         </div>
         <table class="pricing-table">
-          <tr><td>Prijevod za ugostiteljstvo <small>jelovnici, brošure, web sadržaj</small></td><td>15,00 € <small>/ str.</small></td></tr>
-          <tr><td>Lektura i jezična korekcija <small>kartica 1.500 znakova</small></td><td>5,00 €</td></tr>
-          <tr><td>Prijevod marketinških kampanja</td><td>Na upit</td></tr>
+          <tr><td data-hr="Prijevod za ugostiteljstvo <small>jelovnici, brošure, web sadržaj</small>" data-en="Translation for hospitality <small>menus, brochures, web content</small>">Prijevod za ugostiteljstvo <small>jelovnici, brošure, web sadržaj</small></td><td data-hr="15,00 € <small>/ str.</small>" data-en="15.00 € <small>/ pg</small>">15,00 € <small>/ str.</small></td></tr>
+          <tr><td data-hr="Lektura i jezična korekcija <small>kartica 1.500 znakova</small>" data-en="Proofreading and language correction <small>page of 1,500 characters</small>">Lektura i jezična korekcija <small>kartica 1.500 znakova</small></td><td>5,00 €</td></tr>
+          <tr><td data-hr="Prijevod marketinških kampanja" data-en="Translation of marketing campaigns">Prijevod marketinških kampanja</td><td data-hr="Na upit" data-en="On request">Na upit</td></tr>
         </table>
       </div>
 
       <div class="pricing-category">
         <div class="pricing-category-header">
           <div class="pricing-category-num">06</div>
-          <div class="pricing-category-title">Savjetovanje i Administracija</div>
+          <div class="pricing-category-title" data-hr="Savjetovanje i Administracija" data-en="Consulting and Administration">Savjetovanje i Administracija</div>
         </div>
         <table class="pricing-table">
-          <tr><td>Strateško vizualno savjetovanje (Visual Audit)</td><td>60,00 € <small>/ sat</small></td></tr>
-          <tr><td>Tehnička priprema dokumentacije</td><td>30,00 € <small>/ sat</small></td></tr>
-          <tr><td>Digitalno arhiviranje i organizacija</td><td>40,00 € <small>/ sat</small></td></tr>
-          <tr><td>Usluge virtualnog asistenta</td><td>40,00 € <small>/ sat</small></td></tr>
-          <tr><td>Organizacija evenata i manifestacija</td><td>od 600,00 € <small>/ proj.</small></td></tr>
+          <tr><td data-hr="Strateško vizualno savjetovanje (Visual Audit)" data-en="Strategic visual consulting (Visual Audit)">Strateško vizualno savjetovanje (Visual Audit)</td><td data-hr="60,00 € <small>/ sat</small>" data-en="60.00 € <small>/ hr</small>">60,00 € <small>/ sat</small></td></tr>
+          <tr><td data-hr="Tehnička priprema dokumentacije" data-en="Technical preparation of documentation">Tehnička priprema dokumentacije</td><td data-hr="30,00 € <small>/ sat</small>" data-en="30.00 € <small>/ hr</small>">30,00 € <small>/ sat</small></td></tr>
+          <tr><td data-hr="Digitalno arhiviranje i organizacija" data-en="Digital archiving and organization">Digitalno arhiviranje i organizacija</td><td data-hr="40,00 € <small>/ sat</small>" data-en="40.00 € <small>/ hr</small>">40,00 € <small>/ sat</small></td></tr>
+          <tr><td data-hr="Usluge virtualnog asistenta" data-en="Virtual assistant services">Usluge virtualnog asistenta</td><td data-hr="40,00 € <small>/ sat</small>" data-en="40.00 € <small>/ hr</small>">40,00 € <small>/ sat</small></td></tr>
+          <tr><td data-hr="Organizacija evenata i manifestacija" data-en="Organization of events and manifestations">Organizacija evenata i manifestacija</td><td data-hr="od 600,00 € <small>/ proj.</small>" data-en="from 600.00 € <small>/ proj.</small>">od 600,00 € <small>/ proj.</small></td></tr>
         </table>
       </div>
 
       <div class="pricing-category">
         <div class="pricing-category-header">
           <div class="pricing-category-num">07</div>
-          <div class="pricing-category-title">Izdavaštvo i Internet Trgovina</div>
+          <div class="pricing-category-title" data-hr="Izdavaštvo i Internet Trgovina" data-en="Publishing and E-commerce">Izdavaštvo i Internet Trgovina</div>
         </div>
         <table class="pricing-table">
-          <tr><td>Digitalni vodiči, predlošci i e-knjige (PDF)</td><td>9,00 – 35,00 €</td></tr>
-          <tr><td>Dizajn personaliziranih artikala <small>majice i promo predmeti</small></td><td>25,00 – 35,00 €</td></tr>
-          <tr><td>Unikatne uokvirene slike i radovi</td><td>Na upit</td></tr>
+          <tr><td data-hr="Digitalni vodiči, predlošci i e-knjige (PDF)" data-en="Digital guides, templates, and e-books (PDF)">Digitalni vodiči, predlošci i e-knjige (PDF)</td><td>9,00 – 35,00 €</td></tr>
+          <tr><td data-hr="Dizajn personaliziranih artikala <small>majice i promo predmeti</small>" data-en="Design of personalized items <small>t-shirts and promo items</small>">Dizajn personaliziranih artikala <small>majice i promo predmeti</small></td><td>25,00 – 35,00 €</td></tr>
+          <tr><td data-hr="Unikatne uokvirene slike i radovi" data-en="Unique framed paintings and artworks">Unikatne uokvirene slike i radovi</td><td data-hr="Na upit" data-en="On request">Na upit</td></tr>
         </table>
       </div>
 
     </div>
 
     <div class="pricing-note reveal">
-      <strong>Napomena o tisku:</strong> Sve cijene odnose se na izradu digitalnog rješenja. Usluga tiska nije uključena u cijenu dizajna. Kao partner Print Centra Velika Gorica, nudimo kompletnu uslugu prema posebnim uvjetima.
+      <strong data-hr="Napomena o tisku:" data-en="Print note:">Napomena o tisku:</strong> <span data-hr="Sve cijene odnose se na izradu digitalnog rješenja. Usluga tiska nije uključena u cijenu dizajna. Kao partner Print Centra Velika Gorica, nudimo kompletnu uslugu prema posebnim uvjetima." data-en="All prices refer to the creation of digital solutions. Printing services are not included in the design price. As a partner of Print Center Velika Gorica, we offer complete services under special conditions.">Sve cijene odnose se na izradu digitalnog rješenja. Usluga tiska nije uključena u cijenu dizajna. Kao partner Print Centra Velika Gorica, nudimo kompletnu uslugu prema posebnim uvjetima.</span>
     </div>
   </section>
 
   <!-- ══ FAQ SEKCIJA ══ -->
   <section id="faq">
-    <div class="section-label">Imate pitanja?</div>
-    <h2 class="section-title">Često postavljana <em>Pitanja</em></h2>
+    <div class="section-label" data-hr="Imate pitanja?" data-en="Have questions?">Imate pitanja?</div>
+    <h2 class="section-title" data-hr="Često postavljana <em>Pitanja</em>" data-en="Frequently Asked <em>Questions</em>">Često postavljana <em>Pitanja</em></h2>
     <div class="divider"></div>
     
     <div class="faq-container reveal">
       
       <div class="faq-item">
-        <button class="faq-question">Što točno znači besplatan hosting? <span class="faq-icon">+</span></button>
+        <button class="faq-question"><span data-hr="Što točno znači besplatan hosting?" data-en="What exactly does free hosting mean?">Što točno znači besplatan hosting?</span> <span class="faq-icon">+</span></button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">
+          <div class="faq-answer-inner" data-hr="Koristimo najmodernije platforme (poput GitHuba) za lansiranje ultra-brzih statičnih web stranica. To znači da je vaša stranica vrhunski optimizirana i smještena na globalnim serverima, a vi nemate apsolutno nikakvih skrivenih mjesečnih troškova za hosting. Jednom kada je stranica gotova, vaša je zauvijek." data-en="We use cutting-edge platforms (like GitHub) to launch ultra-fast static websites. This means your site is highly optimized and hosted on global servers, and you have absolutely no hidden monthly hosting costs. Once the site is done, it's yours forever.">
             Koristimo najmodernije platforme (poput GitHuba) za lansiranje ultra-brzih statičnih web stranica. To znači da je vaša stranica vrhunski optimizirana i smještena na globalnim serverima, a vi nemate apsolutno nikakvih skrivenih mjesečnih troškova za hosting. Jednom kada je stranica gotova, vaša je zauvijek.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">Koliko se čeka na izradu web stranice od 200€? <span class="faq-icon">+</span></button>
+        <button class="faq-question"><span data-hr="Koliko se čeka na izradu web stranice od 200€?" data-en="How long is the wait for the 200€ website?">Koliko se čeka na izradu web stranice od 200€?</span> <span class="faq-icon">+</span></button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">
+          <div class="faq-answer-inner" data-hr="Zahvaljujući našem optimiziranom procesu, stranica je najčešće gotova i lansirana unutar 7 do 10 radnih dana, pod uvjetom da smo prethodno obavili fotografiranje i da imamo sve potrebne informacije s vaše strane." data-en="Thanks to our optimized process, the site is usually finished and launched within 7 to 10 working days, provided we have completed the photography and have all the necessary information from your side.">
             Zahvaljujući našem optimiziranom procesu, stranica je najčešće gotova i lansirana unutar 7 do 10 radnih dana, pod uvjetom da smo prethodno obavili fotografiranje i da imamo sve potrebne informacije s vaše strane.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">Plaćam li održavanje stranice? <span class="faq-icon">+</span></button>
+        <button class="faq-question"><span data-hr="Plaćam li održavanje stranice?" data-en="Do I pay for website maintenance?">Plaćam li održavanje stranice?</span> <span class="faq-icon">+</span></button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">
+          <div class="faq-answer-inner" data-hr="Ne! Stranica je u vašem potpunom vlasništvu i dizajnirana je da dugoročno radi bez greške. Ako u budućnosti budete trebali mijenjati tekstove, cijene ili slike, možemo to odraditi uz jednokratnu naknadu po dogovoru, no niste obvezni plaćati mjesečne paušale ako ne trebate promjene." data-en="No! The site is entirely in your ownership and designed to run flawlessly long-term. If you need to change texts, prices, or images in the future, we can do it for a one-time fee upon agreement, but you are not obliged to pay monthly flat rates if you don't need changes.">
             Ne! Stranica je u vašem potpunom vlasništvu i dizajnirana je da dugoročno radi bez greške. Ako u budućnosti budete trebali mijenjati tekstove, cijene ili slike, možemo to odraditi uz jednokratnu naknadu po dogovoru, no niste obvezni plaćati mjesečne paušale ako ne trebate promjene.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-question">Jesu li fotografiranje i pisanje tekstova uključeni? <span class="faq-icon">+</span></button>
+        <button class="faq-question"><span data-hr="Jesu li fotografiranje i pisanje tekstova uključeni?" data-en="Are photography and copywriting included?">Jesu li fotografiranje i pisanje tekstova uključeni?</span> <span class="faq-icon">+</span></button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">
+          <div class="faq-answer-inner" data-hr="Da! Ne morate brinuti o tekstovima ili tražiti drugog fotografa. U paketu je uključeno osnovno fotografiranje vašeg objekta/usluge i pisanje (copywriting) ključnih tekstova kako bi vaša stranica odmah bila spremna privući klijente." data-en="Yes! You don't have to worry about texts or look for another photographer. The package includes basic photography of your facility/service and writing (copywriting) of key texts so your site is immediately ready to attract clients.">
             Da! Ne morate brinuti o tekstovima ili tražiti drugog fotografa. U paketu je uključeno osnovno fotografiranje vašeg objekta/usluge i pisanje (copywriting) ključnih tekstova kako bi vaša stranica odmah bila spremna privući klijente.
           </div>
         </div>
@@ -1466,10 +1467,10 @@ footer::before {
 
   <!-- ══ PORTFOLIO ══ -->
   <section id="portfolio" style="background: var(--bg2);">
-    <div class="section-label">Naši Projekti</div>
-    <h2 class="section-title">Portfolio — <em>Realizirani radovi</em></h2>
+    <div class="section-label" data-hr="Naši Projekti" data-en="Our Projects">Naši Projekti</div>
+    <h2 class="section-title" data-hr="Portfolio — <em>Realizirani radovi</em>" data-en="Portfolio &mdash; <em>Completed Works</em>">Portfolio — <em>Realizirani radovi</em></h2>
     <div class="divider"></div>
-    <p class="reveal" style="color: var(--text-muted); max-width: 600px; margin-bottom: 4rem; line-height: 1.9;">Svaki projekt je autorski rad koji odražava identitet klijenta. Spoj fotografskog oka, modernog weba i grafičkog dizajna — sve u jednom paketu.</p>
+    <p class="reveal" style="color: var(--text-muted); max-width: 600px; margin-bottom: 4rem; line-height: 1.9;" data-hr="Svaki projekt je autorski rad koji odražava identitet klijenta. Spoj fotografskog oka, modernog weba i grafičkog dizajna — sve u jednom paketu." data-en="Every project is an author's work that reflects the client's identity. A blend of a photographic eye, modern web, and graphic design &mdash; all in one package.">Svaki projekt je autorski rad koji odražava identitet klijenta. Spoj fotografskog oka, modernog weba i grafičkog dizajna — sve u jednom paketu.</p>
 
     <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 3rem;">
 
@@ -1477,76 +1478,76 @@ footer::before {
       <div style="background: var(--bg3); padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; position: relative; overflow: hidden; transition: background 0.3s;" onmouseenter="this.style.background='var(--bg4)'" onmouseleave="this.style.background='var(--bg3)'">
         <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent);"></div>
         <div style="display: flex; align-items: center; justify-content: space-between;">
-          <span style="font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 0.25rem 0.8rem; background: rgba(201,168,76,0.08);">Objavljeno</span>
+          <span style="font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 0.25rem 0.8rem; background: rgba(201,168,76,0.08);" data-hr="Objavljeno" data-en="Published">Objavljeno</span>
           <span style="font-size: 0.7rem; color: var(--text-faint); letter-spacing: 0.08em;">2026</span>
         </div>
         <div>
-          <h3 style="font-family: var(--serif); font-size: 1.7rem; font-weight: 300; color: var(--text); line-height: 1.2; margin-bottom: 0.5rem;">Royal Rides<br>Hrvatska</h3>
-          <p style="font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);">Čakovec &amp;middot; Luksuzni najam &amp; vučna služba</p>
+          <h3 style="font-family: var(--serif); font-size: 1.7rem; font-weight: 300; color: var(--text); line-height: 1.2; margin-bottom: 0.5rem;" data-hr="Royal Rides<br>Hrvatska" data-en="Royal Rides<br>Croatia">Royal Rides<br>Hrvatska</h3>
+          <p style="font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);" data-hr="Čakovec &amp;middot; Luksuzni najam &amp; vučna služba" data-en="Čakovec &amp;middot; Luxury rental &amp; towing service">Čakovec &amp;middot; Luksuzni najam &amp; vučna služba</p>
         </div>
-        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; flex: 1;">Ekskluzivni najam luksuznih oldtimera s vozačem — Rolls-Royce, Bentley, Lincoln. Kompletan projekt: dark luxury estetika, bogata galerija vozila, SEO optimizacija i copywriting.</p>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; flex: 1;" data-hr="Ekskluzivni najam luksuznih oldtimera s vozačem — Rolls-Royce, Bentley, Lincoln. Kompletan projekt: dark luxury estetika, bogata galerija vozila, SEO optimizacija i copywriting." data-en="Exclusive rental of luxury vintage cars with a driver &mdash; Rolls-Royce, Bentley, Lincoln. Complete project: dark luxury aesthetics, rich vehicle gallery, SEO optimization, and copywriting.">Ekskluzivni najam luksuznih oldtimera s vozačem — Rolls-Royce, Bentley, Lincoln. Kompletan projekt: dark luxury estetika, bogata galerija vozila, SEO optimizacija i copywriting.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-          <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;">Web dizajn</span>
+          <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;" data-hr="Web dizajn" data-en="Web design">Web dizajn</span>
           <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;">Copywriting</span>
           <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;">SEO</span>
           <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;">Dark luxury</span>
         </div>
-        <a href="https://royalrides.hr/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: var(--gold); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: gap 0.2s;" onmouseenter="this.style.gap='1rem'" onmouseleave="this.style.gap='0.5rem'">Pogledaj stranicu &rarr;</a>
+        <a href="https://royalrides.hr/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: var(--gold); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: gap 0.2s;" onmouseenter="this.style.gap='1rem'" onmouseleave="this.style.gap='0.5rem'" data-hr="Pogledaj stranicu &rarr;" data-en="View website &rarr;">Pogledaj stranicu &rarr;</a>
       </div>
 
       <!-- Galerija Arts — objavljeno -->
       <div style="background: var(--bg3); padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; position: relative; overflow: hidden; transition: background 0.3s;" onmouseenter="this.style.background='var(--bg4)'" onmouseleave="this.style.background='var(--bg3)'">
         <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent);"></div>
         <div style="display: flex; align-items: center; justify-content: space-between;">
-          <span style="font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 0.25rem 0.8rem; background: rgba(201,168,76,0.08);">Objavljeno</span>
+          <span style="font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 0.25rem 0.8rem; background: rgba(201,168,76,0.08);" data-hr="Objavljeno" data-en="Published">Objavljeno</span>
           <span style="font-size: 0.7rem; color: var(--text-faint); letter-spacing: 0.08em;">2026</span>
         </div>
         <div>
           <h3 style="font-family: var(--serif); font-size: 1.7rem; font-weight: 300; color: var(--text); line-height: 1.2; margin-bottom: 0.5rem;">Galerija<br>Arts</h3>
-          <p style="font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);">Umjetnost &amp;middot; Vizualna prezentacija</p>
+          <p style="font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);" data-hr="Umjetnost &amp;middot; Vizualna prezentacija" data-en="Art &amp;middot; Visual presentation">Umjetnost &amp;middot; Vizualna prezentacija</p>
         </div>
-        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; flex: 1;">Digitalni dom za umjetnost i kreativno izražavanje. Izrada modernog i responzivnog weba prilagođenog za isticanje vizualnih djela s naglaskom na detalje i brzu navigaciju.</p>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; flex: 1;" data-hr="Digitalni dom za umjetnost i kreativno izražavanje. Izrada modernog i responzivnog weba prilagođenog za isticanje vizualnih djela s naglaskom na detalje i brzu navigaciju." data-en="Digital home for art and creative expression. Creation of a modern and responsive web tailored to highlight visual works with a focus on details and fast navigation.">Digitalni dom za umjetnost i kreativno izražavanje. Izrada modernog i responzivnog weba prilagođenog za isticanje vizualnih djela s naglaskom na detalje i brzu navigaciju.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-          <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;">Web dizajn</span>
+          <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;" data-hr="Web dizajn" data-en="Web design">Web dizajn</span>
           <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;">Art Portfolio</span>
           <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;">UI/UX</span>
           <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;">Copywriting</span>
           <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;">SEO</span>
         </div>
-        <a href="https://galerijaarts.com/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: var(--gold); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: gap 0.2s;" onmouseenter="this.style.gap='1rem'" onmouseleave="this.style.gap='0.5rem'">Pogledaj stranicu &rarr;</a>
+        <a href="https://galerijaarts.com/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: var(--gold); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: gap 0.2s;" onmouseenter="this.style.gap='1rem'" onmouseleave="this.style.gap='0.5rem'" data-hr="Pogledaj stranicu &rarr;" data-en="View website &rarr;">Pogledaj stranicu &rarr;</a>
       </div>
 
       <!-- Kafić — uskoro -->
       <div style="background: var(--bg3); padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; position: relative; overflow: hidden; transition: background 0.3s;" onmouseenter="this.style.background='var(--bg4)'" onmouseleave="this.style.background='var(--bg3)'">
         <div style="display: flex; align-items: center; justify-content: space-between;">
-          <span style="font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-faint); border: 1px solid var(--border); padding: 0.25rem 0.8rem;">Uskoro</span>
+          <span style="font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-faint); border: 1px solid var(--border); padding: 0.25rem 0.8rem;" data-hr="Uskoro" data-en="Soon">Uskoro</span>
           <span style="font-size: 0.7rem; color: var(--text-faint); letter-spacing: 0.08em;">2026</span>
         </div>
         <div>
-          <h3 style="font-family: var(--serif); font-size: 1.7rem; font-weight: 300; color: var(--text); line-height: 1.2; margin-bottom: 0.5rem;">Kafić<br><span style="font-style: italic; color: var(--gold);">(u pripremi)</span></h3>
-          <p style="font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);">Lokacija &amp;middot; Ugostiteljstvo</p>
+          <h3 style="font-family: var(--serif); font-size: 1.7rem; font-weight: 300; color: var(--text); line-height: 1.2; margin-bottom: 0.5rem;" data-hr="Kafić<br><span style='font-style: italic; color: var(--gold);'>(u pripremi)</span>" data-en="Cafe<br><span style='font-style: italic; color: var(--gold);'>(in preparation)</span>">Kafić<br><span style="font-style: italic; color: var(--gold);">(u pripremi)</span></h3>
+          <p style="font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint);" data-hr="Lokacija &amp;middot; Ugostiteljstvo" data-en="Location &amp;middot; Hospitality">Lokacija &amp;middot; Ugostiteljstvo</p>
         </div>
-        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; flex: 1;">Vizualni identitet, branding i vođenje društvenih mreža. Konzistentna estetika koja privlači i zadržava goste.</p>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; flex: 1;" data-hr="Vizualni identitet, branding i vođenje društvenih mreža. Konzistentna estetika koja privlači i zadržava goste." data-en="Visual identity, branding, and social media management. Consistent aesthetics that attract and retain guests.">Vizualni identitet, branding i vođenje društvenih mreža. Konzistentna estetika koja privlači i zadržava goste.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-          <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;">Branding</span>
-          <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;">Social media</span>
-          <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;">Vizualni identitet</span>
+          <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;" data-hr="Branding" data-en="Branding">Branding</span>
+          <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;" data-hr="Social media" data-en="Social media">Social media</span>
+          <span style="font-size: 0.68rem; color: var(--text-faint); border: 1px solid var(--border); padding: 0.2rem 0.7rem; letter-spacing: 0.04em;" data-hr="Vizualni identitet" data-en="Visual identity">Vizualni identitet</span>
         </div>
-        <span style="font-size: 0.78rem; color: var(--text-faint); letter-spacing: 0.1em; text-transform: uppercase;">Projekt u pripremi</span>
+        <span style="font-size: 0.78rem; color: var(--text-faint); letter-spacing: 0.1em; text-transform: uppercase;" data-hr="Projekt u pripremi" data-en="Project in preparation">Projekt u pripremi</span>
       </div>
 
     </div>
 
     <div class="reveal" style="text-align: center; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-      <a href="portfolio.html" class="btn-outline" style="display: inline-block;">Svi web projekti &rarr;</a>
-      <a href="galerija.html" class="btn-primary" style="display: inline-block;">Otvori foto galeriju &rarr;</a>
+      <a href="portfolio.html" class="btn-outline" style="display: inline-block;" data-hr="Svi web projekti &rarr;" data-en="All web projects &rarr;">Svi web projekti &rarr;</a>
+      <a href="galerija.html" class="btn-primary" style="display: inline-block;" data-hr="Otvori foto galeriju &rarr;" data-en="Open photo gallery &rarr;">Otvori foto galeriju &rarr;</a>
     </div>
   </section>
 
   <!-- ══ RECENZIJE KLIJENATA ══ -->
   <section id="recenzije" style="background: var(--bg);">
-    <div class="section-label">Iskustva klijenata</div>
-    <h2 class="section-title">Što kažu o <em>našem radu</em></h2>
+    <div class="section-label" data-hr="Iskustva klijenata" data-en="Client Experiences">Iskustva klijenata</div>
+    <h2 class="section-title" data-hr="Što kažu o <em>našem radu</em>" data-en="What they say about <em>our work</em>">Što kažu o <em>našem radu</em></h2>
     <div class="divider"></div>
     
     <div class="testimonials-grid reveal">
@@ -1560,7 +1561,7 @@ footer::before {
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="testimonial-text">"Baš mi je drago vidjeti da još ima ljudi koji vole svoj posao i tako ga predano rade, uglavnom svakako ćemo surađivati i dalje 😊. I još jednom veliko hvala."</p>
+        <p class="testimonial-text" data-hr="&quot;Baš mi je drago vidjeti da još ima ljudi koji vole svoj posao i tako ga predano rade, uglavnom svakako ćemo surađivati i dalje 😊. I još jednom veliko hvala.&quot;" data-en="&quot;I'm so glad to see there are still people who love their job and do it so dedicatedly, anyway we will definitely continue to cooperate 😊. And once again a big thank you.&quot;">"Baš mi je drago vidjeti da još ima ljudi koji vole svoj posao i tako ga predano rade, uglavnom svakako ćemo surađivati i dalje 😊. I još jednom veliko hvala."</p>
         <div class="testimonial-author">
           <strong>Nataša</strong>
           <span>Galerija Arts</span>
@@ -1576,9 +1577,9 @@ footer::before {
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="testimonial-text">"Ma vi ste stvarno genijalci 💖 hvala vam puno, stvarno ste na sve mislili od A do Ž. Hvala hvala nemate pojma koliko me veseli što je ovako lijepa stranica ❤️."</p>
+        <p class="testimonial-text" data-hr="&quot;Ma vi ste stvarno genijalci 💖 hvala vam puno, stvarno ste na sve mislili od A do Ž. Hvala hvala nemate pojma koliko me veseli što je ovako lijepa stranica ❤️.&quot;" data-en="&quot;You are truly geniuses 💖 thank you so much, you really thought of everything from A to Z. Thank you thank you you have no idea how happy this beautiful website makes me ❤️.&quot;">"Ma vi ste stvarno genijalci 💖 hvala vam puno, stvarno ste na sve mislili od A do Ž. Hvala hvala nemate pojma koliko me veseli što je ovako lijepa stranica ❤️."</p>
         <div class="testimonial-author">
-          <strong>Osnivač</strong>
+          <strong data-hr="Osnivač" data-en="Founder">Osnivač</strong>
           <span>Royal Rides Hrvatska</span>
         </div>
       </div>
@@ -1592,10 +1593,10 @@ footer::before {
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="testimonial-text">"Prezadovoljna sam stranicom, kada sam već odustala od svega jer su svi htjeli brdo para, vi ste mi napravili Web za sitnicu a izgleda vrhunski. Podijelit ću vaš link hvala vam od ❤️."</p>
+        <p class="testimonial-text" data-hr="&quot;Prezadovoljna sam stranicom, kada sam već odustala od svega jer su svi htjeli brdo para, vi ste mi napravili Web za sitnicu a izgleda vrhunski. Podijelit ću vaš link hvala vam od ❤️.&quot;" data-en="&quot;I am extremely satisfied with the site, when I had almost given up on everything because everyone wanted a ton of money, you made me a Web for a trifle and it looks top-notch. I will share your link thank you from ❤️.&quot;">"Prezadovoljna sam stranicom, kada sam već odustala od svega jer su svi htjeli brdo para, vi ste mi napravili Web za sitnicu a izgleda vrhunski. Podijelit ću vaš link hvala vam od ❤️."</p>
         <div class="testimonial-author">
           <strong>Vedrana</strong>
-          <span>Zadovoljni klijent</span>
+          <span data-hr="Zadovoljni klijent" data-en="Satisfied client">Zadovoljni klijent</span>
         </div>
       </div>
 
@@ -1608,10 +1609,10 @@ footer::before {
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="testimonial-text">"Frende ovo što si napravio je ludilo, ovaj moj Web je sada bolji od tvojeg 😁, ove animacije, video, ma sve si napravio na razini većoj nego je to bilo predviđeno. Web leti, hvala ti."</p>
+        <p class="testimonial-text" data-hr="&quot;Frende ovo što si napravio je ludilo, ovaj moj Web je sada bolji od tvojeg 😁, ove animacije, video, ma sve si napravio na razini većoj nego je to bilo predviđeno. Web leti, hvala ti.&quot;" data-en="&quot;Man, what you did is crazy, this Web of mine is now better than yours 😁, these animations, video, you did everything at a higher level than intended. The web flies, thank you.&quot;">"Frende ovo što si napravio je ludilo, ovaj moj Web je sada bolji od tvojeg 😁, ove animacije, video, ma sve si napravio na razini većoj nego je to bilo predviđeno. Web leti, hvala ti."</p>
         <div class="testimonial-author">
           <strong>Tonči</strong>
-          <span>Zadovoljni klijent</span>
+          <span data-hr="Zadovoljni klijent" data-en="Satisfied client">Zadovoljni klijent</span>
         </div>
       </div>
 
@@ -1624,10 +1625,10 @@ footer::before {
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="testimonial-text">"Ovakav logo nisam mogla niti zamisliti. Sve možemo sami inače napraviti u Canvi a ovo što ste vi napravili je više nego predivno. Preporučit ćemo vas dalje. Hvala vam."</p>
+        <p class="testimonial-text" data-hr="&quot;Ovakav logo nisam mogla niti zamisliti. Sve možemo sami inače napraviti u Canvi a ovo što ste vi napravili je više nego predivno. Preporučit ćemo vas dalje. Hvala vam.&quot;" data-en="&quot;I couldn't even imagine a logo like this. We can usually make everything ourselves in Canva, but what you made is beyond beautiful. We will recommend you further. Thank you.&quot;">"Ovakav logo nisam mogla niti zamisliti. Sve možemo sami inače napraviti u Canvi a ovo što ste vi napravili je više nego predivno. Preporučit ćemo vas dalje. Hvala vam."</p>
         <div class="testimonial-author">
           <strong>Sonja</strong>
-          <span>Zadovoljni klijent</span>
+          <span data-hr="Zadovoljni klijent" data-en="Satisfied client">Zadovoljni klijent</span>
         </div>
       </div>
 
@@ -1640,10 +1641,10 @@ footer::before {
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="testimonial-text">"Jako ste srdačni i puni razumijevanja. Ne volim razgovarati s nepoznatim ljudima, ali vi ste ostavili predivan utisak na mene kada smo se konačno čuli. Napravili ste posao fenomenalno. Od one moje škrabotine na papiru vi ste točno napravili što je bilo u mojoj glavi."</p>
+        <p class="testimonial-text" data-hr="&quot;Jako ste srdačni i puni razumijevanja. Ne volim razgovarati s nepoznatim ljudima, ali vi ste ostavili predivan utisak na mene kada smo se konačno čuli. Napravili ste posao fenomenalno. Od one moje škrabotine na papiru vi ste točno napravili što je bilo u mojoj glavi.&quot;" data-en="&quot;You are very cordial and full of understanding. I don't like talking to strangers, but you left a wonderful impression on me when we finally spoke. You did a phenomenal job. From that scribble of mine on paper, you made exactly what was in my head.&quot;">"Jako ste srdačni i puni razumijevanja. Ne volim razgovarati s nepoznatim ljudima, ali vi ste ostavili predivan utisak na mene kada smo se konačno čuli. Napravili ste posao fenomenalno. Od one moje škrabotine na papiru vi ste točno napravili što je bilo u mojoj glavi."</p>
         <div class="testimonial-author">
           <strong>Meri</strong>
-          <span>Zadovoljni klijent</span>
+          <span data-hr="Zadovoljni klijent" data-en="Satisfied client">Zadovoljni klijent</span>
         </div>
       </div>
 
@@ -1651,20 +1652,20 @@ footer::before {
   </section>
 
   <section id="kontakt">
-    <div class="section-label">Povežimo se</div>
-    <h2 class="section-title">Kontakt</h2>
+    <div class="section-label" data-hr="Povežimo se" data-en="Let's connect">Povežimo se</div>
+    <h2 class="section-title" data-hr="Kontakt" data-en="Contact">Kontakt</h2>
     <div class="divider"></div>
     
     <div class="contact-grid">
       <div class="contact-info reveal-left">
-        <p>Spremni ste podići vizualni identitet svog poslovanja na višu razinu? Pošaljite nam upit i odgovorit ćemo vam u najkraćem mogućem roku s prijedlogom rješenja.</p>
+        <p data-hr="Spremni ste podići vizualni identitet svog poslovanja na višu razinu? Pošaljite nam upit i odgovorit ćemo vam u najkraćem mogućem roku s prijedlogom rješenja." data-en="Ready to take your business's visual identity to the next level? Send us an inquiry and we will reply as soon as possible with a proposed solution.">Spremni ste podići vizualni identitet svog poslovanja na višu razinu? Pošaljite nam upit i odgovorit ćemo vam u najkraćem mogućem roku s prijedlogom rješenja.</p>
         
         <div class="contact-detail">
           <div class="contact-detail-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <div class="contact-detail-text">
-            <label>Email Adresa</label>
+            <label data-hr="Email Adresa" data-en="Email Address">Email Adresa</label>
             <span>kezicvizuali@gmail.com</span>
           </div>
         </div>
@@ -1673,7 +1674,7 @@ footer::before {
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
           </div>
           <div class="contact-detail-text">
-            <label>Telefon</label>
+            <label data-hr="Telefon" data-en="Phone">Telefon</label>
             <span><a href="tel:+385976002753" style="color: var(--text); text-decoration: none;">+385 97 600 2753</a></span>
           </div>
         </div>
@@ -1682,8 +1683,8 @@ footer::before {
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
           <div class="contact-detail-text">
-            <label>Područje Rada</label>
-            <span><strong style="font-weight: 400; color: var(--text);">Terenski:</strong> Cijela Hrvatska i Slovenija<br><strong style="font-weight: 400; color: var(--text);">Online:</strong> Globalno</span>
+            <label data-hr="Područje Rada" data-en="Area of Work">Područje Rada</label>
+            <span data-hr="<strong style='font-weight: 400; color: var(--text);'>Terenski:</strong> Cijela Hrvatska i Slovenija<br><strong style='font-weight: 400; color: var(--text);'>Online:</strong> Globalno" data-en="<strong style='font-weight: 400; color: var(--text);'>Field:</strong> All of Croatia and Slovenia<br><strong style='font-weight: 400; color: var(--text);'>Online:</strong> Globally"><strong style="font-weight: 400; color: var(--text);">Terenski:</strong> Cijela Hrvatska i Slovenija<br><strong style="font-weight: 400; color: var(--text);">Online:</strong> Globalno</span>
           </div>
         </div>
         <div class="contact-detail">
@@ -1691,8 +1692,8 @@ footer::before {
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div class="contact-detail-text">
-            <label>Radno Vrijeme</label>
-            <span>Pon – Pet: 09:00 – 17:00<br>Subota: Prema dogovoru</span>
+            <label data-hr="Radno Vrijeme" data-en="Working Hours">Radno Vrijeme</label>
+            <span data-hr="Pon – Pet: 09:00 – 17:00<br>Subota: Prema dogovoru" data-en="Mon &ndash; Fri: 09:00 &ndash; 17:00<br>Saturday: By appointment">Pon – Pet: 09:00 – 17:00<br>Subota: Prema dogovoru</span>
           </div>
         </div>
       </div>
@@ -1701,34 +1702,34 @@ footer::before {
         <form class="contact-form" action="https://formspree.io/f/mgoqkdek" method="POST" id="contact-form">
           <div class="form-row">
             <div class="form-group">
-              <label>Ime i Prezime / Tvrtka</label>
-              <input type="text" name="name" placeholder="Vaše ime" required>
+              <label data-hr="Ime i Prezime / Tvrtka" data-en="Full Name / Company">Ime i Prezime / Tvrtka</label>
+              <input type="text" name="name" placeholder="Vaše ime" data-hr-placeholder="Vaše ime" data-en-placeholder="Your name" required>
             </div>
             <div class="form-group">
-              <label>Email Adresa</label>
-              <input type="email" name="email" placeholder="vas@email.com" required>
+              <label data-hr="Email Adresa" data-en="Email Address">Email Adresa</label>
+              <input type="email" name="email" placeholder="vas@email.com" data-hr-placeholder="vas@email.com" data-en-placeholder="you@email.com" required>
             </div>
           </div>
           <div class="form-group">
-            <label>Vrsta Usluge</label>
+            <label data-hr="Vrsta Usluge" data-en="Service Type">Vrsta Usluge</label>
             <select name="service">
-              <option>Web za 200 € — akcijska ponuda</option>
-              <option>Fotografiranje (Razne foto usluge)</option>
-              <option>Fotografiranje</option>
-              <option>Grafički Dizajn (Logo, Jelovnici...)</option>
-              <option>Izrada Web Stranice (od 500 €)</option>
-              <option>Vizualne Komunikacije / Fotografiranje</option>
-              <option>Organizacija Evenata</option>
-              <option>Ostalo / Opći upit</option>
+              <option data-hr="Web za 200 € — akcijska ponuda" data-en="Web for 200 € &mdash; special offer">Web za 200 € — akcijska ponuda</option>
+              <option data-hr="Fotografiranje (Razne foto usluge)" data-en="Photography (Various photo services)">Fotografiranje (Razne foto usluge)</option>
+              <option data-hr="Fotografiranje" data-en="Photography">Fotografiranje</option>
+              <option data-hr="Grafički Dizajn (Logo, Jelovnici...)" data-en="Graphic Design (Logo, Menus...)">Grafički Dizajn (Logo, Jelovnici...)</option>
+              <option data-hr="Izrada Web Stranice (od 500 €)" data-en="Website Creation (from 500 €)">Izrada Web Stranice (od 500 €)</option>
+              <option data-hr="Vizualne Komunikacije / Fotografiranje" data-en="Visual Communications / Photography">Vizualne Komunikacije / Fotografiranje</option>
+              <option data-hr="Organizacija Evenata" data-en="Event Organization">Organizacija Evenata</option>
+              <option data-hr="Ostalo / Opći upit" data-en="Other / General inquiry">Ostalo / Opći upit</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Vaša Poruka</label>
-            <textarea name="message" placeholder="Ukratko opišite što vam je potrebno..." required></textarea>
+            <label data-hr="Vaša Poruka" data-en="Your Message">Vaša Poruka</label>
+            <textarea name="message" placeholder="Ukratko opišite što vam je potrebno..." data-hr-placeholder="Ukratko opišite što vam je potrebno..." data-en-placeholder="Briefly describe what you need..." required></textarea>
           </div>
-          <button type="submit" class="btn-primary" style="margin-top: 0.5rem; width: fit-content;">Pošalji Upit →</button>
+          <button type="submit" class="btn-primary" style="margin-top: 0.5rem; width: fit-content;" data-hr="Pošalji Upit &rarr;" data-en="Send Inquiry &rarr;">Pošalji Upit &rarr;</button>
         </form>
-        <div id="form-success">Hvala vam! Vaš upit je uspješno poslan. Javit ćemo vam se uskoro.</div>
+        <div id="form-success" data-hr="Hvala vam! Vaš upit je uspješno poslan. Javit ćemo vam se uskoro." data-en="Thank you! Your inquiry was successfully sent. We will contact you soon.">Hvala vam! Vaš upit je uspješno poslan. Javit ćemo vam se uskoro.</div>
       </div>
     </div>
   </section>
@@ -1736,7 +1737,7 @@ footer::before {
   <!-- ══ INSTAGRAM FEED ══ -->
   <div class="ig-section reveal">
     <div class="ig-header">
-      <h3>Pratite naš rad</h3>
+      <h3 data-hr="Pratite naš rad" data-en="Follow our work">Pratite naš rad</h3>
       <a href="https://www.instagram.com/kezicvizuali/" target="_blank" rel="noopener">@kezicvizuali</a>
     </div>
     <div class="ig-feed">
@@ -1767,35 +1768,70 @@ footer::before {
     <div class="footer-grid reveal">
       <div class="footer-brand">
         <img src="Kezić vizuali transparent xl.png" alt="Kezić Vizuali Logo" style="height: 110px; width: auto;">
-        <p>Studio za vizualne komunikacije i dizajn. Spoj stare škole majstorstva i tehnologije budućnosti.</p>
+        <p data-hr="Studio za vizualne komunikacije i dizajn. Spoj stare škole majstorstva i tehnologije budućnosti." data-en="Studio for visual communications and design. A blend of old-school mastery and future technology.">Studio za vizualne komunikacije i dizajn. Spoj stare škole majstorstva i tehnologije budućnosti.</p>
       </div>
       <div class="footer-col">
-        <h5>Brzi Linkovi</h5>
+        <h5 data-hr="Brzi Linkovi" data-en="Quick Links">Brzi Linkovi</h5>
         <ul>
-          <li><a href="#hero">Početna</a></li>
-          <li><a href="#o-meni">O nama</a></li>
-          <li><a href="portfolio.html">Web Portfolio</a></li>
-          <li><a href="galerija.html">Foto Galerija</a></li>
-          <li><a href="#cjenik">Usluge i Cjenik</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-          <li><a href="ponuda100.html">Web za 200 €</a></li>
+          <li><a href="#hero" data-hr="Početna" data-en="Home">Početna</a></li>
+          <li><a href="#o-meni" data-hr="O nama" data-en="About us">O nama</a></li>
+          <li><a href="portfolio.html" data-hr="Web Portfolio" data-en="Web Portfolio">Web Portfolio</a></li>
+          <li><a href="galerija.html" data-hr="Foto Galerija" data-en="Photo Gallery">Foto Galerija</a></li>
+          <li><a href="#cjenik" data-hr="Usluge i Cjenik" data-en="Services & Pricing">Usluge i Cjenik</a></li>
+          <li><a href="#kontakt" data-hr="Kontakt" data-en="Contact">Kontakt</a></li>
+          <li><a href="ponuda100.html" data-hr="Web za 200 €" data-en="Web for 200 €">Web za 200 €</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Društvene Mreže</h5>
+        <h5 data-hr="Društvene Mreže" data-en="Social Networks">Društvene Mreže</h5>
         <ul>
-          <li><a href="https://www.facebook.com/kezicvizuali.vg" target="_blank">Službena Stranica</a></li>
-          <li><a href="https://www.facebook.com/kezicvizuali/" target="_blank">Privatni Profil</a></li>
+          <li><a href="https://www.facebook.com/kezicvizuali.vg" target="_blank" data-hr="Službena Stranica" data-en="Official Page">Službena Stranica</a></li>
+          <li><a href="https://www.facebook.com/kezicvizuali/" target="_blank" data-hr="Privatni Profil" data-en="Private Profile">Privatni Profil</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom reveal">
-      <p>&copy; 2026 Kezić Vizuali. Sva prava pridržana. <span style="color: var(--text-faint); margin: 0 8px;">|</span> Dizajn i razvoj: <a href="https://www.facebook.com/kezicvizuali.vg" target="_blank" rel="noopener" style="color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.25s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='transparent'">Kezić Vizuali</a></p>
-      <a href="uvjeti.html" target="_blank">Uvjeti korištenja i autorska prava</a>
+      <p><span data-hr="&copy; 2026 Kezić Vizuali. Sva prava pridržana." data-en="&copy; 2026 Kezić Vizuali. All rights reserved.">&copy; 2026 Kezić Vizuali. Sva prava pridržana.</span> <span style="color: var(--text-faint); margin: 0 8px;">|</span> <span data-hr="Dizajn i razvoj:" data-en="Design and development:">Dizajn i razvoj:</span> <a href="https://www.facebook.com/kezicvizuali.vg" target="_blank" rel="noopener" style="color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.25s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='transparent'">Kezić Vizuali</a></p>
+      <a href="uvjeti.html" target="_blank" data-hr="Uvjeti korištenja i autorska prava" data-en="Terms of use and copyrights">Uvjeti korištenja i autorska prava</a>
     </div>
   </footer>
 
   <script>
+    // ── FUNKCIJA ZA PROMJENU JEZIKA ──
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        
+        // Mijenjanje običnih tekstova
+        document.querySelectorAll('[data-hr]').forEach(el => {
+            if (lang === 'en' && el.hasAttribute('data-en')) {
+                el.innerHTML = el.getAttribute('data-en');
+            } else {
+                el.innerHTML = el.getAttribute('data-hr');
+            }
+        });
+
+        // Mijenjanje placeholdera unutar inputa i textarea
+        document.querySelectorAll('[data-hr-placeholder]').forEach(el => {
+            if (lang === 'en' && el.hasAttribute('data-en-placeholder')) {
+                el.setAttribute('placeholder', el.getAttribute('data-en-placeholder'));
+            } else {
+                el.setAttribute('placeholder', el.getAttribute('data-hr-placeholder'));
+            }
+        });
+        
+        // Ažuriranje stilova gumba
+        const btnHr = document.getElementById('btn-hr');
+        const btnEn = document.getElementById('btn-en');
+        
+        if (lang === 'en') {
+            btnEn.style.color = 'var(--gold)';
+            btnHr.style.color = 'var(--text-muted)';
+        } else {
+            btnHr.style.color = 'var(--gold)';
+            btnEn.style.color = 'var(--text-muted)';
+        }
+    }
+
     // ── Custom cursor ──
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursor-ring');
@@ -1929,12 +1965,14 @@ footer::before {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
-      btn.textContent = 'Šaljem...'; btn.disabled = true;
+      const isEn = document.documentElement.lang === 'en';
+      btn.textContent = isEn ? 'Sending...' : 'Šaljem...'; 
+      btn.disabled = true;
       try {
         const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
         if (res.ok) { form.style.display = 'none'; success.style.display = 'block'; }
-        else { btn.textContent = 'Pošalji Upit →'; btn.disabled = false; }
-      } catch { btn.textContent = 'Pošalji Upit →'; btn.disabled = false; }
+        else { btn.innerHTML = isEn ? 'Send Inquiry &rarr;' : 'Pošalji Upit &rarr;'; btn.disabled = false; }
+      } catch { btn.innerHTML = isEn ? 'Send Inquiry &rarr;' : 'Pošalji Upit &rarr;'; btn.disabled = false; }
     });
 
     // ── Cookie banner + GA4 (učitava se tek nakon privole) ──
@@ -1972,31 +2010,6 @@ footer::before {
       localStorage.setItem('cookie_consent', 'rejected');
       cookieBanner.classList.remove('visible');
     });
-  // ── FUNKCIJA ZA PROMJENU JEZIKA ──
-    function setLanguage(lang) {
-        document.documentElement.lang = lang;
-        
-        // Promijeni tekstove za sve elemente s data-hr i data-en atributima
-        document.querySelectorAll('[data-hr]').forEach(el => {
-            if (lang === 'en' && el.hasAttribute('data-en')) {
-                el.innerHTML = el.getAttribute('data-en');
-            } else {
-                el.innerHTML = el.getAttribute('data-hr');
-            }
-        });
-        
-        // Ažuriraj stilove gumba (aktivni jezik je zlatan, neaktivni je siv)
-        const btnHr = document.getElementById('btn-hr');
-        const btnEn = document.getElementById('btn-en');
-        
-        if (lang === 'en') {
-            btnEn.style.color = 'var(--gold)';
-            btnHr.style.color = 'var(--text-muted)';
-        } else {
-            btnHr.style.color = 'var(--gold)';
-            btnEn.style.color = 'var(--text-muted)';
-        }
-    }
   </script>
 </body>
 </html>
