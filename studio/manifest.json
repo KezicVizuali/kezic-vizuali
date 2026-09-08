@@ -1,7 +1,7 @@
 {
   "name": "Studio — Kezić Vizuali",
   "short_name": "Studio",
-  "description": "Foto-toolkit: rasvjeta, ekspozicija, dubinska oštrina, zlatni sat, watermark i EXIF analiza.",
+  "description": "Foto-toolkit: rasvjeta, ekspozicija, dubinska oštrina, zlatni sat s prognozom naoblake, watermark, EXIF/privatnost, ispis i generator ugovora.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
